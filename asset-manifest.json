@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/datsme.io/static/css/main.a4171d6e.css",
-    "main.js": "/datsme.io/static/js/main.1ac423cc.js",
-    "static/media/upgrade-bg.svg": "/datsme.io/static/media/upgrade-bg.8a0d630e72cf3bdc7952.svg",
-    "static/media/team-jatin.png": "/datsme.io/static/media/team-jatin.0f709a6a7c563a8e1efc.png",
-    "static/media/team-aditya.png": "/datsme.io/static/media/team-aditya.9105b493f1131edb7958.png",
-    "static/media/team-siddhant.png": "/datsme.io/static/media/team-siddhant.0d3b8fe352b3b5ec9f82.png",
-    "static/media/team-saurav.png": "/datsme.io/static/media/team-saurav.9cd35de84919ccecf280.png",
-    "static/media/team-sushant.png": "/datsme.io/static/media/team-sushant.7ab71713c483edbc7cfe.png",
-    "static/media/team-shasta.png": "/datsme.io/static/media/team-shasta.b98df2cb027d58a1ca32.png",
-    "static/media/team-pulkit.png": "/datsme.io/static/media/team-pulkit.9055ce926d1ea47b349c.png",
-    "static/media/team-prateek.png": "/datsme.io/static/media/team-prateek.745da8b5f87fecf3d2c9.png",
-    "static/media/ace-bg.svg": "/datsme.io/static/media/ace-bg.7f60570b460c7d8bec2c.svg",
-    "static/media/rise-bg.svg": "/datsme.io/static/media/rise-bg.2b06c7813ad4778a0890.svg",
-    "static/media/hybrid-bg.svg": "/datsme.io/static/media/hybrid-bg.056642d11c8274ebcac9.svg",
-    "index.html": "/datsme.io/index.html",
-    "main.a4171d6e.css.map": "/datsme.io/static/css/main.a4171d6e.css.map",
-    "main.1ac423cc.js.map": "/datsme.io/static/js/main.1ac423cc.js.map"
+    "main.css": "/datsme/static/css/main.ccf0f564.css",
+    "main.js": "/datsme/static/js/main.1ac423cc.js",
+    "static/media/upgrade-bg.svg": "/datsme/static/media/upgrade-bg.8a0d630e72cf3bdc7952.svg",
+    "static/media/team-jatin.png": "/datsme/static/media/team-jatin.0f709a6a7c563a8e1efc.png",
+    "static/media/team-aditya.png": "/datsme/static/media/team-aditya.9105b493f1131edb7958.png",
+    "static/media/team-siddhant.png": "/datsme/static/media/team-siddhant.0d3b8fe352b3b5ec9f82.png",
+    "static/media/team-saurav.png": "/datsme/static/media/team-saurav.9cd35de84919ccecf280.png",
+    "static/media/team-sushant.png": "/datsme/static/media/team-sushant.7ab71713c483edbc7cfe.png",
+    "static/media/team-shasta.png": "/datsme/static/media/team-shasta.b98df2cb027d58a1ca32.png",
+    "static/media/team-pulkit.png": "/datsme/static/media/team-pulkit.9055ce926d1ea47b349c.png",
+    "static/media/team-prateek.png": "/datsme/static/media/team-prateek.745da8b5f87fecf3d2c9.png",
+    "static/media/ace-bg.svg": "/datsme/static/media/ace-bg.7f60570b460c7d8bec2c.svg",
+    "static/media/rise-bg.svg": "/datsme/static/media/rise-bg.2b06c7813ad4778a0890.svg",
+    "static/media/hybrid-bg.svg": "/datsme/static/media/hybrid-bg.056642d11c8274ebcac9.svg",
+    "index.html": "/datsme/index.html",
+    "main.ccf0f564.css.map": "/datsme/static/css/main.ccf0f564.css.map",
+    "main.1ac423cc.js.map": "/datsme/static/js/main.1ac423cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4171d6e.css",
+    "static/css/main.ccf0f564.css",
     "static/js/main.1ac423cc.js"
   ]
 }
