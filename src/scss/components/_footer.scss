@@ -1,0 +1,514 @@
+@use '../util' as *;
+
+.wrapper {
+
+    footer {
+        width: 100%;
+        height: 55.4rem;
+        @include display();
+
+        .footer {
+            width: 100%;
+            height: 100%;
+            max-width: 146rem;
+            @include display(column, center, space-between);
+
+            &--background {
+                @include position(bottom, 0, left, 0);
+                width: 100%;
+                height: 55.4rem;
+                background: #F9FAFA;
+                z-index: -2;
+            }
+
+            &__top {
+                width: 100%;
+                height: 24.9rem;
+                @include display(null, flex-start, space-between);
+                margin-top: 6.9rem;
+
+                .company__overview {
+                    width: 27rem;
+                    height: 100%;
+                    @include display(column, flex-start, space-between);
+
+                    .logo__section {
+                        width: 100%;
+                        height: 4.9rem;
+                        @include display(null, center, space-between);
+
+                        &--icon {
+                            width: 4.9rem;
+                            height: 100%;
+                        }
+
+                        &--main {
+                            width: 12.2rem;
+                            height: 100%;
+                        }
+
+                        &--version {
+                            padding: 0.8rem 1.6rem;
+                            width: 6.6rem;
+                            height: 3.6rem;
+                            background: rgba(72, 97, 230, 0.16);
+                            border-radius: 10rem;
+                            @include display();
+                            @include text(600, 1.3rem, 1.6rem, null, #4861E6);
+                        }
+                    }
+
+                    .contact__section {
+                        width: 100%;
+                        height: 16rem;
+                        @include display(column, flex-start, space-between);
+
+                        li {
+                            width: 100%;
+                            height: auto;
+                            @include display(null, center, flex-start);
+
+                            img {
+                                width: 2.4rem;
+                                height: 2.4rem;
+                                margin-right: 1.7rem;
+                            }
+
+                            span {
+                                @include text(400, 1.6rem, 3.2rem, -0.05rem, #767A8D);
+                            }
+
+                            &:nth-child(1) {
+                                span {
+                                    line-height: 2.4rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .company__details {
+                    width: clamp(65.6rem, 14.861vw + 47.767rem, 76.3rem);
+                    height: clamp(22rem, 4.028vw + 17.167rem, 24.9rem);
+                    @include display(null, flex-start, flex-start);
+
+                    .outer__list {
+                        @include display(null, flex-start, space-between);
+                        width: 100%;
+                        height: 100%;
+
+                        li {
+                            @include display(column, flex-start, flex-start);
+                            width: auto;
+                            height: auto;
+
+                            .text {
+                                @include text(600, 2rem, 3.2rem, null, #2E303A);
+                                margin-bottom: 2.4rem;
+                            }
+
+                            .inner__list {
+                                all: unset;
+                                @include display(column, flex-start, flex-start);
+                                width: auto;
+                                height: auto;
+
+                                li {
+                                    all: unset;
+                                    margin-bottom: 1.2rem;
+                                    @include text(400, 1.6rem, 3.2rem, -0.05rem, rgba(118, 122, 141, 0.75));
+
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__middle {
+                @include display(null, null, space-between);
+                align-self: flex-end;
+                width: clamp(65.6rem, 14.861vw + 47.767rem, 76.3rem);
+                height: clamp(9.2rem, 1.111vw + 7.867rem, 10rem);
+
+                .contact__section {
+                    width: clamp(28.8rem, 7.639vw + 19.633rem, 34.3rem);
+                    height: 100%;
+                    @include display(column, flex-start, space-between);
+
+                    p {
+                        @include text(600, clamp(1.8rem, 0.278vw + 1.467rem, 2rem), 3.2rem, null, #2E303A);
+                    }
+
+                    .contact--mail {
+                        width: 100%;
+                        height: clamp(4.8rem, 1.111vw + 3.467rem, 5.6rem);
+                        position: relative;
+
+                        input {
+                            width: 100%;
+                            height: 100%;
+                            padding: 1.6rem;
+                            background: #EDF1F7;
+                            border-radius: 1.2rem;
+
+                            &::placeholder {
+                                @include text(400, 1.4rem, 1.8rem, null, #767A8D);
+                            }
+                        }
+
+                        img {
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            @include position(right, 1.6rem, top, 50%);
+                            transform: translate(0, -50%);
+                        }
+                    }
+                }
+
+                .download__section {
+                    width: clamp(31.7rem, 6.944vw + 23.367rem, 36.7rem);
+                    height: 100%;
+                    @include display(column, flex-start, space-between);
+
+                    p {
+                        @include text(600, clamp(1.8rem, 0.278vw + 1.467rem, 2rem), 3.2rem, null, #2E303A);
+                    }
+
+                    .download--buttons {
+                        width: 100%;
+                        height: 4.8rem;
+                        @include display(null, center, space-between);
+
+                        img {
+                            width: clamp(14.3rem, 3.333vw + 10.3rem, 16.7rem);
+                            height: 100%;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            &__bottom {
+                width: 100%;
+                height: 8rem;
+                @include display(null, null, space-between);
+                border-top: 1.5px solid #EEEEF1;
+
+                &--background {
+                    @include position(bottom, 0, left, 0);
+                    width: 100%;
+                    height: 8rem;
+                    background: #EEEEF1;
+                    z-index: -1;
+                }
+
+                p {
+                    @include text(400, 1.4rem, 3.2rem, -0.05rem, #767A8D);
+                }
+
+                &__list {
+                    width: 18.6rem;
+                    height: auto;
+                    @include display(null, null, space-between);
+
+                    li {
+                        width: auto;
+                        height: auto;
+                        @include text(400, 1.6rem, 3.2rem, -0.05rem, rgba(118, 122, 141, 0.75));
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .wrapper {
+        footer {
+            height: clamp(49.6rem, 24.038vw + 25.754rem, 54.6rem);
+
+            .footer {
+
+                &--background {
+                    height: clamp(49.6rem, 24.038vw + 25.754rem, 54.6rem);
+                }
+
+                &__top {
+                    height: clamp(19.6rem, 25.481vw + -5.677rem, 24.9rem);
+
+                    .company__overview {
+                        width: clamp(22.2rem, 28.846vw + -6.415rem, 28.2rem);
+
+                        .logo__section {
+                            height: clamp(4rem, 4.327vw + -0.292rem, 4.9rem);
+
+                            &--icon {
+                                width: clamp(4rem, 4.327vw + -0.292rem, 4.9rem);
+                            }
+
+                            &--main {
+                                width: clamp(10rem, 10.577vw + -0.492rem, 12.2rem);
+                            }
+
+                            &--version {
+                                width: clamp(5.3rem, 6.25vw + -0.9rem, 6.6rem);
+                                height: clamp(2.9rem, 3.365vw + -0.438rem, 3.6rem);
+                            }
+                        }
+
+                        .contact__section {
+                            height: clamp(11.6rem, 21.154vw + -9.385rem, 16rem);
+
+                            li {
+                                span {
+                                    font-size: clamp(1.4rem, 0.962vw + 0.446rem, 1.6rem);
+                                    line-height: clamp(1.8rem, 6.731vw + -4.877rem, 3.2rem);
+                                }
+
+                                &:nth-child(1) {
+                                    span {
+                                        line-height: clamp(1.8rem, 2.885vw + -1.062rem, 2.4rem);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .company__details {
+                        width: clamp(57.1rem, 40.865vw + 16.562rem, 65.6rem);
+                        height: clamp(16.4rem, 26.923vw + -10.308rem, 22rem);
+
+                        .outer__list {
+                            li {
+                                .text {
+                                    font-size: clamp(1.6rem, 0.962vw + 0.646rem, 1.8rem);
+                                }
+
+                                .inner__list {
+                                    li {
+                                        font-size: clamp(1.4rem, 0.962vw + 0.446rem, 1.6rem);
+                                        line-height: clamp(1.8rem, 6.731vw + -4.877rem, 3.2rem);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__middle {
+                    width: clamp(57.6rem, 38.462vw + 19.446rem, 65.6rem);
+
+                    .contact__section {
+                        width: clamp(25.9rem, 13.942vw + 12.069rem, 28.8rem);
+
+                        p {
+                            font-size: clamp(1.6rem, 0.962vw + 0.646rem, 1.8rem);
+                        }
+                    }
+
+                    .download__section {
+                        width: clamp(28.4rem, 15.865vw + 12.662rem, 31.7rem);
+
+                        p {
+                            font-size: clamp(1.6rem, 0.962vw + 0.646rem, 1.8rem);
+                        }
+
+                        .download--buttons {
+                            height: clamp(4.4rem, 1.923vw + 2.492rem, 4.8rem);
+
+                            img {
+                                width: clamp(13.1rem, 5.769vw + 7.377rem, 14.3rem);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper {
+        footer {
+            height: 60.7rem;
+
+            .footer {
+
+                &--background {
+                    height: 60.7rem;
+                }
+
+                &__top {
+                    @include display(column, flex-start, space-between);
+                    height: 30.8rem;
+                    margin-top: 4.8rem;
+
+                    .company__overview {
+                        width: 100%;
+                        height: 8.8rem;
+
+                        .logo__section {
+                            max-width: 21.9rem;
+                        }
+
+                        .contact__section {
+                            height: 3.2rem;
+                            @include display(row, center, space-between);
+
+                            li {
+                                width: auto;
+
+                                img {
+                                    margin-right: 1.2rem;
+                                }
+                            }
+                        }
+                    }
+
+                    .company__details {
+                        width: 100%;
+                        height: 18.8rem;
+                        padding-top: 2.4rem;
+                        border-top: 0.1rem solid #eeeef1;
+                    }
+                }
+
+                &__middle {
+                    width: 100%;
+                    height: 9rem;
+
+                    .contact__section {
+                        width: 50%;
+                        max-width: 29.2rem;
+                    }
+
+                    .download__section {
+                        width: 50%;
+                        max-width: 33rem;
+
+                        .download--buttons {
+                            height: 4.4rem;
+
+                            img {
+                                width: 100%;
+                                max-width: 15.7rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        footer {
+            height: auto;
+
+            .footer {
+                align-items: flex-start;
+
+                &--background {
+                    height: 127.3rem;
+                }
+
+                &__top {
+                    @include display(column, flex-start, space-between);
+                    height: auto;
+                    max-width: 25.1rem;
+
+                    .company__overview {
+                        width: 100%;
+                        height: 21.6rem;
+                        margin-bottom: 3.2rem;
+
+                        .logo__section {
+                            max-width: 21.9rem;
+                        }
+
+                        .contact__section {
+                            height: 15.2rem;
+                            @include display(column, flex-start, space-between);
+
+                            li {
+                                width: auto;
+
+                                img {
+                                    margin-right: 1.2rem;
+                                }
+                            }
+                        }
+                    }
+
+                    .company__details {
+                        width: 100%;
+                        height: auto;
+                        padding-top: 1.6rem;
+                        border-top: 0.1rem solid #eeeef1;
+
+                        .outer__list {
+                            flex-direction: column;
+
+                            li {
+                                margin-bottom: 2.4rem;
+
+                                .text {
+                                    margin-bottom: 1.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__middle {
+                    width: 100%;
+                    max-width: 28.4rem;
+                    height: 20.4rem;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    align-self: flex-start;
+                    margin-bottom: 3.2rem;
+
+                    .contact__section {
+                        width: 100%;
+                        max-width: 100%;
+                        height: 9.2rem;
+                    }
+
+                    .download__section {
+                        width: 100%;
+                        max-width: 100%;
+                        height: 8.8rem;
+
+                        .download--buttons {
+                            height: 4.4rem;
+
+                            img {
+                                width: 100%;
+                                max-width: 13.1rem;
+                            }
+                        }
+                    }
+                }
+
+                &__bottom {
+                    height: 11rem;
+                    @include display(column, flex-start, space-around);
+
+                    &--background {
+                        height: 11rem;
+                    }
+
+                    p {
+                        line-height: 2.1rem;
+                    }
+                }
+            }
+        }
+    }
+}

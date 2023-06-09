@@ -1,0 +1,138 @@
+// @use '../../util' as *;
+
+// .product1 {
+//     width: 100vw;
+//     height: auto;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     @include display(column, null, space-between);
+
+//     .heading-container {
+//         width: 97.8rem;
+//         height: 14.4rem;
+//         margin-top: 16.1rem;
+//         margin-bottom: 8.5rem;
+//         @include display(column, null, space-between);
+
+//         h1 {
+//             @include text(700, 7.2rem, 8.8rem, -0.1rem, #6EADA2);
+//         }
+
+//         p {
+//             @include text(400, 2rem, 3.2rem, -0.05rem, #767A8D);
+//         }
+//     }
+
+//     .content-container {
+//         width: 120.9rem;
+//         height: 56.7rem;
+//         position: relative;
+//         margin-bottom: 15rem;
+
+//         .text {
+//             padding: 1.6rem 2.4rem;
+//             width: auto;
+//             height: 6.4rem;
+//             background: rgb(236, 236, 236);
+//             border-radius: 10rem;
+//             @include display();
+
+//             p {
+//                 @include text(400, 2rem, 3.2rem, -0.05rem, #6DAAA1);
+//                 opacity: 0.7;
+//             }
+//         }
+
+//         .preview {
+//             width: 34.5rem;
+//             height: 10.36rem;
+//             background: radial-gradient(103.28% 101.91% at 102.03% 101.91%, #FFFFFF 0%, #FBFCFD 100%);
+//             box-shadow: 0px 0.8rem 4rem rgba(66, 83, 146, 0.12);
+//             border-radius: 2.4rem;
+//             padding: 1.6rem;
+//             @include display(null, center, flex-start);
+
+//             .image {
+//                 width: 6.4rem;
+//                 height: 6.4rem;
+//                 background: black;
+//                 margin-right: 1.6rem;
+//             }
+
+//             .heading-text {
+//                 width: 20.9rem;
+//                 height: 3.8rem;
+//                 background: lightgrey;
+//             }
+
+//             .play {
+//                 width: 2.4rem;
+//                 height: 2.4rem;
+//                 border-radius: 50%;
+//                 background: #6DAAA1;
+//                 border: 1.5px solid #6DAAA1;
+//                 box-shadow: 0px 8px 16px rgba(131, 131, 131, 0.32);
+//             }
+//         }
+
+//         .chapter-section {
+//             @include position(top, 8.8rem, left, 50.9rem);
+//             padding: 3.6rem;
+//             height: 20.9rem;
+//             width: 47.3rem;
+//             background: linear-gradient(102.23deg, #F4FEFC 0%, #D8F1EC 100%), linear-gradient(271.66deg, #9FE375 0%, #12B868 100%);
+//             background: rgb(236, 236, 236);
+//             box-shadow: 0px 4rem 7rem -4rem rgba(66, 83, 146, 0.4);
+//             border-radius: 3.6rem;
+//             @include display(column, flex-start, flex-start);
+
+//             span {
+//                 @include text(400, 1.8rem, 2.2rem, null, #6EADA2);
+//                 opacity: 0.64;
+//             }
+
+//             p {
+//                 @include text(600, 2.6rem, 3.3rem, null, #6EADA2);
+//             }
+//         }
+
+//         .image-section {
+//             // background: #6EADA2;
+//             width: 46.8rem;
+//             height: 44.5rem;
+//             border-radius: 4.8rem;
+//             @include position(top, 3.2rem, left, 0);
+//             overflow: hidden;
+
+//             img{
+//             @include position(top, 0, left, 0);
+//             }
+//         }
+
+
+//         .textTop-section {
+//             width: 34.9rem;
+//             @include position(top, 0, left, 50.9rem);
+//         }
+
+//         .textRight-section {
+//             width: 32.4rem;
+//             @include position(top, 35.9rem, left, 88.5rem);
+//         }
+
+//         .textLeft-section {
+//             width: 28rem;
+//             @include position(top, 50.3rem, left, 25.3rem);
+//         }
+
+//         .previewTop-section {
+//             @include position(top, 33.5rem, left, 50.9rem);
+//         }
+
+//         .previewBottom-section {
+//             @include position(top, 45.5rem, left, 60.2rem);
+//         }
+//     }
+// }

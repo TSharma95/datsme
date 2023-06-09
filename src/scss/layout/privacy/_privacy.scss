@@ -1,0 +1,201 @@
+@use '../../util' as *;
+
+.wrapper {
+
+    .privacy,
+    .terms {
+        width: 100%;
+        height: auto;
+        @include display(column);
+
+        .background {
+            width: 100%;
+            height: clamp(17rem, 36.923vw + 3.708rem, 74.6rem);
+            @include display(null, flex-end, center);
+            @include position(top, 0, left, 0);
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: clamp(12.2rem, 34.038vw + -0.054rem, 65.3rem);
+            }
+        }
+
+        .content__container {
+            width: 100%;
+            height: auto;
+            max-width: 146rem;
+            @include display(column, center, flex-start);
+            background: radial-gradient(103.28% 101.91% at 102.03% 101.91%, #FFFFFF 0%, #FBFCFD 100%);
+            box-shadow: 0 4.8rem 12rem rgba(66, 83, 146, 0.16);
+            border-radius: clamp(1.6rem, 2.308vw + 0.769rem, 4rem);
+            margin-top: clamp(9.6rem, 10.064vw + 5.977rem, 25.3rem);
+            margin-bottom: clamp(10rem, 4.808vw + 8.269rem, 15rem);
+            padding: 0 clamp(2.7rem, 5.705vw + 0.646rem, 11.6rem);
+
+            &--header {
+                width: 100%;
+                max-width: 121rem;
+                height: auto;
+                @include display(null, center, space-between);
+                margin-top: clamp(2.8rem, 5.962vw + 0.654rem, 9rem);
+                margin-bottom: clamp(4.8rem, 7.308vw + 2.169rem, 12.4rem);
+
+                .text {
+                    width: clamp(29.6rem, 38.284vw + 15.818rem, 80.9rem);
+                    height: clamp(9.3rem, 8.881vw + 6.103rem, 21.2rem);
+                    @include display(column, flex-start, space-between);
+
+                    h1 {
+                        @include text(700, clamp(3.6rem, 3.881vw + 2.203rem, 8.8rem), clamp(8.8rem, 1.343vw + 8.316rem, 10.6rem), -0.1rem, #2E303A);
+
+                        @media (max-width: 992px) {
+                            font-size: clamp(3.6rem, 2.848vw + 2.575rem, 5.4rem);
+                            line-height: clamp(4.5rem, 3.323vw + 3.304rem, 6.6rem);
+                        }
+                    }
+
+                    p {
+                        width: 85%;
+                        @include text(300, clamp(1.6rem, 1.194vw + 1.17rem, 3.2rem), clamp(2rem, 1.493vw + 1.463rem, 4rem), -0.1rem, #535664);
+                    }
+
+                }
+
+                img {
+                    width: auto;
+                    max-width: clamp(15.9rem, 10.924vw + 11.967rem, 28.9rem);
+                    height: clamp(15.9rem, 10.924vw + 11.967rem, 28.9rem);
+                }
+
+                @media (max-width: 768px) {
+                    @include display(column-reverse, center, space-between);
+
+                    .text {
+                        align-items: center;
+
+                        h1,
+                        p {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            &--content {
+                width: 100%;
+                height: auto;
+                max-width: 146rem;
+                margin-bottom: clamp(2.8rem, 3.974vw + 1.369rem, 9rem);
+
+                .content__heading {
+                    @include text(700, clamp(1.6rem, 3.165vw + 0.461rem, 3.6rem), 4.3rem, -0.05rem, #2E303A);
+                    margin-bottom: clamp(3.2rem, 5vw + 1.4rem, 8.4rem);
+
+                    &__font {
+                        @include text(400, clamp(1.6rem, 3.165vw + 0.461rem, 3.6rem), 4.3rem, -0.05rem, #000000);
+                    }
+
+                    &--privacycolor {
+                        color: #55B578;
+                    }
+
+                    &--termscolor {
+                        color: #4AC6EC;
+                    }
+                }
+
+                p {
+                    @include text(400, clamp(1.4rem, 0.962vw + 1.054rem, 2.4rem), clamp(2.1rem, 1.442vw + 1.581rem, 3.6rem), null, #2E303A);
+                    margin-bottom: clamp(2.4rem, 2.308vw + 1.569rem, 4.8rem);
+                    word-break: break-all;
+
+                    span {
+                        all: inherit;
+                        margin-bottom: clamp(2.1rem, 1.442vw + 1.581rem, 3.6rem);
+                    }
+
+                    strong {
+                        font-weight: 700;
+                    }
+
+                    a {
+                        color: blue;
+                        font-weight: 700;
+                    }
+                }
+
+                h3 {
+                    @include text(700, clamp(1.4rem, 0.962vw + 1.054rem, 2.4rem), clamp(2.1rem, 1.442vw + 1.581rem, 3.6rem), null, #2E303A);
+                    margin-bottom: 1.6rem;
+                }
+
+                span {
+                    @include text(400, clamp(1.4rem, 0.962vw + 1.054rem, 2.4rem), clamp(2.1rem, 1.442vw + 1.581rem, 3.6rem), null, #2E303A);
+                }
+
+                ul {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: clamp(2.1rem, 1.442vw + 1.581rem, 3.6rem);
+                    max-width: 146rem;
+
+                    li {
+                        list-style: disc;
+                        @include text(400, clamp(1.4rem, 0.962vw + 1.054rem, 2.4rem), clamp(2.1rem, 1.442vw + 1.581rem, 3.6rem), null, #2E303A);
+                        margin-left: 2.4rem;
+                    }
+
+                    span {
+                        display: block;
+                        @include text(400, clamp(1.4rem, 0.962vw + 1.054rem, 2.4rem), clamp(2.1rem, 1.442vw + 1.581rem, 3.6rem), null, #2E303A);
+                    }
+                }
+
+                ol {
+                    list-style-position: inside;
+                    margin-bottom: clamp(2.1rem, 1.442vw + 1.581rem, 3.6rem);
+
+                    li,
+                    span,
+                    p {
+                        word-break: break-all;
+                        @include text(400, clamp(1.4rem, 0.962vw + 1.054rem, 2.4rem), clamp(2.1rem, 1.442vw + 1.581rem, 3.6rem), null, #2E303A);
+
+                        ul {
+                            li {
+                                margin-left: 5rem;
+                            }
+
+                            span {
+                                margin: 1.6rem 0 0 2.5rem;
+                            }
+                        }
+                    }
+
+                    span {
+                        margin: 1.6rem 0 0 2.5rem;
+                        display: block;
+                    }
+
+                    p {
+                        word-break: break-all;
+                        margin: 1.6rem 0 3.6rem 2.5rem;
+                    }
+
+                    ol {
+                        list-style-type: inherit;
+                        margin-left: 2.5rem;
+
+                        ol {
+                            list-style-position: inside;
+                            list-style-type: disc;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}

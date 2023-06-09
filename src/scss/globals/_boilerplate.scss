@@ -1,0 +1,68 @@
+@use '../util' as *;
+
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+html,
+body {
+    width: 100%;
+    height: auto;
+    min-width: 280px;
+    scroll-behavior: smooth;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: $font;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    line-height: 1;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Opera */
+        scrollbar-width: none; /* For Firefox */
+        -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    }
+}
+
+.no--scroll {
+    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    @include display(column, null, flex-start);
+    padding: 0 6.4rem;
+    position: relative;
+
+    @media (max-width: 992px) {
+        padding: 0 clamp(3.2rem, 14.286vw + -7.771rem, 6.4rem);
+    }
+
+    @media (max-width: 768px) {
+        padding: 0 clamp(1.6rem, 7.143vw + -3.886rem, 3.2rem);
+    }
+}

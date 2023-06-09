@@ -1,0 +1,427 @@
+@use '../../util' as *;
+
+.wrapper {
+    .faq {
+        width: 100%;
+        max-width: 146rem;
+        height: auto;
+        @include display(null, flex-start, space-between);
+        margin-top: 15.1rem;
+        margin-bottom: 15.1rem;
+
+        &__header {
+            width: clamp(48.9rem, 4.478vw + 43.303rem, 51.9rem);
+            height: 59.7rem;
+            @include display(column, flex-start, space-between);
+
+            &--heading {
+                width: 100%;
+                height: 20.43rem;
+                padding-bottom: 3.2rem;
+                border-bottom: 1.6px solid #E9E9EC;
+                @include display(null, center, space-between);
+
+                img {
+                    width: auto;
+                    height: 17.25rem;
+                }
+
+                .text {
+                    width: 27.4rem;
+                    height: 14.1rem;
+                    @include display(column, flex-start, space-between);
+
+                    h1 {
+                        @include text(700, 3.2rem, 3.8rem, -0.1rem, #4861E6);
+                    }
+
+                    p {
+                        @include text(400, 1.6rem, 2.4rem, -0.05rem, #767A8D);
+                    }
+                }
+            }
+
+            &--content {
+                width: auto;
+                height: 36rem;
+                @include display(column, flex-start, space-between);
+
+                h2 {
+                    @include text(600, 2.4rem, 3.2rem, -0.05rem, #2E303A);
+                    margin-bottom: 1.6rem;
+                }
+
+                ul {
+                    width: 100%;
+                    height: 100%;
+                    @include display(column, flex-start, space-between);
+
+                    li {
+                        width: 100%;
+                        height: auto;
+                        cursor: pointer;
+                        @include text(600, 1.6rem, 3.2rem, null, #767A8D);
+
+                        &:hover {
+                            color: #4861E6;
+                        }
+
+                        .content--link--active{
+                            color: #4861E6;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__container {
+            background: radial-gradient(103.28% 101.91% at 102.03% 101.91%, #FFFFFF 0%, #FBFCFD 100%);
+            box-shadow: 0px 4.8rem 12rem rgba(66, 83, 146, 0.16);
+            border-radius: 4rem;
+            width: clamp(60rem, 35.821vw + 15.224rem, 84rem);
+            height: auto;
+            padding: 5.6rem;
+            @include display(column, flex-start, flex-start);
+
+            h2 {
+                @include text(700, 3.2rem, 3.2rem, -0.05rem, #2E303A);
+                margin-bottom: 5.6rem;
+            }
+
+            .faq__section {
+                width: 100%;
+                height: 100%;
+                @include display(column, flex-start, flex-start);
+
+                .faq__ques__section {
+                    width: 100%;
+                    @include display(column, flex-start, flex-start);
+                    height: auto;
+
+                    .show {
+                        .faq__item--head strong img {
+                            transform: rotate(180deg);
+                            transition: all 200ms ease-out;
+                        }
+                    }
+
+                    .faq__item {
+                        width: 100%;
+                        @include display(column, flex-start, null);
+                        max-width: 1228px;
+                        height: auto;
+                        border-bottom: 0.16rem solid #E9E9EC;
+                        cursor: pointer;
+                        padding-bottom: 3rem;
+
+                        &:first-child {
+                            .faq__item--head {
+                                padding-top: 0;
+                            }
+                        }
+
+                        &:last-child {
+                            border-bottom: none;
+                            margin-bottom: 0;
+                            padding-bottom: 0;
+
+                            .faq__item--head {
+                                padding-bottom: 0;
+                            }
+                        }
+
+                        &--head {
+                            width: 100%;
+                            padding-top: 3rem;
+                            @include display(null, center, space-between);
+
+                            strong {
+                                width: 100%;
+
+                                p {
+                                    @include text(600, 1.8rem, 2.2rem, null, #2E303A);
+                                }
+                            }
+
+                            img {
+                                width: 2.4rem;
+                                height: 2.4rem;
+                                transform: rotate(0deg);
+                                transition: transform 200ms ease-out;
+                            }
+
+                        }
+
+                        .ques--active {
+
+                            strong {
+                                p {
+                                    color: #4861E6;
+                                }
+                            }
+
+                            img {
+                                transform: rotate(180deg);
+                                transition: transform 200ms ease-out;
+                            }
+                        }
+
+                        &--body {
+                            max-height: 0;
+                            height: auto;
+                            transition: max-height 200ms ease-out;
+                            overflow: hidden;
+
+                            p {
+                                @include text(400, 1.4rem, 1.8rem, null, #767A8D);
+                                margin-top: 1.6rem;
+                            }
+
+                            ol {
+                                width: 100%;
+                                height: auto;
+                                @include display(column, flex-start, space-between);
+                                list-style-type: disc;
+                                padding-left: 1.6rem;
+                                margin-bottom: 1.6rem;
+
+                                li {
+                                    width: 100%;
+                                    height: auto;
+                                    margin-bottom: 1.6rem;
+                                    @include text(400, 1.4rem, 1.8rem, null, #767A8D);
+
+                                    &::marker {
+                                        @include text(400, 1.4rem, 1.8rem, null, #767A8D);
+                                    }
+
+                                    p {
+                                        @include text(400, 1.4rem, 1.8rem, null, #767A8D);
+                                        margin-bottom: 1.6rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .ans--active {
+
+                            ol {
+
+                                li {
+
+                                    &:first-child p {
+                                        margin-top: 1.6rem;
+                                    }
+
+                                    p {
+                                        margin-top: 0;
+
+                                        &:last-child {
+                                            margin-bottom: 0;
+                                        }
+                                    }
+
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                }
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .wrapper {
+        .faq {
+            flex-direction: column;
+            margin-bottom: 12rem;
+            margin-top: 17.6rem;
+
+            &__header {
+                width: 100%;
+                height: 36.4rem;
+                margin-bottom: 8.4rem;
+
+                &--heading {
+                    height: 22rem;
+                    width: 68rem;
+                    padding-bottom: 4rem;
+
+                    .text {
+                        height: 16.8rem;
+                        width: 40.8rem;
+
+                        h1 {
+                            @include text(700, 4.8rem, 6rem, -0.1rem, #4861E6);
+                        }
+
+                        p {
+                            @include text(400, 1.6rem, 2.4rem, -0.05rem, #767A8D);
+                        }
+                    }
+                }
+
+                &--content {
+                    width: 100%;
+                    height: 11.2rem;
+                    overflow: hidden;
+
+                    h2 {
+                        @include text(600, 3.2rem, 3.2rem, -0.05rem, #2E303A);
+                    }
+
+                    ul {
+                        height: 3.2rem;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        overflow-x: auto;
+                        white-space: nowrap;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                        li {
+                            width: auto;
+                            height: 100%;
+                            @include text(400, 2.4rem, 3.2rem, -0.05rem, #767A8D);
+                            margin-right: 6.4rem;
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__container {
+                width: 100%;
+                background: radial-gradient(103.28% 101.91% at 102.03% 101.91%, #FFFFFF 0%, #FBFCFD 100%);
+                box-shadow: 0px 48px 120px rgba(66, 83, 146, 0.16);
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper {
+        .faq {
+            margin-top: clamp(10.2rem, 33.036vw + -15.171rem, 17.6rem);
+
+            &__header {
+                margin-bottom: clamp(3.2rem, 23.214vw + -14.629rem, 8.4rem);
+
+                &--heading {
+                    .text {
+                        height: clamp(14.8rem, 8.929vw + 7.943rem, 16.8rem);
+
+                        h1 {
+                            font-size: clamp(4rem, 3.571vw + 1.257rem, 4.8rem);
+                            line-height: clamp(5rem, 4.464vw + 1.571rem, 6rem);
+                        }
+                    }
+                }
+
+                &--content {
+                    height: clamp(9.6rem, 7.143vw + 4.114rem, 11.2rem);
+
+                    h2 {
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    ul {
+
+                        li {
+                            width: max-content;
+                            font-size: clamp(2rem, 1.786vw + 0.629rem, 2.4rem);
+                        }
+                    }
+                }
+            }
+
+            &__container {
+                padding: clamp(3.2rem, 10.714vw + -5.029rem, 5.6rem);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        .faq {
+            &__header {
+                height: auto;
+
+                &--heading {
+                    width: 100%;
+                    height: auto;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    .text {
+                        width: 70%;
+                        min-width: 32.8rem;
+
+                        h1 {
+                            font-size: clamp(3.2rem, 1.961vw + 2.494rem, 4rem);
+                            line-height: clamp(4rem, 2.451vw + 3.118rem, 5rem);
+                        }
+                    }
+                }
+
+                &--content {
+                    height: clamp(8rem, 3.922vw + 6.588rem, 9.6rem);
+                    margin-top: clamp(1.3rem, 8.333vw + -1.7rem, 4.7rem);
+
+                    h2 {
+                        font-size: clamp(2.4rem, 1.961vw + 1.694rem, 3.2rem);
+                    }
+
+                    ul {
+                        li {
+                            font-size: clamp(1.6rem, 0.98vw + 1.247rem, 2rem);
+                        }
+                    }
+                }
+            }
+
+            &__container {
+                border-radius: clamp(2.4rem, 3.922vw + 0.988rem, 4rem);
+                padding: 3.2rem 1.6rem;
+
+                h2 {
+                    font-size: clamp(2.4rem, 1.961vw + 1.694rem, 3.2rem);
+                }
+
+                .faq__section {
+                    .faq__ques__section {
+                        .faq__item {
+                            &--head {
+                                strong {
+                                    p {
+                                        font-size: clamp(1.4rem, 0.98vw + 1.047rem, 1.8rem);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

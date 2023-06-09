@@ -1,0 +1,26 @@
+// common css
+
+// display mixin
+@mixin display($direction: row, $align-items: center, $justify-content: center) {
+    display: flex;
+    flex-direction: if($direction, $direction, row);
+    align-items: if($align-items, $align-items, center);
+    justify-content: if($justify-content, $justify-content, center);
+}
+
+// text mixin
+@mixin text($fontWeight, $fontSize, $lineHeight, $letterSpacing: normal, $color) {
+    font-style: normal;
+    font-weight: $fontWeight;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    letter-spacing: if($letterSpacing, $letterSpacing, normal);
+    color: $color;
+}
+
+// position mixin
+@mixin position($direction1, $value1: 0, $direction2, $value2: 0) {
+    position: absolute;
+    #{$direction1}: if($value1, $value1, 0);
+    #{$direction2}: if($value2, $value2, 0);
+}

@@ -1,0 +1,515 @@
+@use '../../util' as *;
+
+.wrapper {
+    .contact {
+        @include display(column);
+        width: 100%;
+        height: auto;
+        max-width: 146rem;
+
+        &__container {
+            width: 100%;
+            height: 82.7rem;
+            max-width: 146rem;
+            margin: 19.6rem 0 13.2rem 0;
+            @include display(null, null, space-between);
+
+            .content {
+                width: clamp(44rem, 9.851vw + 31.687rem, 50.6rem);
+                height: 66.86rem;
+                align-self: flex-start;
+                @include display(column, flex-start, space-between);
+                margin-right: 8rem;
+
+                &__image {
+                    width: 100%;
+                    height: 38.2rem;
+                    display: flex;
+                    position: relative;
+                    margin-bottom: 1.7rem;
+
+                    &--main {
+                        width: clamp(24.6rem, 9.698vw + 14.979rem, 33.6rem);
+                        height: clamp(24.4rem, 9.591vw + 14.886rem, 33.3rem);
+                    }
+
+                    &--vector {
+                        width: clamp(21.8rem, 12.931vw + 8.972rem, 33.8rem);
+                        height: clamp(6.8rem, 5.388vw + 1.455rem, 11.8rem);
+                        z-index: -1;
+                        @include position(bottom, clamp(8rem, -11.94vw + 22.925rem, 0rem), right, clamp(-2rem, 2.985vw + -5.731rem, 0rem))
+                    }
+                }
+
+                &__container {
+                    width: 100%;
+                    height: auto;
+                    @include display(column, flex-start, space-between);
+
+                    &__heading {
+                        width: 100%;
+                        height: 19.7rem;
+                        @include display(column, flex-start, space-between);
+                        margin-bottom: 4rem;
+
+                        h1 {
+                            @include text(700, clamp(4.8rem, 1.724vw + 3.09rem, 6.4rem), clamp(6rem, 1.832vw + 4.183rem, 7.7rem), -0.01rem, #4861E6);
+                        }
+
+                        p {
+                            @include text(400, clamp(1.6rem, 0.431vw + 1.172rem, 2rem), clamp(2.4rem, 0.862vw + 1.545rem, 3.2rem), -0.05rem, #767A8D);
+                        }
+                    }
+
+                    &__link {
+                        @include display(null, center, flex-start);
+                        width: 100%;
+                        height: auto;
+                        cursor: pointer;
+
+                        span {
+                            @include text(600, 2.4rem, 3.2rem, -0.05rem, #2E303A);
+                            margin-right: 0.8rem;
+                        }
+
+                        img {
+                            width: 3.2rem;
+                            height: 3.2rem;
+                        }
+                    }
+                }
+            }
+
+            .form__container {
+                background: radial-gradient(103.28% 101.91% at 102.03% 101.91%, #FFFFFF 0%, #FBFCFD 100%);
+                box-shadow: 0px 4.8rem 12rem rgba(66, 83, 146, 0.16);
+                border-radius: 4rem;
+                width: 84rem;
+                height: 78.1rem;
+                @include display(column, flex-start, space-between);
+                padding: 6.4rem 3.2rem 4rem 3.2rem;
+
+                .input__area {
+                    width: 100%;
+                    height: 10.7rem;
+                    @include display(null, center, space-between);
+
+                    &--field {
+                        width: 48%;
+                        max-width: 37rem;
+                        height: 100%;
+                        @include display(column, flex-start, space-between);
+
+                        p {
+                            @include text(500, 1.8rem, 2.2rem, null, #2E303A);
+                        }
+
+                        input {
+                            width: 100%;
+                            height: 6.8rem;
+                            background: #F4F6FA;
+                            border-radius: 1.2rem;
+                            padding: 2.4rem;
+
+                            &::placeholder {
+                                @include text(500, 1.6rem, 2rem, null, #2E303A);
+                                text-align: left;
+                            }
+                        }
+                    }
+
+                }
+
+                .input__textarea {
+                    width: 100%;
+                    height: 25.2rem;
+                    @include display(column, flex-start, space-between);
+
+                    p {
+                        @include text(500, 1.8rem, 2.2rem, null, #2E303A);
+                    }
+
+                    textarea {
+                        width: 100%;
+                        height: 21.3rem;
+                        background: #F4F6FA;
+                        border-radius: 1.2rem;
+                        padding: 2.4rem;
+                        resize: none;
+
+                        &::placeholder {
+                            @include text(500, 1.6rem, 2rem, null, #2E303A);
+                            text-align: left;
+                        }
+                    }
+                }
+
+                p {
+                    @include text(400, 1.4rem, 2rem, null, #767A8D);
+                    width: 100%;
+                }
+
+                button {
+                    background: #4861E6;
+                    border-radius: 1.2rem;
+                    width: 33.7rem;
+                    height: 6.4rem;
+                    padding: 0.8rem 0;
+                    @include text(700, 1.4rem, 1.8rem, null, #FFF);
+                    text-align: center;
+                    box-shadow: 0px 1.4rem 5rem -1.5rem rgba(72, 97, 230, 1);
+                }
+            }
+        }
+
+        .support__container {
+            width: 100%;
+            height: auto;
+            background: linear-gradient(278.39deg, #2E303A 0%, #515566 100%);
+            border-radius: 4.8rem;
+            margin-bottom: 20.8rem;
+            @include display(column);
+            box-shadow: 0 8rem 10rem -6rem rgba(48, 50, 60, 1);
+
+            &--inner {
+                width: 100%;
+                max-width: 133.3rem;
+                height: auto;
+                @include display(column, flex-start, space-between);
+                margin-bottom: 4.7rem;
+                margin-top: 6.4rem;
+
+                h2 {
+                    width: 100%;
+                    text-align: center;
+                    @include text(700, 4.8rem, 7.7rem, null, #FFF);
+                    margin-bottom: 5.6rem;
+                }
+
+                .content {
+                    width: 100%;
+                    height: 100%;
+                    @include display(null, center, space-around);
+                    padding: 0 4.4rem;
+
+                    &__detail {
+                        padding: 1rem;
+                        width: 30.9rem;
+                        height: clamp(37rem, 2.263vw + 34.755rem, 39.9rem);
+                        height: 39.9rem;
+                        @include display(column, center, space-between);
+                        cursor: pointer;
+
+                        &--image {
+                            width: 23.8rem;
+                            height: 23.4rem;
+                            background: #30323C;
+                            border-radius: 3.2rem;
+                            @include display();
+
+                            img {
+                                width: 18rem;
+                                height: 18rem;
+                            }
+                        }
+
+                        &--text {
+                            width: 100%;
+                            height: 12.1rem;
+                            @include display(column, flex-start, space-between);
+                            text-align: center;
+
+                            h3 {
+                                width: 100%;
+                                @include text(700, 2rem, 3.2rem, -0.05rem, #FFF);
+                            }
+
+                            p {
+                                @include text(400, 1.4rem, 1.8rem, null, #FFF);
+                                opacity: 0.75;
+                                height: 6.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .wrapper {
+        .contact {
+            &__container {
+                flex-direction: column;
+                height: auto;
+
+                .content {
+                    width: 100%;
+                    height: 32.3rem;
+                    @include display(null, null, space-between);
+                    margin-right: 0;
+
+                    &__image {
+                        width: 40%;
+                        height: 100%;
+
+                        &--vector {
+                            transform: rotate(87deg) scale(0.9);
+                            right: clamp(3rem, 23.256vw + -20.07rem, 9rem);
+                            bottom: 7rem;
+                        }
+                    }
+
+                    &__container {
+                        width: 45%;
+
+                        &__heading {
+                            height: 14rem;
+                            margin-bottom: 3.2rem;
+                        }
+                    }
+                }
+
+                .form__container {
+                    width: 100%;
+
+                    .input__area {
+                        &--field {
+                            max-width: none;
+                        }
+                    }
+                }
+            }
+
+            .support__container {
+                margin-bottom: clamp(17.6rem, 12.403vw + 5.296rem, 20.8rem);
+
+                &--inner {
+                    .content {
+                        flex-wrap: wrap;
+                        padding: 0 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper {
+        .contact {
+            &__container {
+
+                margin-bottom: clamp(4rem, 41.071vw + -27.543rem, 13.2rem);
+
+                .content {
+
+                    &__image {
+
+                        &--main {
+                            width: clamp(19.2rem, 23.214vw + 1.371rem, 24.4rem);
+                            height: clamp(19.2rem, 23.214vw + 1.371rem, 24.4rem);
+                        }
+
+                        &--vector {
+                            bottom: 10rem;
+                            right: clamp(1rem, 8.929vw + -5.857rem, 3rem);
+                        }
+                    }
+
+                    &__container {
+                        width: 55%;
+
+                        &__heading {
+
+                            h1 {
+                                font-size: clamp(4rem, 3.571vw + 1.257rem, 4.8rem);
+                                line-height: clamp(5rem, 4.464vw + 1.571rem, 6rem);
+                            }
+
+                        }
+
+                        &__link {
+                            span {
+                                font-size: clamp(2rem, 1.786vw + 0.629rem, 2.4rem);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .support__container {
+                border-radius: clamp(4rem, 3.571vw + 1.257rem, 4.8rem);
+                margin-bottom: clamp(11.3rem, 28.125vw + -10.3rem, 17.6rem);
+
+                &--inner {
+                    margin-bottom: 6.4rem;
+
+                    h2 {
+                        font-size: clamp(4rem, 3.571vw + 1.257rem, 4.8rem);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        .contact {
+            &__container {
+                margin: 7.7rem 0 4rem 0;
+
+                .content {
+                    flex-direction: column;
+                    height: auto;
+                    align-items: flex-start;
+
+                    &__image {
+                        width: auto;
+                        height: 25.4rem;
+
+                        &--vector {
+                            right: unset;
+                            bottom: 44px;
+                            left: 5rem;
+                            transform: rotate(87deg) scale(0.8);
+                        }
+                    }
+
+                    &__container {
+                        width: 100%;
+
+                        &__heading {
+                            height: 11rem;
+                            margin-bottom: 1.6rem;
+
+                            h1 {
+                                font-size: clamp(3.2rem, 3.571vw + 0.457rem, 4rem);
+                                line-height: clamp(4rem, 4.464vw + 0.571rem, 5rem);
+                            }
+
+                            p {
+                                font-size: clamp(1.4rem, 0.893vw + 0.714rem, 1.6rem);
+                                line-height: clamp(2.1rem, 1.339vw + 1.071rem, 2.4rem);
+                            }
+                        }
+
+                        &__link {
+                            span {
+                                font-size: clamp(2rem, 1.786vw + 0.629rem, 2.4rem);
+                            }
+                        }
+                    }
+                }
+
+                .form__container {
+                    height: auto;
+                    padding: 3.2rem 1.6rem;
+                    border-radius: 2.4rem;
+                    margin-top: 4rem;
+
+                    .input__area {
+                        flex-direction: column;
+                        height: 21.5rem;
+                        justify-content: space-between;
+                        margin-bottom: 2.4rem;
+
+                        &--field {
+                            width: 100%;
+                            height: 9rem;
+
+                            p {
+                                font-size: 1.8rem;
+                                line-height: 2rem;
+                            }
+
+                            input {
+                                height: 5.4rem;
+                                padding: 1.8rem;
+
+                                &::placeholder {
+                                    font-size: 1.4rem;
+                                    line-height: 1.8rem;
+                                }
+                            }
+                        }
+                    }
+
+                    .input__textarea {
+                        height: 24.9rem;
+                        margin-bottom: 2.4rem;
+
+                        p {
+                            font-size: 1.8rem;
+                            line-height: 2rem;
+                        }
+                    }
+
+                    p {
+                        margin-bottom: 2.4rem;
+                        font-size: 1.2rem;
+                    }
+
+                    button {
+                        width: 100%;
+                        height: 5.6rem;
+                        border-radius: 1.2rem;
+                        margin-bottom: 1.5rem;
+                    }
+                }
+            }
+
+            .support__container {
+                border-radius: clamp(2.4rem, 3.922vw + 0.988rem, 4rem);
+
+                &--inner {
+                    margin-top: clamp(3.2rem, 7.843vw + 0.376rem, 6.4rem);
+                    margin-bottom: clamp(3.2rem, 7.843vw + 0.376rem, 6.4rem);
+
+                    h2 {
+                        font-size: clamp(3.2rem, 1.961vw + 2.494rem, 4rem);
+                        line-height: clamp(4rem, 9.069vw + 0.735rem, 7.7rem);
+                        margin-bottom: clamp(4.8rem, 1.961vw + 4.094rem, 5.6rem);
+                    }
+
+                    .content {
+
+                        &__detail {
+                            padding: 1rem;
+                            width: auto;
+                            height: auto;
+                            margin-bottom: 3.2rem;
+
+                            &--image {
+                                width: clamp(10.8rem, 31.863vw + -0.671rem, 23.8rem);
+                                height: clamp(10.8rem, 31.863vw + -0.671rem, 23.8rem);
+                                margin-bottom: 2.4rem;
+                                border-radius: clamp(2.2rem, 2.451vw + 1.318rem, 3.2rem);
+
+                                img {
+                                    width: clamp(8.4rem, 23.529vw + -0.071rem, 18rem);
+                                    height: clamp(8.4rem, 23.529vw + -0.071rem, 18rem);
+                                }
+                            }
+
+                            &--text {
+                                height: auto;
+
+                                p {
+                                    display: none;
+                                }
+                            }
+
+                            &:nth-child(3),
+                            &:nth-child(4) {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
