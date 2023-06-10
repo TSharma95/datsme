@@ -7,8 +7,7 @@ import Plans from './components/Plans';
 import Team from './components/Team';
 import Terms from './components/Terms';
 import Privacy from './components/Privacy';
-import Faq from './components/Faq';
-
+import Faq from './components/faq';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -29,7 +28,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/datsme' element={<Home />} />
         <Route path='contact' element={<Contact />} />
         <Route path='plans' element={<Plans />} />
         <Route path='team' element={<Team />} />

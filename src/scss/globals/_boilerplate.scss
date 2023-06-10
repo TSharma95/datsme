@@ -26,6 +26,7 @@ html {
     font-size: 62.5%;
     font-family: $font;
     -webkit-font-smoothing: antialiased;
+    scrollbar-width: none;
 }
 
 body {
@@ -55,37 +56,40 @@ button {
 }
 
 input,
-textarea::-webkit-input-placeholder {
-    /* WebKit browsers */
-    @include text(500, 1.6rem, 2rem, null, #767A8D);
+textarea {
+    outline: none;
+    appearance: none;
+    border: 0.2rem solid transparent;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 600;
     font-family: $font;
-    text-align: left;
-}
 
-input,
-textarea:-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    @include text(500, 1.6rem, 2rem, null, #767A8D);
-    font-family: $font;
-    text-align: left;
-    opacity: 1;
-}
+    &::placeholder {
+        font-family: $font;
+        @include text(500, 1.6rem, 2rem, null, #767A8D);
+    }
 
-input,
-textarea::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    @include text(500, 1.6rem, 2rem, null, #767A8D);
-    font-family: $font;
-    text-align: left;
-    opacity: 1;
-}
+    &:hover {
+        background: #F3F4F7;
+        border: 2px solid #989898;
+    }
 
-input,
-textarea:-ms-input-placeholder {
-    /* Internet Explorer 10+ */
-    @include text(500, 1.6rem, 2rem, null, #767A8D);
-    font-family: $font;
-    text-align: left;
+    &:focus {
+        background: #FFFFFF;
+        border: 2px solid #07B4E9;
+        box-shadow: 0 0 16px rgba(7, 180, 233, 0.16);
+    }
+
+    &:disabled {
+        background: #F3F4F7;
+        border: 2px solid #DFDFDF;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
 }
 
 .wrapper {

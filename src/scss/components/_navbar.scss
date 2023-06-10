@@ -191,7 +191,6 @@
                     width: 100%;
                     height: 100%;
                     border-radius: 10rem;
-                    padding: 1.6rem 3.2rem;
                     background: #FFF;
                     @include text(600, 1.6rem, 2rem, -0.02em, #2E303A);
 
@@ -305,6 +304,7 @@
                 transition: transform 0.3s linear;
                 padding: 3.6rem 1.6rem 5rem 1.6rem;
                 overflow-y: scroll;
+                scrollbar-width: none;
 
                 @media (max-width: 768px) {
                     max-width: 100vw;
@@ -312,7 +312,6 @@
 
                 &::-webkit-scrollbar {
                     display: none;
-                    scrollbar-width: none;
                     -ms-overflow-style: none;
                 }
 
@@ -483,8 +482,9 @@
                 right: 0;
                 bottom: 0;
                 left: 0;
-                z-index: -9999;
+                z-index: 9999;
                 background: rgba(0, 0, 0, 0.3);
+                transform: translateX(-100%);
                 transition: opacity 0.3s linear;
             }
         }
@@ -494,13 +494,11 @@
 
             .mobile__menu {
                 transform: translateX(0);
-                transition: transform 0.3s linear;
             }
 
             &+.overlay--nav {
+                transform: translateX(0);
                 opacity: 1;
-                z-index: 9999;
-                transition: opacity 0.3s linear;
             }
         }
     }
