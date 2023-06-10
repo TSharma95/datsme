@@ -1,48 +1,48 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const Faq = () => {
-  const [activeIndex, setActiveIndex] = useState([]);
-  const [activeKey, setActiveKey] = useState('Datsme Overview');
-  const faqItemRef = useRef([]);
-  const [itemHeights, setItemHeights] = useState([]);
+    const [activeIndex, setActiveIndex] = useState([]);
+    const [activeKey, setActiveKey] = useState('Datsme Overview');
+    const faqItemRef = useRef([]);
+    const [itemHeights, setItemHeights] = useState([]);
 
-  useEffect(() => {
-    const calculateHeight = (index) => {
-      if (faqItemRef.current[index]) {
-        const height = faqItemRef.current[index].scrollHeight;
-        return activeIndex.includes(index) ? `${height / 10}rem` : '0';
-      }
-      return '0';
-    };
+    useEffect(() => {
+        const calculateHeight = (index) => {
+            if (faqItemRef.current[index]) {
+                const height = faqItemRef.current[index].scrollHeight;
+                return activeIndex.includes(index) ? `${height / 10}rem` : '0';
+            }
+            return '0';
+        };
 
-    const updatedHeights = faqItemRef.current.map((item, index) => calculateHeight(index));
-    setItemHeights(updatedHeights);
-  }, [activeIndex, activeKey]);
+        const updatedHeights = faqItemRef.current.map((item, index) => calculateHeight(index));
+        setItemHeights(updatedHeights);
+    }, [activeIndex, activeKey]);
 
-  useEffect(() => {
-    // Set the active indexes based on the number of questions in each key
-    const updatedActiveIndex = faqData.map((item, index) => {
-      if (item.questions.length < 4) {
-        return Array.from({ length: item.questions.length }, (_, i) => i);
-      } else {
-        return [0];
-      }
-    });
+    useEffect(() => {
+        // Set the active indexes based on the number of questions in each key
+        const updatedActiveIndex = faqData.map((item, index) => {
+            if (item.questions.length < 4) {
+                return Array.from({ length: item.questions.length }, (_, i) => i);
+            } else {
+                return [0];
+            }
+        });
 
-    const firstQuestionIndex = faqData.findIndex((item) => item.key === activeKey);
-    if (firstQuestionIndex !== -1) {
-      setActiveIndex(updatedActiveIndex[firstQuestionIndex]);
-    }
-  }, [activeKey]);
+        const firstQuestionIndex = faqData.findIndex((item) => item.key === activeKey);
+        if (firstQuestionIndex !== -1) {
+            setActiveIndex(updatedActiveIndex[firstQuestionIndex]);
+        }
+    }, [activeKey]);
 
 
-  const faqData = [
-    {
-      key: "Datsme Overview",
-      questions: [
+    const faqData = [
         {
-          question: "What is Datsme?",
-          answer: `
+            key: "Datsme Overview",
+            questions: [
+                {
+                    question: "What is Datsme?",
+                    answer: `
                 <p>
                     Living in a society that satisfies material wants and needs, Little did we know that we need to find Acceptance and Meaning through Deep Human Contact. Such assurance only resides in Compatibility.
                 </p>
@@ -60,10 +60,10 @@ const Faq = () => {
                 </p>
                 <p>We are more than just beautiful bodies and faces. Join the Revolution - Download the Datsme App now!</p>
                 `
-        },
-        {
-          question: "How can I use Datsme?",
-          answer: `
+                },
+                {
+                    question: "How can I use Datsme?",
+                    answer: `
                 <p>The Datsme App is now available for Android only.</p>
                 <p>The iOS version of the app will be launched soon in June 2020.</p>
                 <p>Download the Datsme App from the Google Play Store.</p>
@@ -75,10 +75,10 @@ const Faq = () => {
                     Answer Unique Questions based on Psychology so that Datsme can help you find friends you are Compatible with.
                 </p>
                 `
-        },
-        {
-          question: "Do I have to pay for Datsme or is it free?",
-          answer: `
+                },
+                {
+                    question: "Do I have to pay for Datsme or is it free?",
+                    answer: `
                 <p>
                     Who pays for finding friends right? We know you have a life. And that is why : Datsme was, is and always will be free.
                 </p>
@@ -87,10 +87,10 @@ const Faq = () => {
                 </p>
                 <p>Download the Datsme App now.</p>
                 `
-        },
-        {
-          question: "Where can I use Datsme right now?",
-          answer: `
+                },
+                {
+                    question: "Where can I use Datsme right now?",
+                    answer: `
                 <p>
                     The Datsme App is now available in India only. In India, Prime Locations for Datsme Users are New Delhi/NCR, Hyderabad, Bangalore, Mumbai, Pune, Chennai, Kolkata, Lucknow, Jaipur, Kerala, Ahmedabad, Chandigarh and Vadodara.
                 </p>
@@ -99,24 +99,24 @@ const Faq = () => {
                 </p>
                 <p>Stay Tuned!</p>
                 `
-        },
-        {
-          question: "What is the Minimum Age Requirement to use Datsme?",
-          answer: `
+                },
+                {
+                    question: "What is the Minimum Age Requirement to use Datsme?",
+                    answer: `
                 <p>The Minimum Age Requirement for Datsme is 18 years old.</p>
                 <p>
                     We want you to know that Datsme is a journey of knowing yourself enough, to be able to choose friends you are compatible with.
                 </p>
                 `
-        }
-      ]
-    },
-    {
-      key: "About Datsme",
-      questions: [
+                }
+            ]
+        },
         {
-          question: "What is the problem Datsme is solving?",
-          answer: `
+            key: "About Datsme",
+            questions: [
+                {
+                    question: "What is the problem Datsme is solving?",
+                    answer: `
                 <p>
                     While other social media platforms focus on instant gratification of looks, Datsme focuses on understanding the roots of Genuine Bonding & Friendship through Psychology.
                 </p>
@@ -125,10 +125,10 @@ const Faq = () => {
                 </p>
                 <p>Compatibility is the Future. The Future is Datsme.</p>
                 `
-        },
-        {
-          question: "Why should users prefer Datsme over other social media platforms?",
-          answer: `
+                },
+                {
+                    question: "Why should users prefer Datsme over other social media platforms?",
+                    answer: `
                 <ol>
                     <li>
                         <p>We put you in the strongest and safest position possible</p>
@@ -159,114 +159,114 @@ const Faq = () => {
                     We can go on and on, Why don’t you try it out yourself? Download the Datsme App now!
                 </p>
                 `
-        }
-      ]
-    },
-    {
-      key: "Signing Up and Getting Started",
-      questions: [
+                }
+            ]
+        },
         {
-          question: "Where can I download Datsme?",
-          answer: `
+            key: "Signing Up and Getting Started",
+            questions: [
+                {
+                    question: "Where can I download Datsme?",
+                    answer: `
                 <p>The Datsme App is now available for Android only.</p>
                 <p>The iOS version of the app will be launched soon in June 2020.</p>
                 <p>Download the Datsme App from the Google Play Store.</p>
                 <p>Datsme currently supports minimum Android 6.0 Marshmallow and up.</p>
                 `
-        },
-        {
-          question: "How do I create a Datsme Account?",
-          answer: `
+                },
+                {
+                    question: "How do I create a Datsme Account?",
+                    answer: `
                 <p>To Register with Facebook :</p>
                 <ol>
-                    <li>Download the Datsme App for Android. The iOS version of the app will be launched soon in June 2020.<li>
-                    <li>Tap “Facebook” Button</li>
-                    <li>If prompted, Sign in to your Facebook Account (Datsme does not post anything to Facebook)</li>
-                    <li>Fill out your Profile Info</li>
-                    <li>Allow Datsme access to all required permissions</li>
-                    <li>Cut to the Chase? You’re Awesome! Now Get going!</li>
+                    <li><p>Download the Datsme App for Android. The iOS version of the app will be launched soon in June 2020.</p></li>
+                    <li><p>Tap “Facebook” Button</p></li>
+                    <li><p>If prompted, Sign in to your Facebook Account (Datsme does not post anything to Facebook)</p></li>
+                    <li><p>Fill out your Profile Info</p></li>
+                    <li><p>Allow Datsme access to all required permissions</p></li>
+                    <li><p>Cut to the Chase? You’re Awesome! Now Get going!</p></li>
                 </ol>
                 <p>To Register with Google :</p>
                 <ol>
-                    <li>Download the Datsme App for Android. The iOS version of the app will be launched soon in June 2020.</li>
-                    <li>Tap “Google” Button</li>
-                    <li>Select the Google Account you want to use</li>
-                    <li>If the account you want to use isn’t listed, tap Use Another Account and sign in</li>
-                    <li>Fill out your Profile Info</li>
-                    <li>Allow Datsme access to all required permissions</li>
-                    <li>Cut to the Chase? You’re Awesome! Now Get going!</li>
+                    <li><p>Download the Datsme App for Android. The iOS version of the app will be launched soon in June 2020.</p></li>
+                    <li><p>Tap “Google” Button</p></li>
+                    <li><p>Select the Google Account you want to use</p></li>
+                    <li><p>If the account you want to use isn’t listed, tap Use Another Account and sign in</p></li>
+                    <li><p>Fill out your Profile Info</p></li>
+                    <li><p>Allow Datsme access to all required permissions</p></li>
+                    <li><p>Cut to the Chase? You’re Awesome! Now Get going!</p></li>
                 </ol>
                 <p>To Register with Mobile Number :</p>
                 <ol>
-                    <li>Download the Datsme App for Android. The iOS version of the app will be launched soon in June 2020.</li>
-                    <li>Tap “Mobile Number” Button and follow the instructions on your screen</li>
-                    <li>Select the Google Account you want to use</li>
-                    <li>Fill out your Profile Info</li>
-                    <li>Allow Datsme access to all required permissions</li>
-                    <li>Cut to the Chase? You’re Awesome! Now Get going!</li>
+                    <li><p>Download the Datsme App for Android. The iOS version of the app will be launched soon in June 2020.</p></li>
+                    <li><p>Tap “Mobile Number” Button and follow the instructions on your screen</p></li>
+                    <li><p>Select the Google Account you want to use</p></li>
+                    <li><p>Fill out your Profile Info</p></li>
+                    <li><p>Allow Datsme access to all required permissions</p></li>
+                    <li><p>Cut to the Chase? You’re Awesome! Now Get going!</p></li>
                 </ol>
                 `
-        },
-        {
-          question: "What are the diﬀerent ways by which I could sign in?",
-          answer: `
+                },
+                {
+                    question: "What are the diﬀerent ways by which I could sign in?",
+                    answer: `
                 <p>There are 3 ways to login to the Datsme App :</p>
                 <ol>
-                    <li>Login through Facebook</li>
-                    <li>Login through Google</li>
-                    <li>Login through Mobile Number</li>
+                    <li><p>Login through Facebook</p></li>
+                    <li><p>Login through Google</p></li>
+                    <li><p>Login through Mobile Number</p></li>
                 </ol>
                 <p>Check out -> How do I create a Datsme Account?</p>
                 `
-        },
-        {
-          question: "How do I edit my Profile?",
-          answer: `
+                },
+                {
+                    question: "How do I edit my Profile?",
+                    answer: `
                 <p>To Edit your Profile info, Open your Profile, Tap the “Edit Profile” (Pencil Icon) below your Profile</p>
                 <p>Picture. Here, You can edit the following sections :</p>
                 <ol>
-                    <li>Profile Picture</li>
-                    <li>Location</li>
-                    <li>Working at</li>
-                    <li>Studying at</li>
-                    <li>Say Something about Yourself</li>
+                    <li><p>Profile Picture</p></li>
+                    <li><p>Location</p></li>
+                    <li><p>Working at</p></li>
+                    <li><p>Studying at</p></li>
+                    <li><p>Say Something about Yourself</p></li>
                 </ol>
                 <p>You are not allowed to edit the following sections :</p>
                 <ol>
-                    <li>Name</li>
-                    <li>Date of Birth</li>
-                    <li>Gender</li>
+                    <li><p>Name</p></li>
+                    <li><p>Date of Birth</p></li>
+                    <li><p>Gender</p></li>
                 </ol>
                 <p>If you have any problem regarding these 3, Please delete your account and sign in again.</p>
                 `
-        },
-        {
-          question: "What are the diﬀerent filter and sorting techniques I can apply to find people?",
-          answer: `
+                },
+                {
+                    question: "What are the diﬀerent filter and sorting techniques I can apply to find people?",
+                    answer: `
                 <p>You can apply the distance filter which gives you the power to find people according to the following :</p>
                 <ol>
-                    <li>Locally</li>
-                    <li>District</li>
-                    <li>Citywide</li>
-                    <li>State</li>
-                    <li>Nation</li>
+                    <li><p>Locally</p></li>
+                    <li><p>District</p></li>
+                    <li><p>Citywide</p></li>
+                    <li><p>State</p></li>
+                    <li><p>Nation</p></li>
                 </ol>
                 <p>The Age Filter is coming soon!</p>
                 <p>You can apply these sort techniques to find people :</p>
                 <ol>
-                    <li>Sort by Level : The Most Authentic Users are seen first</li>
-                    <li>Sort by Activity : The Most Active Users are seen first</li>
+                    <li><p>Sort by Level : The Most Authentic Users are seen first</p></li>
+                    <li><p>Sort by Activity : The Most Active Users are seen first</p></li>
                 </ol>
                 `
-        }
-      ]
-    },
-    {
-      key: "Features of Datsme",
-      questions: [
+                }
+            ]
+        },
         {
-          question: "Psychology and Compatibility ?",
-          answer: `
+            key: "Features of Datsme",
+            questions: [
+                {
+                    question: "Psychology and Compatibility ?",
+                    answer: `
                 <p>
                     You are the average of the top 5 friends, with whom, you spend most of our time. So, choosing a right friend is an absolute necessity.
                 </p>
@@ -281,10 +281,10 @@ const Faq = () => {
                     While other social media platforms focus on instant gratification of looks, Datsme focuses on understanding the roots of Genuine Bonding and Friendship through Psychology.
                 </p>
                 `
-        },
-        {
-          question: "Datsme Tag Search ?",
-          answer: `
+                },
+                {
+                    question: "Datsme Tag Search ?",
+                    answer: `
                 <p>
                     Datsme Tag Search is the Ultra Feature of the Datsme App. Combining it with Psychology and Compatibility, This feature is unstoppable and the king of Social Media!
                 </p>
@@ -295,10 +295,10 @@ const Faq = () => {
                 <p>Never done before, Unleash the Power of Social Media with our cutting edge technology.</p>
                 <p>Create your Chain Reaction and Experience Power at your Fingertips.</p>
                 `
-        },
-        {
-          question: "Datsme Location Search ?",
-          answer: `
+                },
+                {
+                    question: "Datsme Location Search ?",
+                    answer: `
                 <p>Datsme Location Search - Be where the buzz is</p>
                 <ol>
                     <li>
@@ -315,10 +315,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "Datsme Map Mode ?",
-          answer: `
+                },
+                {
+                    question: "Datsme Map Mode ?",
+                    answer: `
                 <p>Datsme Map Mode - The Gamified Experience</p>
                 <p>
                     Datsme Map Mode only displays the Top 150 profiles of the Datsme Platform RELEVANT TO YOU. That’s right, Read that again.
@@ -339,15 +339,15 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        }
-      ]
-    },
-    {
-      key: "How does Datsme work?",
-      questions: [
+                }
+            ]
+        },
         {
-          question: "How does Datsme incorporate Psychology?",
-          answer: `
+            key: "How does Datsme work?",
+            questions: [
+                {
+                    question: "How does Datsme incorporate Psychology?",
+                    answer: `
                 <p>
                     Psychology is the scientific study of the Human Mind. As people are becoming more intellectual and intelligent, Smarter People need Smarter Platforms.
                 </p>
@@ -358,24 +358,24 @@ const Faq = () => {
                     Although you know we cannot completely reveal what our algorithm is ; But some of the Researches, Factors and Concepts that the Datsme Psychology Algorithm is based on are as follows :
                 </p>
                 <ol>
-                    <li>Shasta Nelson’s Friendship Survey</li>
-                    <li>The Frientimacy Triangle</li>
-                    <li>Aristotle’s Model of Friendship</li>
-                    <li>Compatibility - Chemistry Ratios</li>
-                    <li>Social Penetration Theory</li>
-                    <li>Social Attraction Trust Hypothesis</li>
-                    <li>Social Exchange Theory</li>
-                    <li>The Norm of Reciprocity</li>
-                    <li>Constructive Conflict Resolution</li>
-                    <li>Self - Disclosure and Reciprocity Theories</li>
-                    <li>Intelligence and Emotional Quotient Criteria</li>
-                    <li>Emotional Health Monitoring, and more And this will evolve with time.</li>
+                    <li><p>Shasta Nelson’s Friendship Survey</p></li>
+                    <li><p>The Frientimacy Triangle</p></li>
+                    <li><p>Aristotle’s Model of Friendship</p></li>
+                    <li><p>Compatibility - Chemistry Ratios</p></li>
+                    <li><p>Social Penetration Theory</p></li>
+                    <li><p>Social Attraction Trust Hypothesis</p></li>
+                    <li><p>Social Exchange Theory</p></li>
+                    <li><p>The Norm of Reciprocity</p></li>
+                    <li><p>Constructive Conflict Resolution</p></li>
+                    <li><p>Self - Disclosure and Reciprocity Theories</p></li>
+                    <li><p>Intelligence and Emotional Quotient Criteria</p></li>
+                    <li><p>Emotional Health Monitoring, and more And this will evolve with time.</p></li>
                 </ol>
                 `
-        },
-        {
-          question: "What is Compatibility?",
-          answer: `
+                },
+                {
+                    question: "What is Compatibility?",
+                    answer: `
                 <p>
                     Since Compatibility is the foundation of Datsme, Datsme would like to tell you The 3 Tier Definition compatible with Datsme :
                 </p>
@@ -393,10 +393,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "What if it does not work out with People I’m Compatible with?",
-          answer: `
+                },
+                {
+                    question: "What if it does not work out with People I’m Compatible with?",
+                    answer: `
                 <p>Yes it is possible that things might not click even though you have a really high compatibility. Here’s why :</p>
                 <ol>
                     <li>
@@ -421,20 +421,20 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "What about the People I am not Compatible with?",
-          answer: `
+                },
+                {
+                    question: "What about the People I am not Compatible with?",
+                    answer: `
                 <p>The time you can truly grow as a human being, both professionally and personally, is when you have the opportunity to listen to people who are different from you.</p>
                 <p>Sometimes you remain in a fixed mindset when you hang around people who just agree with you or do the same things as you.</p>
                 <p>Friends who offer new perspectives, ideas, experiences and advice can help you learn more about yourself and will help you grow as a more well rounded person.</p>
                 <p>Since everything has become so temporary in these times, and People do not have the time, energy and emotions to invest in new friendships just to see people go away,</p>
                 <p>We encourage Compatibility because it helps to form long lasting and trustworthy relationships.</p>
                 `
-        },
-        {
-          question: "What if I don’t want to answer the Psychology Questionnaire?",
-          answer: `
+                },
+                {
+                    question: "What if I don’t want to answer the Psychology Questionnaire?",
+                    answer: `
                 <p>Here’s why you would love to answer the Datsme Psychology Questionnaire :</p>
                 <ol>
                     <li>
@@ -449,10 +449,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "Can I use the Datsme App without answering the Questionnaire?",
-          answer: `
+                },
+                {
+                    question: "Can I use the Datsme App without answering the Questionnaire?",
+                    answer: `
                 <p>Living in a hyper-stimulating world where patience has become so costly and everything is fighting for your attention, We understand that going through the Datsme Algorithm can be a little time taking.</p>
                 <p>Therefore, Before you start answering psychological questions, Click on the “I’ll Answer Later” Button to skip the question and enter the Datsme Platform.</p>
                 <p>If you have already started the Questionnaire, The “I’ll Answer later Button” will appear if :</p>
@@ -466,10 +466,10 @@ const Faq = () => {
                 </ol>
                 <p>Since Compatibility is the foundation of Datsme and you skipped the Psychological Compatibility Questionnaire, You cannot connect with other individuals unless you complete your answers. You can just explore the platform and see what the app is all about.</p>
                 `
-        },
-        {
-          question: "How can I change my answers?",
-          answer: `
+                },
+                {
+                    question: "How can I change my answers?",
+                    answer: `
                 <p>To change your answers/Re-answer the Datsme Questionnaire :</p>
                 <ol>
                     <li>
@@ -487,10 +487,10 @@ const Faq = () => {
                 </ol>
                 <p>Note : You will loose your previous answers and this would result in a different compatibility with every other person on the platform.</p>
                 `
-        },
-        {
-          question: "How does Datsme Tag Search work?",
-          answer: `
+                },
+                {
+                    question: "How does Datsme Tag Search work?",
+                    answer: `
                 <ol>
                     <li>
                         <p>First open the main Datsme View (2nd from left in the bottom bar) where you see all the profiles.</p>
@@ -506,18 +506,18 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How many tags can be used in a single search in Datsme Tag Search?",
-          answer: `
+                },
+                {
+                    question: "How many tags can be used in a single search in Datsme Tag Search?",
+                    answer: `
                 <p>Currently, You can use 2 Tags at a time in a single search. But hey, This is just the beginning.</p>
                 <p>We have already tested Datsme Tag Search to work perfectly for 5 Tags at a time and this will increase.</p>
                 <p>As the number of users increase, The power of Datsme Tag Search would be unleashed.</p>
                 `
-        },
-        {
-          question: "How does Datsme Location Search Work?",
-          answer: `
+                },
+                {
+                    question: "How does Datsme Location Search Work?",
+                    answer: `
                 <ol>
                     <li>
                         <p>First open the main Datsme View (2nd from left in the Bottom Bar) where you see all the profiles.</p>
@@ -536,10 +536,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "What are the locations where Datsme Location Search is available right now?",
-          answer: `
+                },
+                {
+                    question: "What are the locations where Datsme Location Search is available right now?",
+                    answer: `
                 <p>Right now, Datsme Location Search is available in the following cities :</p>
                 <ol>
                     <li><p>Delhi</p></li>
@@ -557,10 +557,10 @@ const Faq = () => {
                     <li><p>Vadodara</p></li>
                 </ol>
                 `
-        },
-        {
-          question: "How does Datsme Map Mode work?",
-          answer: `
+                },
+                {
+                    question: "How does Datsme Map Mode work?",
+                    answer: `
                 <ol>
                     <li>
                         <p>First open the Main Datsme View (2nd from left, in the Bottom Bar) where you see all the profiles.</p>
@@ -576,10 +576,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "Can I hide myself from the Map?",
-          answer: `
+                },
+                {
+                    question: "Can I hide myself from the Map?",
+                    answer: `
                 <p>Yes. You can hide yourself from the Map by following the steps below :</p>
                 <ol>
                     <li>
@@ -596,10 +596,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "Where can I access the Map Settings?",
-          answer: `
+                },
+                {
+                    question: "Where can I access the Map Settings?",
+                    answer: `
                 <p>You can access the Map Settings as follows :</p>
                 <ol>
                     <li>
@@ -613,10 +613,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "Does the Map show my exact location? Is it safe?",
-          answer: `
+                },
+                {
+                    question: "Does the Map show my exact location? Is it safe?",
+                    answer: `
                 <p>Before we even thought of creating the Map Mode, We were concerned about the Safety and Privacy of females. We don’t want anyone should suffer any harm because of us, and thus, we have taken the following initiatives to keep everyone safe :</p>
                 <ol>
                     <li>
@@ -628,10 +628,10 @@ const Faq = () => {
                 </ol>
                 <p>We care about you, and are concerned about your privacy.</p>
                 `
-        },
-        {
-          question: "Can I use Multiple Modes at the same time?",
-          answer: `
+                },
+                {
+                    question: "Can I use Multiple Modes at the same time?",
+                    answer: `
                 <p>No, You cannot use Multiple Modes at the same time. Compatibility is the foundation of Datsme, Thus it is coupled with every other feature.</p>
                 <p>Therefore, You will have to use only One Mode at a time :</p>
                 <ol>
@@ -649,10 +649,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "Can I use Datsme without giving Location Permissions?",
-          answer: `
+                },
+                {
+                    question: "Can I use Datsme without giving Location Permissions?",
+                    answer: `
                 <p>Social Psychological Research finds that proximity or propinquity is the greatest predictor of friendships. This is where location comes into the picture. Datsme Algorithm is based on Location so that you can meet the people to talk.</p>
                 <p>No, You cannot use Datsme without enabling Location Permissions. But if you want to hide yourself from the Datsme Map :</p>
                 <ol>
@@ -670,10 +670,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How can I access Settings from the app?",
-          answer: `
+                },
+                {
+                    question: "How can I access Settings from the app?",
+                    answer: `
                 <p>To open settings on your app :</p>
                 <ol>
                     <li>
@@ -687,24 +687,24 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        }
-      ]
-    },
-    {
-      key: "User Levels and Tags",
-      questions: [
+                }
+            ]
+        },
         {
-          question: "What is the “Level” of a User?",
-          answer: `
+            key: "User Levels and Tags",
+            questions: [
+                {
+                    question: "What is the “Level” of a User?",
+                    answer: `
                 <p>The “Level of a User” determines the Authenticity and Visibility of a User in the Datsme App.</p>
                 <p>Since a higher level means more tags added to your profile, This gives people a chance to approach you in more friendly and interactive ways possible to break the ice.</p>
                 <p>The more your level, The more other people would want to be in touch with you because of your “Authentic” Profile</p>
                 <p>The more the level, The higher is your Visibility in the app and more people can see you.</p>
                 `
-        },
-        {
-          question: "How can I increase my Level?",
-          answer: `
+                },
+                {
+                    question: "How can I increase my Level?",
+                    answer: `
                 <p>To increase your level :</p>
                 <ol>
                     <li>
@@ -728,10 +728,10 @@ const Faq = () => {
                 </ol>
                 <p>This is how you can Level Up till a maximum of Level 9.</p>
                 `
-        },
-        {
-          question: "Why should I increase my level? How does that help me?",
-          answer: `
+                },
+                {
+                    question: "Why should I increase my level? How does that help me?",
+                    answer: `
                 <p>This is why you should increase your level :</p>
                 <ol>
                     <li>
@@ -745,10 +745,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How can I change my Tags?",
-          answer: `
+                },
+                {
+                    question: "How can I change my Tags?",
+                    answer: `
                 <p>To change the Nature, Political Opinion, Animal Preference and Eating Habits :</p>
                 <ol>
                     <li>
@@ -783,10 +783,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How can I change my Top 5 Tags displayed to everyone?",
-          answer: `
+                },
+                {
+                    question: "How can I change my Top 5 Tags displayed to everyone?",
+                    answer: `
                 <p>Datsme view displays your profile to everyone in 3 blocks :</p>
                 <ol>
                     <li>
@@ -817,15 +817,15 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        }
-      ]
-    },
-    {
-      key: "Profile and Account Settings",
-      questions: [
+                }
+            ]
+        },
         {
-          question: "How can I edit my Profile?",
-          answer: `
+            key: "Profile and Account Settings",
+            questions: [
+                {
+                    question: "How can I edit my Profile?",
+                    answer: `
                 <p>To Edit your Profile info, Open your Profile, Tap the “Edit Profile” (Pencil Icon) below your Profile Picture.</p>
                 <p>Here, You can edit the following sections :</p>
                 <ol>
@@ -859,10 +859,10 @@ const Faq = () => {
                 </ol>
                 <p>If you have any problem regarding these 3, Please delete your account and sign in again.</p>
                 `
-        },
-        {
-          question: "What all I can edit in my profile once I have created my account?",
-          answer: `
+                },
+                {
+                    question: "What all I can edit in my profile once I have created my account?",
+                    answer: `
                 <p>You can edit the following sections :</p>
                 <ol>
                     <li>
@@ -894,10 +894,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How can I pause my account?",
-          answer: `
+                },
+                {
+                    question: "How can I pause my account?",
+                    answer: `
                 <p>To Pause your account :</p>
                 <ol>
                     <li>
@@ -914,10 +914,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How can I delete my account?",
-          answer: `
+                },
+                {
+                    question: "How can I delete my account?",
+                    answer: `
                 <p>To Delete your account :</p>
                 <ol>
                     <li>
@@ -934,10 +934,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How can I change my Profile picture in the app?",
-          answer: `
+                },
+                {
+                    question: "How can I change my Profile picture in the app?",
+                    answer: `
                 <ol>
                     <li>
                         <p>Open your Profile</p>
@@ -959,10 +959,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How can I change my workplace/educational institute in the app?",
-          answer: `
+                },
+                {
+                    question: "How can I change my workplace/educational institute in the app?",
+                    answer: `
                 <ol>
                     <li>
                         <p>Open your Profile</p>
@@ -984,10 +984,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How can I change my location?",
-          answer: `
+                },
+                {
+                    question: "How can I change my location?",
+                    answer: `
                 <ol>
                     <li>
                         <p>Open your Profile</p>
@@ -1006,10 +1006,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How can I change my Gender?",
-          answer: `
+                },
+                {
+                    question: "How can I change my Gender?",
+                    answer: `
                 <p>For now, Datsme does not allow you to change your Gender once you have created your account. You will have to Delete that account, and make a new one through a different means.</p>
                 <p>To Delete your account :</p>
                 <ol>
@@ -1028,10 +1028,10 @@ const Faq = () => {
                 </ol>
                 <p>When signing up again, Out of the three options - Facebook, Google and Mobile Number, Whatever method you used to sign up before deleting your account, You cannot use that now. Example : If you signed up using Mobile Number and you had to delete your name, You will now have to sign up using Facebook or Google</p>
                 `
-        },
-        {
-          question: "How can I change my name?",
-          answer: `
+                },
+                {
+                    question: "How can I change my name?",
+                    answer: `
                 <p>For now, Datsme does not allow you to change your Name once you have created your account. You will have to Delete that account, and make a new one through a different means.</p>
                 <p>To Delete your account :</p>
                 <ol>
@@ -1050,10 +1050,10 @@ const Faq = () => {
                 </ol>
                 <p>When signing up again, Out of the three options - Facebook, Google and Mobile Number, Whatever method you used to sign up before deleting your account, You cannot use that now. Example : If you signed up using Mobile Number and you had to delete your name, You will now have to sign up using Facebook or Google</p>
                 `
-        },
-        {
-          question: "How can I change my status/bio?",
-          answer: `
+                },
+                {
+                    question: "How can I change my status/bio?",
+                    answer: `
                 <ol>
                     <li>
                         <p>Open your Profile</p>
@@ -1072,24 +1072,24 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        }
-      ]
-    },
-    {
-      key: "People and Friends",
-      questions: [
+                }
+            ]
+        },
         {
-          question: "Can I search for a specific person in the app?",
-          answer: `
+            key: "People and Friends",
+            questions: [
+                {
+                    question: "Can I search for a specific person in the app?",
+                    answer: `
                 <p>Datsme was designed to help you find compatible friends around you, so currently we do not have the option to search for specific people.</p>
                 <p>But how cool would it be to check your compatibility with people you already know?</p>
                 <p>And how cool would it be to check the compatibility of your group?</p>
                 <p>Amazing Features Incoming. Stay Tuned!</p>
                 `
-        },
-        {
-          question: "How can I add someone as a Friend?",
-          answer: `
+                },
+                {
+                    question: "How can I add someone as a Friend?",
+                    answer: `
                 <ol>
                     <li>
                         <p>You can explore new people either from Datsme View, Datsme Tag Search, Datsme location Search and Datsme Map Mode.</p>
@@ -1114,10 +1114,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "Where do I see my Friends?",
-          answer: `
+                },
+                {
+                    question: "Where do I see my Friends?",
+                    answer: `
                 <ol>
                     <li>
                         <p>From the Bottom bar of Datsme, Open the 4th from Left (Rightmost) Icon</p>
@@ -1130,10 +1130,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How do I message someone?",
-          answer: `
+                },
+                {
+                    question: "How do I message someone?",
+                    answer: `
                 <ol>
                     <li>
                         <p>To message someone, You need to add someone as your Friend.</p>
@@ -1155,10 +1155,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How do I report someone?",
-          answer: `
+                },
+                {
+                    question: "How do I report someone?",
+                    answer: `
                 <p>To report someone :</p>
                 <ol>
                     <li>
@@ -1172,10 +1172,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How do I block someone?",
-          answer: `
+                },
+                {
+                    question: "How do I block someone?",
+                    answer: `
                 <p>To block someone :</p>
                 <ol>
                     <li>
@@ -1189,10 +1189,10 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "How do I unblock someone?",
-          answer: `
+                },
+                {
+                    question: "How do I unblock someone?",
+                    answer: `
                 <p>To unblock someone you have blocked earlier :</p>
                 <ol>
                     <li>
@@ -1209,18 +1209,18 @@ const Faq = () => {
                     </li>
                 </ol>
                 `
-        },
-        {
-          question: "Is the app only for Heterosexuals?",
-          answer: `
+                },
+                {
+                    question: "Is the app only for Heterosexuals?",
+                    answer: `
                 <p>Datsme is for everyone! Although we started with males and females only, Now you can select “Others” as your Gender while creating your account on the Datsme App.</p>
                 <p>Everyone needs compatible friends who understand and uplift them right?</p>
                 <p>This is what Datsme is all about. Download the Datsme App now.</p>
                 `
-        },
-        {
-          question: "How can I share the app with my friends?",
-          answer: `
+                },
+                {
+                    question: "How can I share the app with my friends?",
+                    answer: `
                 <p>To share the app with your friends :</p>
                 <ol>
                     <li>
@@ -1238,68 +1238,68 @@ const Faq = () => {
                 </ol>
                 <p>This is how you can share the app with your friends.</p>
                 `
+                }
+            ]
         }
-      ]
-    }
-  ];
+    ];
 
-  return (
-    <main className="faq">
-      <div className="faq__header">
-        <div className="faq__header--heading">
-          <img src="assets/faq-main.webp" alt="" />
-          <div className="text">
-            <h1>Frequently Asked Questions</h1>
-            <p>Get answers to your most frequently asked questions</p>
-          </div>
-        </div>
-        <div className="faq__header--content">
-          <h2>Table Of Content</h2>
-          <ul className="content--list">
-            {faqData.map((item, index) => (
-              <li key={index}>
-                <a
-                  className={`content--link ${item.key === activeKey ? 'content--link--active' : ''}`}
-                  onClick={() => setActiveKey(item.key)}
-                >
-                  {item.key}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className="faq__container">
-        <h2>{activeKey}</h2>
-        <div className="faq__section">
-          <div className="faq__ques__section">
-            {faqData.map((item, index) => (
-              item.key === activeKey &&
-              item.questions.map((question, qIndex) => (
-                <div className="faq__item" key={qIndex}>
-                  <div
-                    className={`faq__item--head ${activeIndex.includes(qIndex) ? 'ques--active' : ''}`}
-                    onClick={() => setActiveIndex([qIndex])}
-                  >
-                    <strong>
-                      <p>{question.question}</p>
-                    </strong>
-                    <img className="down-arrow" src="assets/down-arrow.svg" alt="" />
-                  </div>
-                  <div
-                    ref={(element) => (faqItemRef.current[qIndex] = element)}
-                    style={{ maxHeight: activeIndex.includes(qIndex) ? itemHeights[qIndex] : '0' }}
-                    className={`faq__item--body ${activeIndex.includes(qIndex) ? 'active ans--active' : ''}`}
-                    dangerouslySetInnerHTML={{ __html: question.answer }}
-                  ></div>
+    return (
+        <main className="faq">
+            <div className="faq__header">
+                <div className="faq__header--heading">
+                    <img src="assets/faq-main.webp" alt="" />
+                    <div className="text">
+                        <h1>Frequently Asked Questions</h1>
+                        <p>Get answers to your most frequently asked questions</p>
+                    </div>
                 </div>
-              ))
-            ))}
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+                <div className="faq__header--content">
+                    <h2>Table Of Content</h2>
+                    <ul className="content--list">
+                        {faqData.map((item, index) => (
+                            <li key={index}>
+                                <a
+                                    className={`content--link ${item.key === activeKey ? 'content--link--active' : ''}`}
+                                    onClick={() => setActiveKey(item.key)}
+                                >
+                                    {item.key}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+            <div className="faq__container">
+                <h2>{activeKey}</h2>
+                <div className="faq__section">
+                    <div className="faq__ques__section">
+                        {faqData.map((item, index) => (
+                            item.key === activeKey &&
+                            item.questions.map((question, qIndex) => (
+                                <div className="faq__item" key={qIndex}>
+                                    <div
+                                        className={`faq__item--head ${activeIndex.includes(qIndex) ? 'ques--active' : ''}`}
+                                        onClick={() => setActiveIndex([qIndex])}
+                                    >
+                                        <strong>
+                                            <p>{question.question}</p>
+                                        </strong>
+                                        <img className="down-arrow" src="assets/down-arrow.svg" alt="" />
+                                    </div>
+                                    <div
+                                        ref={(element) => (faqItemRef.current[qIndex] = element)}
+                                        style={{ maxHeight: activeIndex.includes(qIndex) ? itemHeights[qIndex] : '0' }}
+                                        className={`faq__item--body ${activeIndex.includes(qIndex) ? 'active ans--active' : ''}`}
+                                        dangerouslySetInnerHTML={{ __html: question.answer }}
+                                    ></div>
+                                </div>
+                            ))
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </main>
+    );
 };
 
 export default Faq;

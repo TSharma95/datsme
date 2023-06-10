@@ -37,9 +37,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
     &::-webkit-scrollbar {
-        display: none; /* For Chrome, Safari, and Opera */
-        scrollbar-width: none; /* For Firefox */
-        -ms-overflow-style: none; /* For Internet Explorer and Edge */
+        display: none;
+        /* For Chrome, Safari, and Opera */
+        scrollbar-width: none;
+        /* For Firefox */
+        -ms-overflow-style: none;
+        /* For Internet Explorer and Edge */
     }
 }
 
@@ -49,6 +52,40 @@ body {
 
 button {
     cursor: pointer;
+}
+
+input,
+textarea::-webkit-input-placeholder {
+    /* WebKit browsers */
+    @include text(500, 1.6rem, 2rem, null, #767A8D);
+    font-family: $font;
+    text-align: left;
+}
+
+input,
+textarea:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    @include text(500, 1.6rem, 2rem, null, #767A8D);
+    font-family: $font;
+    text-align: left;
+    opacity: 1;
+}
+
+input,
+textarea::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    @include text(500, 1.6rem, 2rem, null, #767A8D);
+    font-family: $font;
+    text-align: left;
+    opacity: 1;
+}
+
+input,
+textarea:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    @include text(500, 1.6rem, 2rem, null, #767A8D);
+    font-family: $font;
+    text-align: left;
 }
 
 .wrapper {

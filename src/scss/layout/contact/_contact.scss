@@ -111,9 +111,8 @@
                             border-radius: 1.2rem;
                             padding: 2.4rem;
 
-                            &::placeholder {
-                                @include text(500, 1.6rem, 2rem, null, #2E303A);
-                                text-align: left;
+                            &:active {
+                                color: #2E303A;
                             }
                         }
                     }
@@ -137,10 +136,10 @@
                         padding: 2.4rem;
                         resize: none;
 
-                        &::placeholder {
-                            @include text(500, 1.6rem, 2rem, null, #2E303A);
-                            text-align: left;
-                        }
+                        // &::placeholder {
+                        //     @include text(400, 1.6rem, 2rem, null, #2E303A);
+                        //     text-align: left;
+                        // }
                     }
                 }
 
