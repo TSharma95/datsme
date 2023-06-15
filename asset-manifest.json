@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/datsme/static/css/main.22d44736.css",
+    "main.css": "/datsme/static/css/main.084c8b1e.css",
     "main.js": "/datsme/static/js/main.ddb0d7f0.js",
     "static/media/upgrade-bg.svg": "/datsme/static/media/upgrade-bg.8a0d630e72cf3bdc7952.svg",
     "static/media/team-jatin.png": "/datsme/static/media/team-jatin.0f709a6a7c563a8e1efc.png",
@@ -15,11 +15,11 @@
     "static/media/rise-bg.svg": "/datsme/static/media/rise-bg.2b06c7813ad4778a0890.svg",
     "static/media/hybrid-bg.svg": "/datsme/static/media/hybrid-bg.056642d11c8274ebcac9.svg",
     "index.html": "/datsme/index.html",
-    "main.22d44736.css.map": "/datsme/static/css/main.22d44736.css.map",
+    "main.084c8b1e.css.map": "/datsme/static/css/main.084c8b1e.css.map",
     "main.ddb0d7f0.js.map": "/datsme/static/js/main.ddb0d7f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.22d44736.css",
+    "static/css/main.084c8b1e.css",
     "static/js/main.ddb0d7f0.js"
   ]
 }
