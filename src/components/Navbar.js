@@ -20,13 +20,15 @@ const Navbar = () => {
         <>
             <nav className={`${hamActive ? 'nav--active' : ''}`}>
                 <div className="nav">
-                    <div className="logo__section">
-                        <img className="logo__section--icon" src="assets/datsme-icon.svg" alt="Datsme icon" />
-                        <img className="logo__section--main" src="assets/datsme.svg" alt="Datsme logo" />
-                        <span className="logo__section--version">v3.0</span>
-                    </div>
+                    <Link to="/">
+                        <div className="logo__section">
+                            <img className="logo__section--icon" src="assets/datsme-icon.svg" alt="Datsme icon" />
+                            <img className="logo__section--main" src="assets/datsme.svg" alt="Datsme logo" />
+                            <span className="logo__section--version">v3.0</span>
+                        </div>
+                    </Link>
                     <ul className="nav__list">
-                        <li>Home</li>
+                        <li><Link to="/">Home</Link></li>
                         <li className="product" id='navProduct' onClick={handleNavProductClick}>
                             Product <img className="down-arrow" src="assets/down-arrow.svg" alt="down arrow" />
                             {prodListActive && (
@@ -92,7 +94,7 @@ const Navbar = () => {
                 <div className="mobile__menu">
                     <div className="mobile__menu--list">
                         <ul className="mobile__list">
-                            <li>Home</li>
+                            <Link to="/" onClick={handleHamClick}><li>Home</li></Link>
                             <li className="product" id='navProduct' onClick={handleNavProductClick}>
                                 <div className={`text ${prodListActive ? 'text--active' : ''}`}>
                                     Product <img className="down-arrow" src="assets/down-arrow.svg" alt="down arrow" />
@@ -135,9 +137,9 @@ const Navbar = () => {
                                     </div>
                                 )}
                             </li>
-                            <li><Link to="/team" onClick={handleHamClick}>Team</Link></li>
-                            <li><Link to="/contact" onClick={handleHamClick}>Contact</Link></li>
-                            <li><Link to="/plans" onClick={handleHamClick}>Plans</Link></li>
+                            <Link to="/team" onClick={handleHamClick}><li>Team</li></Link>
+                            <Link to="/contact" onClick={handleHamClick}><li>Contact</li></Link>
+                            <Link to="/plans" onClick={handleHamClick}><li>Plans</li></Link>
                         </ul>
                     </div>
                     <button className="mobile__menu--button"><span>Try Datsme</span><img src="assets/arrow-right.svg" alt="" /></button>

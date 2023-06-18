@@ -1,6 +1,5 @@
 {
   "name": "datsme-react",
-  "homepage": "http://TSharma95.github.io/datsme",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
@@ -13,6 +12,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

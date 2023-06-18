@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Team = () => {
+
     return (
         <main className="team">
             <div className="team__header">

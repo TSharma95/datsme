@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Privacy = () => {
+
     return (
         <main className="privacy">
             <div className="background">
@@ -39,9 +41,9 @@ const Privacy = () => {
                             in this Privacy Policy.
                         </span>
                         <span>
-                            The terms used in this Privacy Policy have the same meanings as in our <a href="">Terms and
-                                Conditions</a>,
-                            which is accessible at <a href="">www.datsme.io</a> unless otherwise defined in this Privacy
+                            The terms used in this Privacy Policy have the same meanings as in our <Link to="/terms">Terms and
+                                Conditions</Link>,
+                            which is accessible at <Link to="/">www.datsme.io</Link> unless otherwise defined in this Privacy
                             Policy.
                         </span>
                         <span>
@@ -849,8 +851,8 @@ const Privacy = () => {
                         </span>
                         <span>
                             If you believe someone has had unauthorised access to your account or password, or your
-                            information is no longer secure, you may contact us at the address mentioned in the “<a
-                                href="">Contact Us</a>” section.
+                            information is no longer secure, you may contact us at the address mentioned in the “<Link
+                                to="/contact">Contact Us</Link>” section.
                         </span>
                     </p>
 

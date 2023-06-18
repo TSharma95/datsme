@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const Faq = () => {
     const [activeIndex, setActiveIndex] = useState([]);
-    const [activeKey, setActiveKey] = useState('Datsme Overview');
+    const [activeKey, setActiveKey] = useState('Login, Signup & Onboarding');
     const faqItemRef = useRef([]);
     const [itemHeights, setItemHeights] = useState([]);
 
@@ -35,1208 +35,869 @@ const Faq = () => {
         }
     }, [activeKey]);
 
+    useEffect(() => {
+        // Scroll the active question into view after a delay of 300ms
+        if (activeIndex.length > 0) {
+            setTimeout(() => {
+                const activeQuestionRef = faqItemRef.current[activeIndex[0]];
+                if (activeQuestionRef) {
+                    activeQuestionRef.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                    });
+                }
+            }, 100);
+        }
+    }, [activeIndex]);
 
     const faqData = [
         {
-            key: "Datsme Overview",
+            key: "Login, Signup & Onboarding",
             questions: [
                 {
-                    question: "What is Datsme?",
+                    question: "How can I log in/signup for the Datsme App?",
                     answer: `
                 <p>
-                    Living in a society that satisfies material wants and needs, Little did we know that we need to find Acceptance and Meaning through Deep Human Contact. Such assurance only resides in Compatibility.
+                    You can log in/signup onto the Datsme App using these 4 ways:
                 </p>
                 <p>
-                    Find, Explore and Connect with Highly Compatible Friends having Similar Interests.
+                    <strong>A. Signing up through Mobile Number</strong>
                 </p>
                 <p>
-                    Based on Psychology, Datsme allows you to explore Friendships on the basis of Compatibility and Understanding.
+                    Step 1: Enter your mobile number.<br />
+                    Step 2: Complete the OTP verification.<br />
+                    Step 3: Enter OTP and proceed to account creation.
                 </p>
                 <p>
-                    High compatibility comes from similarities in Lifestyle, Values, Beliefs, Perceptions, Worldview, Perspectives and more, which is the Foundation of Datsme Compatibility Algorithm.
+                    <strong>B. Signing up through Google</strong>
                 </p>
                 <p>
-                    While other social media platforms focus on instant gratification of looks, Datsme focuses on the understanding the roots of Genuine Bonding and Friendship through Psychology.
+                    Step 1: Click on the Google icon to sign up using Google.<br />
+                    Step 2: Upon clicking the Google icon, A list of all the Google email IDs would appear. Please select the account through which you would like to sign up.<br />
+                    Step 3: Proceed to account creation.
                 </p>
-                <p>We are more than just beautiful bodies and faces. Join the Revolution - Download the Datsme App now!</p>
+                <p>
+                    <strong>C. Signing up through Facebook</strong>
+                </p>
+                <p>
+                    Step 1: Click on the Facebook icon to sign up using Facebook.<br />
+                    Step 2: You will be redirected to Facebook and asked to enter your Facebook login details.<br />
+                    Step 3: Login through Facebook to complete the signup process.
+                </p>
+                <p>
+                    <strong>D. Signing up through Apple</strong>
+                </p>
+                <p>
+                    Step 1: Click on the “Sign in with Apple” button.<br />
+                    Step 2: Click on “Continue”.<br />
+                    Step 3: After Face ID verification, You can proceed to account creation.
+                </p>
                 `
                 },
                 {
-                    question: "How can I use Datsme?",
+                    question: "What is required for creating a Datsme account?",
                     answer: `
-                <p>The Datsme App is now available for Android only.</p>
-                <p>The iOS version of the app will be launched soon in June 2020.</p>
-                <p>Download the Datsme App from the Google Play Store.</p>
-                <p>Datsme currently supports minimum Android 6.0 Marshmallow and up.</p>
-                <p>
-                    Rather than perfecting the perception others have of you, Establish a strong sense of self by going through the Datsme Psychology Algorithm.
-                </p>
-                <p>
-                    Answer Unique Questions based on Psychology so that Datsme can help you find friends you are Compatible with.
-                </p>
+                    <p>
+                        To create a Datsme account, 2 things are required:
+                    </p>
+                    <p>
+                        A. Full Name: You have to enter your full name within 30 characters
+                    </p>
+                    <p>
+                        B. Username: You have to select a unique username for your Datsme account. The constraints for the username are as follows:
+                    </p>
+                    <p>
+                        - The minimum username character limit is 3 characters.<br />
+                        - The maximum username character limit is 30 characters.<br />
+                        - The username should be unique.<br />
+                        - The username can contain letters (a-z), numbers (0-9), and periods(.)<br />
+                        - You cannot include symbols or other punctuation marks as a part of your username.<br />
+                    </p>
                 `
                 },
                 {
-                    question: "Do I have to pay for Datsme or is it free?",
+                    question: "What are “Goals” in the Datsme App?",
                     answer: `
+                <p>Datsme is a social health app to help people develop meaningful connections.
+                Goals are different dimensions/areas of your social health you can work on to become a better friend!</p>
+                <p>There are 5 different goals you can choose from:</p>
                 <p>
-                    Who pays for finding friends right? We know you have a life. And that is why : Datsme was, is and always will be free.
+                    A. Feel more positivity in my friendships 
+                    B. Build new friendships
+                    C. Develop deeper friendships
+                    D. Protect my friendships from challenges
+                    E. Practice advanced friendship strategies
                 </p>
-                <p>
-                    To enhance your Datsme Experience, Premium Features of Datsme will be launched in June 2020. Stay Tuned!
-                </p>
-                <p>Download the Datsme App now.</p>
-                `
-                },
-                {
-                    question: "Where can I use Datsme right now?",
-                    answer: `
-                <p>
-                    The Datsme App is now available in India only. In India, Prime Locations for Datsme Users are New Delhi/NCR, Hyderabad, Bangalore, Mumbai, Pune, Chennai, Kolkata, Lucknow, Jaipur, Kerala, Ahmedabad, Chandigarh and Vadodara.
-                </p>
-                <p>
-                    Datsme will be launched in these countries soon : United States, Canada, Mexico, Brazil, Spain, France, UK, Germany and Australia.
-                </p>
-                <p>Stay Tuned!</p>
-                `
-                },
-                {
-                    question: "What is the Minimum Age Requirement to use Datsme?",
-                    answer: `
-                <p>The Minimum Age Requirement for Datsme is 18 years old.</p>
-                <p>
-                    We want you to know that Datsme is a journey of knowing yourself enough, to be able to choose friends you are compatible with.
-                </p>
+                <p>In step 1, You will be asked to select up to 3 goals from the above-mentioned.
+                In step 2, You will be asked to select your top priority.</p>
+                <p>Based on your inputs, Your Datsme experience will be personalized.</p>
                 `
                 }
             ]
         },
         {
-            key: "About Datsme",
+            key: "About the “Learn” section",
             questions: [
                 {
-                    question: "What is the problem Datsme is solving?",
+                    question: "What is the purpose of “How are you feeling today”?",
                     answer: `
                 <p>
-                    While other social media platforms focus on instant gratification of looks, Datsme focuses on understanding the roots of Genuine Bonding & Friendship through Psychology.
+                This section is like a Daily Mood Tracker that tracks your mood on a weekly and monthly basis.
                 </p>
                 <p>
-                    We, at Datsme, believe that Deeper Understanding & Genuine Happiness can be found among friends with High Compatibility.
+                There are 5 different moods that you can select from. The goal is to help you identify and track your emotions.
                 </p>
-                <p>Compatibility is the Future. The Future is Datsme.</p>
+                <p>The app analyzes your mood to give you mood improvement insights like “You felt X% better than the previous month”</p>
                 `
                 },
                 {
-                    question: "Why should users prefer Datsme over other social media platforms?",
+                    question: "What is “Streak” in the Datsme app?",
                     answer: `
-                <ol>
-                    <li>
-                        <p>We put you in the strongest and safest position possible</p>
-                        <p>
-                            A 10 minutes successful Investment in the Datsme Psychological Algorithm can save you from a failed 10,000 minutes you would have invested to know someone and it would not have worked out.
-                         </p>
-                        <p>What if we still fail?</p>
-                        <p>What if It does not work out with People I’m Compatible with?</p>
-                        <p>What about People I’m not that Compatible with?</p>
-                    </li>
-                    <li>
-                        <p>
-                            Social Media Platforms have become quote Looks-centric. Datsme has overweighed here also, by using well defined, researched and surveyed, Psychological Researches and Algorithms that you would give you very better matches compared to judging from pictures.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            The Tools and Power that Datsme offers its users are incredible. Social Media has never seen something like this before. Psychology and Compatibility, Datsme Tag Search, Datsme Location Search, Datsme Map Mode, The Filter and Sorting Criteria . This is too much to handle!
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            It is more important for a social media platform to be strong, trustworthy and dependable rather than just warm and optimistic. Datsme has carefully given thought to every aspect of its being.
-                        </p>
-                    </li>
-                </ol>
                 <p>
-                    We can go on and on, Why don’t you try it out yourself? Download the Datsme App now!
+                If you can measure it, You can improve it!
                 </p>
+                <p>
+                Your streak shows how committed you are to building better friendships. The higher the streak, the more consistent you are.
+                </p>
+                <p><strong>The streak feature tracks:</strong></p>
+                <p><strong>A. Days in the app</strong> - The total number of days you have logged in on the Datsme App in the current year.</p>
+                <p><strong>B. Perfect weeks</strong> - A streak of 7 means 1 perfect week! Whenever you complete a streak of 7, +1 will be added to your perfect week counter.</p>
+                <p><strong>C. Weekly login reports</strong> - All the days you’ve logged in (7 days - from Sunday to Saturday) will be represented by a green dot below the date. The current date is highlighted in a green circle as well.</p>
+                `
+                },
+                {
+                    question: "What is “Level” in the Datsme app? How many levels are there in total?",
+                    answer: `
+                    <p>Your level is based on your engagement in our community and your commitment to growth! Level 10 is the highest credibility and visibility.</p>
+                    <p>Every user starts as Level 1 and can go to a maximum of Level 10. The levels are -</p>
+                    <p>
+                    <strong>Level 1 - </strong>Bronze Level 1<br />
+                    <strong>Level 2 - </strong>Bronze Level 2<br />
+                    <strong>Level 3 - </strong>Silver Level 1<br />
+                    <strong>Level 4 - </strong>Silver Level 2<br />
+                    <strong>Level 5 - </strong>Gold Level 1<br />
+                    <strong>Level 6 - </strong>Gold Level 2<br />
+                    <strong>Level 7 - </strong>Platinum Level 1<br />
+                    <strong>Level 8 - </strong>Platinum Level 2<br />
+                    <strong>Level 9 - </strong>Luxury Level 1<br />
+                    <strong>Level 10 - </strong>Luxury Level 2
+                    </p>
+                `
+                },
+                {
+                    question: "How can I level up on the Datsme app?",
+                    answer: `
+                    <p>You can level up on the datsme app by completing the following in-app goals and activities -</p>
+                    <p>
+                    <strong>+1 Level - </strong>Activate your social profile and complete the Twelve Rings test.<br />
+                    <strong>+1 Level - </strong>Add 5 contacts in the connection management interface (Manage section in the app).<br />
+                    <strong>+1 Level - </strong>Add 20 contacts in the connection management interface (Manage section in the app).<br />
+                    <strong>+1 Level - </strong>Complete 5 expert sessions.<br />
+                    <strong>+1 Level - </strong>Complete 12 expert sessions.<br />
+                    <strong>+1 Level - </strong>Complete 25 expert sessions.<br />
+                    <strong>+1 Level - </strong>Complete 50 expert sessions.<br />
+                    <strong>+1 Level - </strong>Update 3 out of 4 tags categories (Choose your favorite tags from Movies, TV Series, Games, and Anime).<br />
+                    <strong>+1 Level - </strong>Update 3 out of 5 tags categories (Choose your favorite tags from Hobbies & Interests, Things I like to talk about, Sports & Activities, Preferred Weekend Activity, and Language).<br />
+                    <strong>+1 Level - </strong>Luxury Level 2
+                    </p>
+                    <p>Every user starts as Level 1 and can go to a maximum of Level 10.</p>
+                `
+                },
+                {
+                    question: "Why should I “level up” on the Datsme App?",
+                    answer: `
+                <p>
+                Your level is based on your engagement in our community and your commitment to growth! Level 10 is the highest credibility and visibility.
+                </p>
+                <p>
+                If you have a higher level on the Datsme app, Your social visibility is increased, and your chances of getting discovered by possible meaningful connections increase!
+                </p>
+                `
+                },
+                {
+                    question: "What is “Progress” on the Datsme app?",
+                    answer: `
+                <p>
+                Your progress reveals how far along you are in expert sessions. There are currently 80+ sessions on the Datsme app and your progress is calculated based on the number of sessions you have completed.
+                </p>
+                <p>
+                Take the sessions and self-reflect for greater progress!
+                </p>
+                `
+                },
+                {
+                    question: "What is “Activity” on the Datsme app?",
+                    answer: `
+                <p>
+                Your activity tracks how much time you've spent learning from the expert sessions on how to become a better friend.
+                </p>
+                `
+                },
+                {
+                    question: "What is “Recommended Chapters” section in the Datsme app?",
+                    answer: `
+                <p>
+                The Datsme app offers more than 80 audio sessions developed by our co-founder and world-leading friendship expert - Shasta Nelson, based on her years of expertise and research.
+                </p>
+                <p><strong>All sessions are divided into 7 chapters.</strong></p>
+                <p>
+                <strong>Chapter 1 - </strong>How friendships are made (12 Sessions)<br />
+                <strong>Chapter 2 - </strong>Tips for meeting new friends (9 Sessions)<br />
+                <strong>Chapter 3 - </strong>Commit to Consistency (12 Sessions)<br />
+                <strong>Chapter 4 - </strong>Add tons of Positivity (12 Sessions)<br />
+                <strong>Chapter 5 - </strong>Increasing Vulnerability (12 Sessions)<br />
+                <strong>Chapter 6 - </strong>The 5 Friendship Threats (13 Sessions)<br />
+                <strong>Chapter 7 - </strong>Advanced Friendship Strategies (11 Sessions)
+                </p>
+                <p>The last 3 chapters from which you have taken sessions will be displayed under the section “Recommended Chapters”.</p>
+                `
+                },
+                {
+                    question: "What are “Chapters” on the Datsme app?",
+                    answer: `
+                <p>
+                The Datsme app offers more than 80 audio sessions developed by our co-founder and world-leading friendship expert - Shasta Nelson, based on her years of expertise and research.
+                </p>
+                <p>All sessions are divided into 7 chapters.</p>
+                <p>
+                <strong>Chapter 1 - </strong>How friendships are made (12 Sessions)<br />
+                <strong>Chapter 2 - </strong>Tips for meeting new friends (9 Sessions)<br />
+                <strong>Chapter 3 - </strong>Commit to Consistency (12 Sessions)<br />
+                <strong>Chapter 4 - </strong>Add tons of Positivity (12 Sessions)<br />
+                <strong>Chapter 5 - </strong>Increasing Vulnerability (12 Sessions)<br />
+                <strong>Chapter 6 - </strong>The 5 Friendship Threats (13 Sessions)<br />
+                <strong>Chapter 7 - </strong>Advanced Friendship Strategies (11 Sessions)
+                </p>
+                `
+                },
+                {
+                    question: "What is the “Positivity” and “Positivity Analysis”?",
+                    answer: `
+                <p>Positivity, the actions that leave others feeling pleasant emotions is the 1st requirement to all healthy friendships because it’s why everyone wants friends: we want to feel happier.</p>
+                <p>We gravitate to people who leave us feeling happier because we enjoy each other, make each other laugh, and feel affirmed. We feel closer to people who we know like us and with whom we don’t feel judged.</p>
+                <p>The Positivity Analysis is a self-assessment framework developed by Shasta Nelson (Global Friendship Expert & Co-Founder of Datsme) to assess and improve your positivity dimension.</p>
+                <p>Based on the results of your assessment, We also give you custom tips so that you can improve your positivity dimension.</p>
+                `
+                },
+                {
+                    question: "What is “Consistency” and “Consistency Analysis”?",
+                    answer: `
+                <p>Consistency, the regular time we spend together sharing experiences and interacting, is the 2nd Requirement to all healthy relationships because it’s what builds friendship. Without time together, we won’t have the opportunity to get to know each other and enjoy each other.</p>
+                <p>We feel closest to people whom we’ve spent the most time with because our shared history leaves us feeling more comfortable and safe as we better know what to expect. </p>
+                <p>The Consistency Analysis is a self-assessment framework developed by Shasta Nelson (Global Friendship Expert & Co-Founder of Datsme) to assess and improve your consistency dimension.</p>
+                <p>Based on the results of your assessment, We also give you custom tips so that you can improve your consistency dimension.</p>
+                `
+                },
+                {
+                    question: "What is “Vulnerability” and “Vulnerability Analysis”?",
+                    answer: `
+                <p>Vulnerability, the way we share who we are with each other, is the 3rd Requirement to all healthy relationships because it’s how a friendship develops closeness. When we spend time with someone (consistency) and enjoy each other (positivity) then we get to know each other as we incrementally reveal our opinions, personality, ideas, thoughts, and needs with each other.</p>
+                <p>The Vulnerability Analysis is a self-assessment framework developed by Shasta Nelson (Global Friendship Expert & Co-Founder of Datsme) to assess and improve your vulnerability dimension.</p>
+                <p>Based on the results of your assessment, We also give you custom tips so that you can improve your vulnerability dimension.</p>
+                `
+                },
+                {
+                    question: "What is the Frientimacy Profile?",
+                    answer: `
+                <p>When we look at the science of social wellness - whether it’s looking at how people create bonds, or whom they call a best friend, or what builds trust, or what makes up the perfect team - we always see the same 3 non-negotiables: Positivity, Consistency & Vulnerability.</p>
+                <p>Like a formula, a healthy bond must have all three: Positivity (P), Consistency (C), and Vulnerability (V).</p>
+                <p>The Frientimacy Profile is an introspective framework engineered to assess our 3 Bonding Dimensions of P, C, and V through the Frientimacy quiz.</p>
+                <p>The Frientimacy Profile will spark the self-awareness that will inform you how you can most strategically foster more meaningful connections in your life.</p>
+                <p>Based on the results of your assessment, We also give you custom tips so that you can improve your Frientimacy profile (made up of P, C, and V). We hope you develop better friendships with Datsme!</p>
                 `
                 }
             ]
         },
         {
-            key: "Signing Up and Getting Started",
+            key: "About the “Connect” section",
             questions: [
                 {
-                    question: "Where can I download Datsme?",
+                    question: "How can I create my social profile on Datsme?",
                     answer: `
-                <p>The Datsme App is now available for Android only.</p>
-                <p>The iOS version of the app will be launched soon in June 2020.</p>
-                <p>Download the Datsme App from the Google Play Store.</p>
-                <p>Datsme currently supports minimum Android 6.0 Marshmallow and up.</p>
+                <p><strong>How can I create my social profile on Datsme?</strong></p>
+                <p><strong>Step 1 - </strong>Create your account by entering the following details:</p>
+                <p>
+                    A. Full Name<br />
+                    B. Hometown<br />
+                    C. Profession & Occupation<br />
+                    D. Company<br />
+                    E. 3 things I love to discuss
+                </p>
+                <p><strong>Step 2 - </strong>Upload at least 2 pictures to the profile.</p>
+                <p><strong>Step 3 - </strong>Take the Twelve Rings Test.</p>
+                <p>The Twelve Rings Test is a proven framework that reveals which of the 12 Datsme Rings is your primary bonding style.</p>
+                <p>The Twelve Rings of Datsme Social :</p>
+                <p>
+                    (1) The Innovators<br />
+                    (2) The Pragmatics<br />
+                    (3) The Benevolents<br />
+                    (4) The Altruistics<br />
+                    (5) The Allegiants<br />
+                    (6) The Socialites<br />
+                    (7) The Visionaries<br />
+                    (8) The Intellectuals<br />
+                    (9) The Pioneers<br />
+                    (10) The Valiants<br />
+                    (11) The Futurists<br />
+                    (12) The Mavericks
+                </p>
+                <p>Once step 3 is complete, We connect you with the most meaningful people based on your bonding style!</p>
                 `
                 },
                 {
-                    question: "How do I create a Datsme Account?",
+                    question: "Is it important for me to turn on the notifications in the Datsme App?",
                     answer: `
-                <p>To Register with Facebook :</p>
-                <ol>
-                    <li><p>Download the Datsme App for Android. The iOS version of the app will be launched soon in June 2020.</p></li>
-                    <li><p>Tap “Facebook” Button</p></li>
-                    <li><p>If prompted, Sign in to your Facebook Account (Datsme does not post anything to Facebook)</p></li>
-                    <li><p>Fill out your Profile Info</p></li>
-                    <li><p>Allow Datsme access to all required permissions</p></li>
-                    <li><p>Cut to the Chase? You’re Awesome! Now Get going!</p></li>
-                </ol>
-                <p>To Register with Google :</p>
-                <ol>
-                    <li><p>Download the Datsme App for Android. The iOS version of the app will be launched soon in June 2020.</p></li>
-                    <li><p>Tap “Google” Button</p></li>
-                    <li><p>Select the Google Account you want to use</p></li>
-                    <li><p>If the account you want to use isn’t listed, tap Use Another Account and sign in</p></li>
-                    <li><p>Fill out your Profile Info</p></li>
-                    <li><p>Allow Datsme access to all required permissions</p></li>
-                    <li><p>Cut to the Chase? You’re Awesome! Now Get going!</p></li>
-                </ol>
-                <p>To Register with Mobile Number :</p>
-                <ol>
-                    <li><p>Download the Datsme App for Android. The iOS version of the app will be launched soon in June 2020.</p></li>
-                    <li><p>Tap “Mobile Number” Button and follow the instructions on your screen</p></li>
-                    <li><p>Select the Google Account you want to use</p></li>
-                    <li><p>Fill out your Profile Info</p></li>
-                    <li><p>Allow Datsme access to all required permissions</p></li>
-                    <li><p>Cut to the Chase? You’re Awesome! Now Get going!</p></li>
-                </ol>
+                <p>Turning on notifications will only enhance your overall app experience.
+                Datsme App never bothers you with irrelevant updates.</p>
+                <p>It just notifies you regarding what’s important like:</p>
+                <p><strong>A. Connection requests received -</strong></p>
+                <p>Datsme is home to mindful individuals looking for meaningful connections. If someone tries to reach you, You will see a connection request notification in this section.</p>
+                <p><strong>B. Connection requests accepted -</strong></p>
+                <p>You can send connection requests to potential connects by clicking the “Add Friend” button (leftmost bottom of the connect section)</p>
+                <p>Once a connection request is accepted, We notify you about the same.</p>
+                <p><strong>C. Birthday notifications -</strong></p>
+                <p>Birthdays are special, and we make sure that you never forget a friend’s birthday again by notifying you.</p>
+                <p><strong>D. Important updates that you might be interested in -</strong></p>
+                <p>We inform you about some important updates like product upgrades, new features, and the features you may have missed out on in the app</p>
+                <p>You may access the notifications section by clicking on the bell icon on the top right corner of the “Connect” section.</p>
+                <p>In a nutshell, Turning on notifications is not mandatory but it is highly recommended.</p>
                 `
                 },
                 {
-                    question: "What are the diﬀerent ways by which I could sign in?",
+                    question: "How can I access my messages or chats?",
                     answer: `
-                <p>There are 3 ways to login to the Datsme App :</p>
-                <ol>
-                    <li><p>Login through Facebook</p></li>
-                    <li><p>Login through Google</p></li>
-                    <li><p>Login through Mobile Number</p></li>
-                </ol>
-                <p>Check out -> How do I create a Datsme Account?</p>
+                <p>You may see the messages that you received or your chats by clicking on the “Message Button” in the top right corner of the connection screen.</p>
+                <p>All your chats with your connections are accessible through this section only. You may also start a new chat by visiting the connection section and choosing the person you want to talk to.</p>
                 `
                 },
                 {
-                    question: "How do I edit my Profile?",
+                    question: "Why do I see my message box empty?",
                     answer: `
-                <p>To Edit your Profile info, Open your Profile, Tap the “Edit Profile” (Pencil Icon) below your Profile</p>
-                <p>Picture. Here, You can edit the following sections :</p>
-                <ol>
-                    <li><p>Profile Picture</p></li>
-                    <li><p>Location</p></li>
-                    <li><p>Working at</p></li>
-                    <li><p>Studying at</p></li>
-                    <li><p>Say Something about Yourself</p></li>
-                </ol>
-                <p>You are not allowed to edit the following sections :</p>
-                <ol>
-                    <li><p>Name</p></li>
-                    <li><p>Date of Birth</p></li>
-                    <li><p>Gender</p></li>
-                </ol>
-                <p>If you have any problem regarding these 3, Please delete your account and sign in again.</p>
+                <p>You can only talk to people in this section who already are your “Connections” on the Datsme app.</p>
+                <p>Once you have accepted someone’s connection request or once your connection request has been accepted by someone, They are added as a connection.</p>
+                <p>You may tap on their profile under the “Connection” tab, and start a chat with them.</p>
+                <p>Please note that you can only talk to someone after they are added as a connection. If you wish to talk to someone before adding them as a connection, You may use the “Message Request” feature.</p>
                 `
                 },
                 {
-                    question: "What are the diﬀerent filter and sorting techniques I can apply to find people?",
+                    question: "Can I send emojis/images/videos using the chat feature on the Datsme App?",
                     answer: `
-                <p>You can apply the distance filter which gives you the power to find people according to the following :</p>
-                <ol>
-                    <li><p>Locally</p></li>
-                    <li><p>District</p></li>
-                    <li><p>Citywide</p></li>
-                    <li><p>State</p></li>
-                    <li><p>Nation</p></li>
-                </ol>
-                <p>The Age Filter is coming soon!</p>
-                <p>You can apply these sort techniques to find people :</p>
-                <ol>
-                    <li><p>Sort by Level : The Most Authentic Users are seen first</p></li>
-                    <li><p>Sort by Activity : The Most Active Users are seen first</p></li>
-                </ol>
+                <p>Yes, You will be able to share emojis, GIFs, and images with your connections to enhance your overall conversation.</p>
+                <p>Considering the fair use policy, sharing videos through the Datsme App is not allowed at the moment.</p>
+                <p>We highly recommend that you send in the chats (either images or GIFs) to be non-explicit to keep up with the community guidelines.</p>
+                <p>Any such image/GIFs reported may lead to a permanent ban from the platform.</p>
+                `
+                },
+                {
+                    question: "What are “Message Requests'' on the Datsme app? How can I access this feature on the Datsme app?",
+                    answer: `
+                <p>Message Requests is a special feature of Datsme wherein you can choose to talk to a person before adding them as a connection.</p>
+                <p>Message Requests is a premium feature and can only be accessed through a “Datsme Spark” subscription.</p>
+                <p>If you are a premium user with a Datsme Spark subscription, You may send up to 5 message requests every day.</p>
+                <p>Non-premium users will only be able to send a message to someone after their connection request has been accepted.</p>
+                <p>However, A non-premium user will be able to see a message request sent to them by a premium user in the message request section.</p>
+                <p>You may access this section by first clicking on the “Message Icon” on the top right corner of the “Connect” section, and then clicking on the top right icon (Gold DM Icon) to see the messages requests you have sent or the message requests you have received.</p>
+                <p>Note: Unresponded message requests will automatically vanish after 15 days from the time they were sent.</p>
+                `
+                },
+                {
+                    question: "How do I add a new connection on the Datsme App/How can I send connection requests?",
+                    answer: `
+                <p>You may send a connection request by clicking on the “Add Connection” icon in the bottom left corner of the Connect section.</p>
+                <p>For a premium user, The number of connection requests per day is unlimited, while non-premium users may only send up to 2 connection requests per day.</p>
+                <p>The algorithm of the Datsme app fetches the most relevant profiles for you and you may choose to switch between different profiles before sending them a connection request by tapping on the “Next” or “Previous” icons on the bottom right corner of the “Connect” section.</p>
+                `
+                },
+                {
+                    question: "I saw an inappropriate image as a profile photo. How do I block/report this person?",
+                    answer: `
+                <p>The Datsme community follows strict guidelines for explicit/obscene content and we highly recommend that users report any such inappropriate/fake profile to keep the community clean.</p>
+                <p>You can report/block such profiles by tapping on the 3 dots present at the top right corner of the profile picture.</p>
+                <p>Blocking a profile means that this profile will never be shown to you (or will be permanently blocked) in the connect section.</p>
+                <p>If you choose to report a profile, Please select the appropriate category i.e.</p>
+                <p>
+                <strong>A. Fake</strong><br />
+                <strong>B. Inappropriate Content (Nudity, Sexual Content, Violence, Hate Speech, Harassment, Other)</strong><br />
+                <strong>C. Scam</strong><br />
+                </p>
+                <p>Reporting a user profile will not lead to its automatic block. Please make sure that you also block this profile after reporting it.</p>
+                <p>Team Datsme will take strict action against the said profile if found malicious.</p>
+                `
+                },
+                {
+                    question: "What is the “View Synergy Report” I see on a profile in the Connect section?",
+                    answer: `
+                <p>Each user of Datsme has a unique bonding style and we have categorized these bonding styles into 12 Datsme Rings.</p>
+                <p>By tapping on the “View Synergy Report” button, You may get an insight into their social ring and learn more about their bonding style.</p>
+                <p>You can also see the commonalities between yourself and this connection on topics such as:</p>
+                <p>
+                A. Preferred social activities<br />
+                B. Ideal topics of conversation<br />
+                C. Preferred way of communication<br />
+                D. Weekly availability schedule<br />
+                E. Other shared similarities
+                </p>
+                <p>You may use these insights to explore a possible meaningful connection before sending them a connection request.</p>
+                `
+                },
+                {
+                    question: "What is the purpose of the “Interests” tab in the “Connect” section?",
+                    answer: `
+                <p>You may see 2 different tabs on a profile:</p>
+                <p>
+                A. 3 Things I love to discuss<br />
+                B. My Interests
+                </p>
+                <p>These are specially curated sections answered by each individual themselves. The purpose of this section is to give the users a better insight into the hobbies/interests of a connection to explore the possibility of future synergy.</p>
+                <p>Based on these insights, A user would be able to decide whether or not to send a connection request to this user.</p>
+                <p>These tags may also serve as an icebreaker while initiating a conversation after a connection has been established.</p>
                 `
                 }
             ]
         },
         {
-            key: "Features of Datsme",
+            key: "About the “Manage” section",
             questions: [
                 {
-                    question: "Psychology and Compatibility ?",
+                    question: "How can I manage my connections on Datsme?",
                     answer: `
+                <p>The Connection Management system of Datsme has been designed to manage the Top 30 people in your life.</p>
+                <p>Other than the people you stay in touch with on a day-to-day basis, You can add connections in this section that you want to stay in touch with.</p>
+                <p>This includes your school friends, college friends, friends near your home, friends who have switched jobs, residences, family members, cousins, business connections, investors, workplace friends from previous jobs, etc.</p>
+                <p><strong>Step 1</strong>: Add a connection manually or import contacts through your contacts list.</p>
+                <p>If you add a connection manually, You have to provide details such as the connection’s name, birthday, the category you want to assign them to, tags, and the frequency you want to stay in touch with them (Once a week, Once every 2 weeks, etc).</p>
+                <p>If you are importing connections through your phone contact list, You need to first give access to Datsme to fetch contact names. Once done, Select the connections you want to import by clicking on the “Add” button and selecting the category you want to assign them to. In the next step, Select the frequency you want to stay in touch with them by clicking on “Schedule”. Hit “Save” to get started!</p>
+                <p><strong>Step 2</strong>: Get weekly reminders.</p>
+                <p>You will now find all your added connections in different categories under the “Organize” tab.</p>
+                <p>Click on the “Schedule” tab and under the Events section, You will find a list of people that you should get in touch with for the following week! You’ll get a reminder every Monday that your weekly list is ready. There will be a follow-up reminder on Saturdays to make sure you are maintaining a healthy social circle.</p>
+                <p>It is highly recommended that you enable push notifications on the app to get the best experience.</p>
+                <p>As a free user, You can manage 7 connections through the Datsme Manage feature.</p>
+                <p>As a premium user (Datsme Sync), You can manage up to 30 connections through the Datsme Manage feature.</p>
+                <p>For more help, Click on the bulb icon on the top right corner of your screen in the “Manage” section!</p>
+                `
+                },
+                {
+                    question: "What is the progress/milestone dashboard in the “Manage” section?",
+                    answer: `
+                <p>The progress or milestones section is designed to help you set up and get started with the connection management system.</p>
+                <p><strong>It has 3 milestones:</strong></p>
+                <p><strong>Milestone 1</strong> - Import Contacts - The goal is to import 5 connections from your phone contacts.</p>
+                <p><strong>Milestone 2</strong> - Set Frequency - The goal is to set a frequency with 5 connections that you want to stay in touch with.</p>
+                <p><strong>Milestone 3</strong> - Add Birthday - The goal is to add the birthdays of 5 of your connections so that the Datsme app reminds you about their birthday.</p>
+                <p>This feature helps you to add missing birthdays, tags, and connection stay-in-touch frequencies!</p>
+                `
+                },
+                {
+                    question: "What is the purpose of the connection dashboard in the “Manage” section?",
+                    answer: `
+                <p>The connection dashboard tracks:</p>
                 <p>
-                    You are the average of the top 5 friends, with whom, you spend most of our time. So, choosing a right friend is an absolute necessity.
-                </p>
-                <p>This is where Psychology comes into the picture.</p>
-                <p>
-                    Based on psychology, Datsme allows you to explore friendships on the basis of compatibility and understanding. Friends have a direct effect on our personality as they connect with us on an emotional level. So, Datsme lets you engage in self introspection through a personality test which calculates your compatibility with a friend.
-                </p>
-                <p>
-                    High Compatibility comes from similarities in Lifestyle, Values, Beliefs, Perceptions, Worldview, Perspectives and more, which is the Foundation of Datsme Compatibility Algorithm.
-                </p>
-                <p>
-                    While other social media platforms focus on instant gratification of looks, Datsme focuses on understanding the roots of Genuine Bonding and Friendship through Psychology.
+                    A. Overall circle health - Making sure you are maintaining healthy connections and staying in touch with the people who matter to you.<br />
+                    B. The total number of connections.<br />
+                    C. Connections in Group 1 (By default as “Inner Circle”).<br />
+                    D. Connections in Group 2 (By default as “Second Circle”).<br />
+                    E. Connections in Group 3 (By default as “Third Circle”).<br />
+                    F. Connections in Group 4 (If a new category has been created).<br />
+                    G. Connections in Group 5 (If a new category has been created).<br />
+                    H. It enables you to add a connection.<br />
+                    I. It also enables you to import connections from your phone’s contacts list.
                 </p>
                 `
                 },
                 {
-                    question: "Datsme Tag Search ?",
+                    question: "What is “Add a Connection” in the Manage section of the Datsme app? How can I add connections in the app?",
                     answer: `
+                <p>This feature helps you add a contact/connection to the manage section so that you can track this bond and maintain positive bond health with the person.</p>
+                <p>If you add a connection, You have to provide details while adding them such as:</p>
                 <p>
-                    Datsme Tag Search is the Ultra Feature of the Datsme App. Combining it with Psychology and Compatibility, This feature is unstoppable and the king of Social Media!
+                    A. Connection’s name.<br />
+                    B. Birthday.<br />
+                    C. Category you want to assign them to.<br />
+                    D. Tags (Friends, Family, School, College, Network, Services, Colleagues, etc).<br />
+                    E. Frequency you want to stay in touch with them (Once a week, Once every 2 weeks, Once in 3 weeks, etc).
                 </p>
-                <p>Here’s how :</p>
+                <p>Click “Save” to successfully add the connection to your connection management system at Datsme.</p>
+                <p>You can add a connection by:</p>
                 <p>
-                    Out of available 19 categories like Nature, Hobbies x Interests, Work x Profession, Personality Type etc and 320 Tags in total, You can create your own chain reaction of tags to find the type of people you want to. Multiple Tags in a Single Search.                    
+                    A. Clicking on “Add a connection” from the connection dashboard under the “Organize” tab.<br />
+                    B. Clicking on “+” and then click on “Add new contact”.<br />
+                    C. Scrolling down to “My Connections”, Opening any category by clicking the drop-down icon and then clicking on “Add a Connection”.
                 </p>
-                <p>Never done before, Unleash the Power of Social Media with our cutting edge technology.</p>
-                <p>Create your Chain Reaction and Experience Power at your Fingertips.</p>
                 `
                 },
                 {
-                    question: "Datsme Location Search ?",
+                    question: "What is “Import Contacts'' in the Manage section of the Datsme app? How can I import connections in the app?",
                     answer: `
-                <p>Datsme Location Search - Be where the buzz is</p>
-                <ol>
-                    <li>
-                        <p>Admission into a new college?</p>
-                        <p>Given the power of Multiple Tags, Find Friendly Seniors you can be thankful for.</p>
-                    </li>
-                    <li>
-                        <p>Moving to a new place?</p>
-                        <p>Find Compatible Friends with similar interests in your locality who you never knew existed.</p>
-                    </li>
-                    <li>
-                        <p>Got a new job?</p>
-                        <p>Connect with professionals who match your vibe before you even get there.</p>
-                    </li>
-                </ol>
+                <p>This feature helps you to import a lot of connections to the Datsme Manage section in a single go.</p>
+                <p>If you are importing connections through your phone contact list, You need to first give access to Datsme to fetch contact names. Once done, Select the connections you want to import by clicking on the “Add” button and selecting the category you want to assign them to. In the next step, Select the frequency you want to stay in touch with them by clicking on “Schedule”. Hit “Save” to get started!</p>
+                <p>You can import connections by:</p>
+                <p>
+                    A. Clicking on “Import Connections” from the connection dashboard under the “Organize” tab.<br />
+                    B. Clicking on “+” and then clicking on “Import from contacts”.
+                </p>
                 `
                 },
                 {
-                    question: "Datsme Map Mode ?",
+                    question: "How many categories can I add connections to? How can I create a new category?",
                     answer: `
-                <p>Datsme Map Mode - The Gamified Experience</p>
+                <p>You have 3 categories by default to which you can add connections:</p>
                 <p>
-                    Datsme Map Mode only displays the Top 150 profiles of the Datsme Platform RELEVANT TO YOU. That’s right, Read that again.
+                    <strong>A. Inner Circle</strong><br />
+                    <strong>B. Second Circle</strong><br />
+                    <strong>C. Third Circle</strong>
                 </p>
+                <p>You can edit the name of the above categories by clicking on the drop-down icon in front of the category and then clicking on the pencil icon.</p>
+                <p>You can add a total of 5 Categories. To add a new category, Click on the “+” icon and then click on “Create new category”. Enter the name of your new category and click “Save”. You will now find your new category under the “My Connections” section.</p>
+                `
+                },
+                {
+                    question: "How can I “sort by” connections in the manage section?",
+                    answer: `
+                <p>You can sort connections by clicking on the “Filter” button on the right side of the search bar under the “My Connections” tab.</p>
+                <p>You can sort all your connections based on:</p>
+                <p><strong>A. Sort by Priority (Default)</strong></p>
+                <p>By default, All your connections can be added into 3 categories - Inner Circle, Second Circle, and Third Circle. This is based on Priority. You can create 2 more categories as Fourth Circle and Fifth Circle to maintain your order of priority. You can also rename all your categories based on convenience (Example: School friends, College friends, Work friends, Family & Relatives, and Business Connections)</p>
+                <p><strong>B. Sort by Bond Health</strong></p>
+                <p>All your connection cards under the categories can be 1 of the 4 colors.</p>
+                <p>- Blue (If you have not added how often you want to stay in touch i.e. frequency with that particular connection, Their connection card will be displayed as Blue).</p>
+                <p>- Red (If it has been a long time since you were supposed to get in touch with the connection but didn’t, the connection card will be displayed as Red).</p>
+                <p>- Yellow (If it has been a little time since you were supposed to get in touch with the connection but didn’t, the connection card will be displayed as Yellow).</p>
+                <p>- Green (If you are perfectly staying in touch with a connection based on the frequency you set, The connection card will be displayed as Green).</p>
+                <p><strong>C. Sort by Birthday</strong></p>
+                <p>This is based on recency. The connections who have their birthdays coming soon will be shown on top of the list, and vice versa.</p>
+                <p><strong>D. Sort by Name</strong></p>
+                <p>This follows Alphabetical order.</p>
+                <p><strong>E. Sort by Tags</strong></p>
+                <p>Whenever you add a connection, You have to assign tags to that connection like Friends, Family, School, College, Network, Services, and Colleagues.
+                You can sort out all the connections belonging to a particular tag by sorting through this feature!</p>
+                `
+                },
+                {
+                    question: "Why are the connection cards colored? What does it mean?",
+                    answer: `
+                <p>All your connection cards in the “Organize” tab are colored. Every connection card can be 1 of the 4 colors and they mean the following:</p>
+                <p>- Blue (If you have not added how often you want to stay in touch i.e. frequency with that particular connection, Their connection card will be displayed as Blue).</p>
+                <p>- Red (If it has been a long time since you were supposed to get in touch with the connection but didn’t, the connection card will be displayed as Red).</p>
+                <p>- Yellow (If it has been a little time since you were supposed to get in touch with the connection but didn’t, the connection card will be displayed as Yellow).</p>
+                <p>-Green (If you are perfectly staying in touch with a connection based on the frequency you set, The connection card will be displayed as Green).</p>
+                `
+                },
+                {
+                    question: "How can I change the tags assigned to a connection?",
+                    answer: `
+                <p>To change the tags assigned to a connection,</p>
                 <p>
-                    We go the extra mile and the users you see are relevant to you. That means everybody will see different users specially catered to themselves. This is because we care about you and want you to have the best Datsme Experience.
+                    A. Click on the connection card.<br />
+                    B. This will open the connection profile.<br />
+                    C. Scroll down to the tags section.<br />
+                    D. Select/Deselect tags you want to add/remove to update tags for that connection.<br />
+                    E. Click on “Save” on the top right section of your screen for the changes to take effect.
                 </p>
-                <p>You can go to settings and toggle between the following options for Map Mode :</p>
-                <ol>
-                    <li>
-                        <p>See All : Explore 150 Users relevant to you.</p>
-                    </li>
-                    <li>
-                        <p>Advanced Filtering : A Notch Above! Just like the name suggests.</p>
-                    </li>
-                    <li>
-                        <p>Invisible Mode : Hide yourself from the Map Mode</p>
-                    </li>
-                </ol>
+                `
+                },
+                {
+                    question: "How can I change the stay-in-touch frequency of a connection?",
+                    answer: `
+                <p>To change the stay-in-touch frequency of a connection,</p>
+                <p>
+                    A. Click on the connection card.<br />
+                    B. This will open the connection profile.<br />
+                    C. Scroll down to the frequency section.<br />
+                    D. Click on the new frequency you want to assign to the connection.<br />
+                    E. Click on “Save” on the top right section of your screen for the changes to take effect.
+                </p>
+                `
+                },
+                {
+                    question: "How can I change the Birthday of a connection?",
+                    answer: `
+                <p>To change the birthday of a connection,</p>
+                <p>
+                    A. Click on the connection card.<br />
+                    B. This will open the connection profile.<br />
+                    C. Click on the Edit Pencil icon above the name of the connection.<br />
+                    D. When the bottom sheet opens, Tap on birthday.<br />
+                    E. Select the new birthday.<br />
+                    F. Click on “Save” on the bottom sheet.<br />
+                    G. Click on “Save” on Edit Connection screen.
+                </p>
+                `
+                },
+                {
+                    question: "How can I change the Category of a connection?",
+                    answer: `
+                <p>To change the tags assigned to a connection,</p>
+                <p>
+                    A. Click on the connection card.<br />
+                    B. This will open the connection profile.<br />
+                    C. Find the section “Select a category to add this connection to”.<br />
+                    D. Click on the category that is added already (in black).<br />
+                    E. Select the new category from the drop-down list.<br />
+                    F. Click on “Save” on the top right section of your screen for the changes to take effect.
+                </p>
+                `
+                },
+                {
+                    question: "What is the “Add Notes” feature when I click on a connection card?",
+                    answer: `
+                <p>This section is designed to give you a consecrated space to store all the important information about a connection.</p>
+                <p><strong>Example</strong>: Married to Lena, 2 Kids - Alex and Daisy, Dog Name - Chester, Works at Company & Co.</p>
+                <p>You can store notes for all your connections making a note of all the things of value and importance!</p>
+                `
+                },
+                {
+                    question: "What is the “Add Reminder” feature when I click on a connection card?",
+                    answer: `
+                <p>This section is designed to give you guided reminders. This works like an alarm with a text reminder. </p>
+                <p>You can use this feature whenever you want to get reminders on your device for your connections.</p>
+                <p><strong>Example</strong>: Check up on Dave after his doctor’s appointment, Call Rena to make sure she has landed safely after her flight, etc.</p>
+                <p>It is recommended that you should turn on your push notifications for the best experience on the Datsme app.</p>
+                `
+                },
+                {
+                    question: "Can I update a picture of a connection in the “Manage” section?",
+                    answer: `
+                <p>Yes, You can update the connection card picture by following these steps:</p>
+                <p>
+                    A. Click on the connection card.<br />
+                    B. This will open the connection profile.<br />
+                    C. Click on the Edit Pencil icon above the name of the connection.<br />
+                    D. When the bottom sheet opens, Tap on the circular upload icon.<br />
+                    E. Click on “Upload Image”.<br />
+                    F. Select a picture from your phone gallery.<br />
+                    G. Once uploaded, Click on “Save” on the bottom sheet.<br />
+                    H. Click on “Save” on Edit Connection screen.
+                </p>
+                `
+                },
+                {
+                    question: "What is the “Reset” feature in the connection management system? How can I reset the system?",
+                    answer: `
+                <p>When many of your connection cards have gone “Red” because you were not able to get in touch with them, You can use the reset feature.</p>
+                <p>The reset feature sets all your connection cards to green, so it is like a fresh start!</p>
+                <p>To reset the system:</p>
+                <p>
+                    A. Go to the “Schedule” tab in connection management<br />
+                    B. Click on the 3 dots on the right side of “Events”<br />
+                    C. From the drop-down options, Select “Reset”<br />
+                    D. Confirm that you want to reset by clicking on “Reset all connections”<br />
+                    E. Voila! All your connections are now reset.
+                </p>
+                `
+                },
+                {
+                    question: "What is the “Snooze” feature in the connection management system? How can I snooze the system?",
+                    answer: `
+                <p>It is sometimes hard to stay in touch with all your connections, or you may just need some space or time off everyone and everything. For times like these, you can snooze the system.</p>
+                <p>If you snooze for 7 days, It means that the connections you had to get in touch with today will be shifted 7 days in the future.</p>
+                <p>This feature offers you the flexibility to take care of your social life at your own pace!</p>
+                <p>To snooze the system:</p>
+                <p>
+                    A. Go to the “Schedule” tab in connection management<br />
+                    B. Click on the 3 dots on the right side of “Events”<br />
+                    C. From the drop-down options, Select “Snooze”<br />
+                    D. Click on “Set Snooze”<br />
+                    E. Select the snooze duration<br />
+                    F Click “Save” on the bottom sheet<br />
+                    E. Voila! All your connections have now been snoozed
+                </p>
+                <p>You will now find the message “Snoozed for 7 days” under the Events section.
+                To remove the snooze, Click on the “Stop Snooze” button to end the snooze.</p>
                 `
                 }
             ]
         },
         {
-            key: "How does Datsme work?",
+            key: "Profile & Settings",
             questions: [
                 {
-                    question: "How does Datsme incorporate Psychology?",
+                    question: "How can I reset my session journey on the Datsme App?",
                     answer: `
-                <p>
-                    Psychology is the scientific study of the Human Mind. As people are becoming more intellectual and intelligent, Smarter People need Smarter Platforms.
-                </p>
-                <p>
-                    This is where Datsme comes into the picture, Merging the next big psychological and technological revolution.
-                </p>
-                <p>
-                    Although you know we cannot completely reveal what our algorithm is ; But some of the Researches, Factors and Concepts that the Datsme Psychology Algorithm is based on are as follows :
-                </p>
-                <ol>
-                    <li><p>Shasta Nelson’s Friendship Survey</p></li>
-                    <li><p>The Frientimacy Triangle</p></li>
-                    <li><p>Aristotle’s Model of Friendship</p></li>
-                    <li><p>Compatibility - Chemistry Ratios</p></li>
-                    <li><p>Social Penetration Theory</p></li>
-                    <li><p>Social Attraction Trust Hypothesis</p></li>
-                    <li><p>Social Exchange Theory</p></li>
-                    <li><p>The Norm of Reciprocity</p></li>
-                    <li><p>Constructive Conflict Resolution</p></li>
-                    <li><p>Self - Disclosure and Reciprocity Theories</p></li>
-                    <li><p>Intelligence and Emotional Quotient Criteria</p></li>
-                    <li><p>Emotional Health Monitoring, and more And this will evolve with time.</p></li>
-                </ol>
+                    <p>To reset your session journey,</p>
+                    <p>
+                        A. Click the fourth icon (from the left) in the bottom bar of Datsme app).<br />
+                        B. On the top right section of the screen, Click on the “Settings” icon.<br />
+                        C. Under the “Learn” section settings, Click the second option which says “Reset your session journey”.<br />
+                        D. Click on “Reset Psychological progress” to confirm.
+                    </p>
+                    <p>Your session progress is now reset successfully!</p>
                 `
                 },
                 {
-                    question: "What is Compatibility?",
+                    question: "Can I answer the Twelve Rings Test/Questionnaire on the Datsme app again?",
                     answer: `
-                <p>
-                    Since Compatibility is the foundation of Datsme, Datsme would like to tell you The 3 Tier Definition compatible with Datsme :
-                </p>
-                <ol>
-                    <li>
-                        <p>
-                            The Natural Alignment between 2 people that comes from similarities in Lifestyle, Values, Beliefs, Perceptions, Worldview, Perspectives and more factors incorporated in the Datsme Psychology Algorithm.
-                        </p>
-                    </li>
-                    <li>
-                        <p>It is the Long Term Potential between 2 People.</p>
-                    </li>
-                    <li>
-                        <p>It is the Success Rate between 2 People if they decide to talk.</p>
-                    </li>
-                </ol>
+                    <p>Yes, You can retake the Twelve Rings Test by following these steps:</p>
+                    <p>
+                        A. Click the fourth icon (from the left) in the bottom bar of the Datsme app).<br />
+                        B. On the top right section of the screen, Click on the “Settings” icon.<br />
+                        C. Under the “Learn” section settings, Click the second option which says “Retake: The Twelve Rings Test”.
+                    </p>
+                    <p>Slide to start the test!</p>
                 `
                 },
                 {
-                    question: "What if it does not work out with People I’m Compatible with?",
+                    question: "How can I pause my account on Datsme?",
                     answer: `
-                <p>Yes it is possible that things might not click even though you have a really high compatibility. Here’s why :</p>
-                <ol>
-                    <li>
-                        <p>
-                            Datsme is a Journey of knowing yourself enough, to be able to choose friends you are compatible with. What people think about themselves are not what they truly are.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            You are always changing and evolving. Every time you take the Datsme Algorithm after a considerable time, You will find that you have changed. Thus, Datsme also gives you an introspective approach into yourself.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Although Compatibility is the best way to meet people, Social Media can never replace human life interactions. This is where Chemistry (The Emotional Quotient present between 2 People when they are together) comes into the picture. You can be really highly compatible with someone, but when you meet them in real life, Things may seem dull.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Tag Search is the best way to ensure High Compatibility and High Chemistry for best results!
-                        </p>
-                    </li>
-                </ol>
+                    <p>You can pause your Datsme account by following these steps:</p>
+                    <p>
+                        A. Click the fourth icon (from the left) in the bottom bar of the Datsme app)<br />
+                        B. On the top right section of the screen, Click on the “Settings” icon<br />
+                        C. Under the “Learn” section settings, Click the third option which says “Pause your Datsme account”<br />
+                        D. Once a popup comes, Click on “Yes, Pause account”
+                    </p>
+                    <p>This will pause your Datsme account!</p>
                 `
                 },
                 {
-                    question: "What about the People I am not Compatible with?",
+                    question: "What if I want to hide my social profile from the Datsme app, and just want to focus on learning?",
                     answer: `
-                <p>The time you can truly grow as a human being, both professionally and personally, is when you have the opportunity to listen to people who are different from you.</p>
-                <p>Sometimes you remain in a fixed mindset when you hang around people who just agree with you or do the same things as you.</p>
-                <p>Friends who offer new perspectives, ideas, experiences and advice can help you learn more about yourself and will help you grow as a more well rounded person.</p>
-                <p>Since everything has become so temporary in these times, and People do not have the time, energy and emotions to invest in new friendships just to see people go away,</p>
-                <p>We encourage Compatibility because it helps to form long lasting and trustworthy relationships.</p>
+                    <p>Datsme allows you to turn off your social profile visibility. Follow these steps:</p>
+                    <p>
+                        A. Click the fourth icon (from the left) in the bottom bar of the Datsme app).<br />
+                        B. On the top right section of the screen, Click on the “Settings” icon.<br />
+                        C. Under the “Connect” section settings, The Social Profile button must be turned on.<br />
+                        D. Click on the blue button to turn it off.
+                    </p>
+                    <p>This will hide your social profile from the Datsme app and allow you to continue using the app without the social feature!</p>
                 `
                 },
                 {
-                    question: "What if I don’t want to answer the Psychology Questionnaire?",
+                    question: "How can I unblock a user profile on the Datsme app?",
                     answer: `
-                <p>Here’s why you would love to answer the Datsme Psychology Questionnaire :</p>
-                <ol>
-                    <li>
-                        <p>Journal of Science and Psychology tells us that it takes about 50 hours of sharing time with someone before you consider someone a casual friend. How can you find great friends? By investing your time, energy and efforts. Hit and Trial in Real Life or Social Media are your only options.</p>
-                        <p>Datsme helps you find new friends in minutes, and puts you in a strong position that no other social media platform can place you in.</p>
-                        <p>A 10 minutes successful Investment in the Datsme Psychological Algorithm can save you from a failed 3,000 minutes you would have invested to know someone and it would not have worked out. Just be in a better position.</p>
-                    </li>
-                    <li>
-                        <p>The Psychology Questions act as a firewall.</p>
-                        <p>This Firewall lets through smart and intellectual people, People who want meaningful friendships and those who want to find friends who complete them.</p>
-                        <p>Remember, Loneliness does not come from having less people around you. You can be around hundreds of people and still be lonely. Loneliness comes from not being able to share what you truly feel inside.</p>
-                    </li>
-                </ol>
+                    <p>To unblock a user on the Datsme app:</p>
+                    <p>
+                        A. Click the fourth icon (from the left) in the bottom bar of the Datsme app).<br />
+                        B. On the top right section of the screen, Click on the “Settings” icon.<br />
+                        C. Under the “Connect” section settings, Click on “Block List”.<br />
+                        D. Find the profile you want to unblock by clicking on the “Unblock” button.
+                    </p>
+                    <p>This is how you can unblock a user on the Datsme app!</p>
                 `
                 },
                 {
-                    question: "Can I use the Datsme App without answering the Questionnaire?",
+                    question: "I have deleted the Datsme app, but have an active subscription. How can I restore my purchases?",
                     answer: `
-                <p>Living in a hyper-stimulating world where patience has become so costly and everything is fighting for your attention, We understand that going through the Datsme Algorithm can be a little time taking.</p>
-                <p>Therefore, Before you start answering psychological questions, Click on the “I’ll Answer Later” Button to skip the question and enter the Datsme Platform.</p>
-                <p>If you have already started the Questionnaire, The “I’ll Answer later Button” will appear if :</p>
-                <ol>
-                    <li>
-                        <p>You leave the screen idle for 10 seconds</p>
-                    </li>
-                    <li>
-                        <p>You click anywhere on the screen except the questions or answers</p>
-                    </li>
-                </ol>
-                <p>Since Compatibility is the foundation of Datsme and you skipped the Psychological Compatibility Questionnaire, You cannot connect with other individuals unless you complete your answers. You can just explore the platform and see what the app is all about.</p>
+                    <p>To restore your purchases:</p>
+                    <p>
+                        A. Click the fourth icon (from the left) in the bottom bar of Datsme app).<br />
+                        B. On the top right section of the screen, Click on the “Settings” icon.<br />
+                        C. Under the “Misc” section settings, Scroll down and click on “Advanced Settings”.<br />
+                        D. Now, Click on “Restore Purchases”.
+                    </p>
+                    <p>If you have an active subscription, It will be restored!</p>
+                    <p>If you still have trouble restoring your purchases, Please connect with us at hello@datsme.io</p>
                 `
                 },
                 {
-                    question: "How can I change my answers?",
+                    question: "How can I delete my Datsme account?",
                     answer: `
-                <p>To change your answers/Re-answer the Datsme Questionnaire :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Go to Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>Click on “Change you Answers”</p>
-                    </li>
-                    <li>
-                        <p>When the popup comes, Select Yes.</p>
-                    </li>
-                </ol>
-                <p>Note : You will loose your previous answers and this would result in a different compatibility with every other person on the platform.</p>
+                    <p>To delete your Datsme account:</p>
+                    <p>
+                        A. Click the fourth icon (from the left) in the bottom bar of Datsme app).<br />
+                        B. On the top right section of the screen, Click on the “Settings” icon.<br />
+                        C. Under the “Misc” section settings, Scroll down and click on “Advanced Settings”.<br />
+                        D. Now, Click on “Delete my account”.<br />
+                        E. Select your reason for deleting the Datsme app, or click on “skip”.<br />
+                        F. Click on “Delete my account” popup.
+                    </p>
+                    <p>This will permanently delete your Datsme account!</p>
                 `
                 },
                 {
-                    question: "How does Datsme Tag Search work?",
+                    question: "How can I logout from the Datsme App?",
                     answer: `
-                <ol>
-                    <li>
-                        <p>First open the main Datsme View (2nd from left in the bottom bar) where you see all the profiles.</p>
-                    </li>
-                    <li>
-                        <p>In the 3-option panel above the main bottom bar, Click on the “Search” icon.</p>
-                    </li>
-                    <li>
-                        <p>You can now select Tags from different categories, Mix it up, Create your chain reaction and Find people your type.</p>
-                    </li>
-                    <li>
-                        <p>You can also type in the Tag Search Panel the tag that you want to search for.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How many tags can be used in a single search in Datsme Tag Search?",
-                    answer: `
-                <p>Currently, You can use 2 Tags at a time in a single search. But hey, This is just the beginning.</p>
-                <p>We have already tested Datsme Tag Search to work perfectly for 5 Tags at a time and this will increase.</p>
-                <p>As the number of users increase, The power of Datsme Tag Search would be unleashed.</p>
-                `
-                },
-                {
-                    question: "How does Datsme Location Search Work?",
-                    answer: `
-                <ol>
-                    <li>
-                        <p>First open the main Datsme View (2nd from left in the Bottom Bar) where you see all the profiles.</p>
-                    </li>
-                    <li>
-                        <p>In the 3-option panel above the main bottom bar, Click on the Leftmost “Search” icon.</p>
-                    </li>
-                    <li>
-                        <p>Tag Search is pre-selected. Select “Location Search” on its right side by clicking on it.</p>
-                    </li>
-                    <li>
-                        <p>You can now select Tags from different locations in the Quick Suggestions.</p>
-                    </li>
-                    <li>
-                        <p>You can also type in the Location Search Panel the place that you want to search for.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "What are the locations where Datsme Location Search is available right now?",
-                    answer: `
-                <p>Right now, Datsme Location Search is available in the following cities :</p>
-                <ol>
-                    <li><p>Delhi</p></li>
-                    <li><p>Hyderabad</p></li>
-                    <li><p>Bangalore</p></li>
-                    <li><p>Mumbai</p></li>
-                    <li><p>Pune</p></li>
-                    <li><p>Chennai</p></li>
-                    <li><p>Kolkata</p></li>
-                    <li><p>Lucknow</p></li>
-                    <li><p>Jaipur</p></li>
-                    <li><p>Kerala</p></li>
-                    <li><p>Ahmedabad</p></li>
-                    <li><p>Chandigarh</p></li>
-                    <li><p>Vadodara</p></li>
-                </ol>
-                `
-                },
-                {
-                    question: "How does Datsme Map Mode work?",
-                    answer: `
-                <ol>
-                    <li>
-                        <p>First open the Main Datsme View (2nd from left, in the Bottom Bar) where you see all the profiles.</p>
-                    </li>
-                    <li>
-                        <p>In the 3-option panel above the Main Bottom Bar, Click on the Rightmost “Location” icon to enter the Datsme Map Mode.</p>
-                    </li>
-                    <li>
-                        <p>You can now see the Top Profile Bar and The Top 150 Users relevant to you, on the map.</p>
-                    </li>
-                    <li>
-                        <p>To go back, Click on the “Cross” Icon which will take you back to Main Datsme View.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "Can I hide myself from the Map?",
-                    answer: `
-                <p>Yes. You can hide yourself from the Map by following the steps below :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Open Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>In Settings, You will see “Map Settings”</p>
-                    </li>
-                    <li>
-                        <p>Turn ON “Invisible Mode” to hide yourself from the Map.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "Where can I access the Map Settings?",
-                    answer: `
-                <p>You can access the Map Settings as follows :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Open Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>In Settings, You will see “Map Settings”</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "Does the Map show my exact location? Is it safe?",
-                    answer: `
-                <p>Before we even thought of creating the Map Mode, We were concerned about the Safety and Privacy of females. We don’t want anyone should suffer any harm because of us, and thus, we have taken the following initiatives to keep everyone safe :</p>
-                <ol>
-                    <li>
-                        <p>Your location is displaced in a way that nobody can track where you exactly live or which area you live in. Stalkers and Creeps won’t be able to find you through the Map Mode.</p>
-                    </li>
-                    <li>
-                        <p>The Zoom of the Map is locked in a way that nobody can track you from the Map</p>
-                    </li>
-                </ol>
-                <p>We care about you, and are concerned about your privacy.</p>
-                `
-                },
-                {
-                    question: "Can I use Multiple Modes at the same time?",
-                    answer: `
-                <p>No, You cannot use Multiple Modes at the same time. Compatibility is the foundation of Datsme, Thus it is coupled with every other feature.</p>
-                <p>Therefore, You will have to use only One Mode at a time :</p>
-                <ol>
-                    <li>
-                        <p>Datsme with Compatibility and Filter/Sort</p>
-                    </li>
-                    <li>
-                        <p>Datsme Tag Search with Compatibility</p>
-                    </li>
-                    <li>
-                        <p>Datsme Location Search with Compatibility</p>
-                    </li>
-                    <li>
-                        <p>Datsme Map Mode with Compatibility</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "Can I use Datsme without giving Location Permissions?",
-                    answer: `
-                <p>Social Psychological Research finds that proximity or propinquity is the greatest predictor of friendships. This is where location comes into the picture. Datsme Algorithm is based on Location so that you can meet the people to talk.</p>
-                <p>No, You cannot use Datsme without enabling Location Permissions. But if you want to hide yourself from the Datsme Map :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Open Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>In Settings, You will see “Map Settings”</p>
-                    </li>
-                    <li>
-                        <p>Turn ON “Invisible Mode” to hide yourself from the Map.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How can I access Settings from the app?",
-                    answer: `
-                <p>To open settings on your app :</p>
-                <ol>
-                    <li>
-                        <p>From the bottom bar of the app, Open the first icon from the left.</p>
-                    </li>
-                    <li>
-                        <p>This icon opens your profile.</p>
-                    </li>
-                    <li>
-                        <p>On the Top Right of the screen, Click the “Gear” Icon to open “Settings”</p>
-                    </li>
-                </ol>
+                    <p>To log out from the Datsme app:</p>
+                    <p>
+                        A. Click the fourth icon (from the left) in the bottom bar of the Datsme app).<br />
+                        B. On the top right section of the screen, Click on the “Settings” icon.<br />
+                        C. Under the “Misc” section settings, Scroll down and click on “Logout”.<br />
+                        D. Now, Click on “Yes, Log out” to confirm.
+                    </p>
                 `
                 }
             ]
         },
         {
-            key: "User Levels and Tags",
+            key: "Pricing & Revenue Model",
             questions: [
                 {
-                    question: "What is the “Level” of a User?",
+                    question: "What is Datsme Rise?",
                     answer: `
-                <p>The “Level of a User” determines the Authenticity and Visibility of a User in the Datsme App.</p>
-                <p>Since a higher level means more tags added to your profile, This gives people a chance to approach you in more friendly and interactive ways possible to break the ice.</p>
-                <p>The more your level, The more other people would want to be in touch with you because of your “Authentic” Profile</p>
-                <p>The more the level, The higher is your Visibility in the app and more people can see you.</p>
+                    <p>Unlock the full potential of the Learn section of Datsme! The <strong>#1 choice</strong> for raising your social EQ through science and skill-building for better connecting!</p>
+                    <p><strong>Benefits of Datsme Rise:</strong></p>
+                    <p>
+                        - Learn from the world’s leading experts.<br />
+                        - Master the art of meaningful friendships.<br />
+                        - Feel happy, secure and fulfilled.
+                    </p>
+                    <p><strong>Features of Datsme Rise:</strong></p>
+                    <p>
+                        - 80+ Masterclass Sessions unlocked!<br />
+                        - Learn from the world’s leading experts.<br />
+                        - Gain full access to our vault of acclaimed Expert Sessions.<br />
+                        - Regular updates with new content catering to social wellness development in a holistic manner.
+                    </p>
                 `
                 },
                 {
-                    question: "How can I increase my Level?",
+                    question: "What is Datsme Spark?",
                     answer: `
-                <p>To increase your level :</p>
-                <ol>
-                    <li>
-                        <p>Open your Profile</p>
-                    </li>
-                    <li>
-                        <p>Click on either the “Orange Level button” below the profile picture, or on the “Edit Tags button” by scrolling down to your Tags box in your profile.</p>
-                    </li>
-                    <li>
-                        <p>This will lead you to a screen where you see a lot of Levels.</p>
-                    </li>
-                    <li>
-                        <p>Each Level has Multiple Categories</p>
-                    </li>
-                    <li>
-                        <p>Answer any level to get a +1 Level Up</p>
-                    </li>
-                    <li>
-                        <p>There is no order. You can answer whatever you like first.</p>
-                    </li>
-                </ol>
-                <p>This is how you can Level Up till a maximum of Level 9.</p>
+                    <p>Unlock the full potential of the Connect section of Datsme! The #1 choice for meeting, connecting, and building meaningful connections.</p>
+                    <p><strong>Benefits of Datsme Spark:</strong></p>
+                    <p>
+                        - Access to 300+ elite members of The Twelve Rings community.<br />
+                        - Advanced matching based on your bonding style.<br />
+                        - 3X More profiles & enhanced visibility.<br />
+                        - 150+ Message Requests.
+                    </p>
+                    <p><strong>Features of Datsme Spark:</strong></p>
+                    <p>
+                        - Explore & connect with mindful individuals of The Twelve Rings community.<br />
+                        - 5 Message Requests/day (150+ Message Requests/month).<br />
+                        - 10 connections/day (300 connections/month).<br />
+                        - 3X social visibility for more connections!
+                    </p>
                 `
                 },
                 {
-                    question: "Why should I increase my level? How does that help me?",
+                    question: "What is Datsme Sync?",
                     answer: `
-                <p>This is why you should increase your level :</p>
-                <ol>
-                    <li>
-                        <p>What you seek is seeking you : A Higher level means More Tags Updated on your profile. This gives people a chance to approach you in more friendly and interactive ways possible to break the ice.</p>
-                    </li>
-                    <li>
-                        <p>Higher Authenticity : The more your level, The more other people would want to be in touch with you because of your “Authentic” Profile</p>
-                    </li>
-                    <li>
-                        <p>Higher Visibility : The more the level, The higher is your Visibility in the app and more people can see you.</p>
-                    </li>
-                </ol>
+                    <p>Unlock the full potential of the Manage section of Datsme! Bring thoughtfulness & depth to your personal & professional network!</p>
+                    <p><strong>Benefits of Datsme Sync:</strong></p>
+                    <p>
+                        - Consciously build & manage your circles.<br />
+                        - Carry the people who matter to you.<br />
+                        - Defeat the constraints of a busy life.
+                    </p>
+                    <p><strong>Features of Datsme Sync:</strong></p>
+                    <p>
+                        - Manage up to 30 connections.<br />
+                        - Add, edit and customize up to 5 categories.<br />
+                        - Reminder notes - Unlocked!
+                    </p>
                 `
                 },
                 {
-                    question: "How can I change my Tags?",
+                    question: "What is Datsme Hybrid?",
                     answer: `
-                <p>To change the Nature, Political Opinion, Animal Preference and Eating Habits :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Go to Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>Click on “Change you Answers”</p>
-                    </li>
-                    <li>
-                        <p>When the popup comes, Select Yes.</p>
-                    </li>
-                </ol>
-                <p>To change all the other Tags :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Click on either the “Orange Level button” below the profile picture, or on the “Edit Tags button” by scrolling down to your Tags box in your profile.</p>
-                    </li>
-                    <li>
-                        <p>This will lead you to a screen where you see a lot of Levels.</p>
-                    </li>
-                    <li>
-                        <p>Each Level has Multiple Categories</p>
-                    </li>
-                    <li>
-                        <p>Update the new tags and save the changes by clicking on the “Tick” icon in the bottom right.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How can I change my Top 5 Tags displayed to everyone?",
-                    answer: `
-                <p>Datsme view displays your profile to everyone in 3 blocks :</p>
-                <ol>
-                    <li>
-                        <p>First block - Profile Picture, Location, Age, College/Workplace</p>
-                    </li>
-                    <li>
-                        <p>Second block - Bio and Compatibility</p>
-                    </li>
-                    <li>
-                        <p>Third Block - Your 5 Tags</p>
-                    </li>
-                </ol>
-                <p>By Default, The Top 5 tags are : Zodiac, Nature, Eating Habits, Political Inclination and Animal Preferences</p>
-                <p>The power to change these top 5 tags is only given to our maximum level user i.e Level 9 User.</p>
-                <p>Once you are a Level 9 User,</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Click on either the “Orange Level button” below the profile picture, or on the “Edit Tags button” by scrolling down to your Tags box in your profile.</p>
-                    </li>
-                    <li>
-                        <p>In the topmost box, Click “Customize Tags”</p>
-                    </li>
-                    <li>
-                        <p>From this screen, You can select your Top 5 Tags that would be visible to everyone.</p>
-                    </li>
-                </ol>
-                `
-                }
-            ]
-        },
-        {
-            key: "Profile and Account Settings",
-            questions: [
-                {
-                    question: "How can I edit my Profile?",
-                    answer: `
-                <p>To Edit your Profile info, Open your Profile, Tap the “Edit Profile” (Pencil Icon) below your Profile Picture.</p>
-                <p>Here, You can edit the following sections :</p>
-                <ol>
-                    <li>
-                        <p>Profile Picture</p>
-                    </li>
-                    <li>
-                        <p>Location</p>
-                    </li>
-                    <li>
-                        <p>Working at</p>
-                    </li>
-                    <li>
-                        <p>Studying at</p>
-                    </li>
-                    <li>
-                        <p>Say Something about Yourself</p>
-                    </li>
-                </ol>
-                <p>You are not allowed to edit the following sections :</p>
-                <ol>
-                    <li>
-                        <p>Name</p>
-                    </li>
-                    <li>
-                        <p>Date of Birth</p>
-                    </li>
-                    <li>
-                        <p>Gender</p>
-                    </li>
-                </ol>
-                <p>If you have any problem regarding these 3, Please delete your account and sign in again.</p>
-                `
-                },
-                {
-                    question: "What all I can edit in my profile once I have created my account?",
-                    answer: `
-                <p>You can edit the following sections :</p>
-                <ol>
-                    <li>
-                        <p>Profile Picture</p>
-                    </li>
-                    <li>
-                        <p>Location</p>
-                    </li>
-                    <li>
-                        <p>Working at</p>
-                    </li>
-                    <li>
-                        <p>Studying at</p>
-                    </li>
-                    <li>
-                        <p>Say Something about Yourself</p>
-                    </li>
-                </ol>
-                <p>You are not allowed to edit the following sections :</p>
-                <ol>
-                    <li>
-                        <p>Name</p>
-                    </li>
-                    <li>
-                        <p>Date of Birth</p>
-                    </li>
-                    <li>
-                        <p>Gender</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How can I pause my account?",
-                    answer: `
-                <p>To Pause your account :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Go to Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>Scroll down and Click on “Delete my Account”</p>
-                    </li>
-                    <li>
-                        <p>When the popup comes, Select “Pause my Account” on the right side.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How can I delete my account?",
-                    answer: `
-                <p>To Delete your account :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Go to Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>Scroll down and Click on “Delete my Account”</p>
-                    </li>
-                    <li>
-                        <p>When the popup comes, Select “Yes, Delete It” on the left side.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How can I change my Profile picture in the app?",
-                    answer: `
-                <ol>
-                    <li>
-                        <p>Open your Profile</p>
-                    </li>
-                    <li>
-                        <p>Tap the “Edit Profile” (Pencil Icon) below your Profile Picture.</p>
-                    </li>
-                    <li>
-                        <p>On your Profile Picture, You will see “Tap to Change”</p>
-                    </li>
-                    <li>
-                        <p>Click anywhere on the Profile Picture</p>
-                    </li>
-                    <li>
-                        <p>You can now choose from “Camera” or “Gallery” to change your profile picture.</p>
-                    </li>
-                    <li>
-                        <p>Scroll Down and click on “Continue” to save your changes.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How can I change my workplace/educational institute in the app?",
-                    answer: `
-                <ol>
-                    <li>
-                        <p>Open your Profile</p>
-                    </li>
-                    <li>
-                        <p>Tap the “Edit Profile” (Pencil Icon) below your Profile Picture.</p>
-                    </li>
-                    <li>
-                        <p>Scroll down to “I am currently” section</p>
-                    </li>
-                    <li>
-                        <p>Select “Working” or “Studying”</p>
-                    </li>
-                    <li>
-                        <p>You can edit your Workplace/Educational Institute here</p>
-                    </li>
-                    <li>
-                        <p>Scroll Down and click on “Continue” to save your changes.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How can I change my location?",
-                    answer: `
-                <ol>
-                    <li>
-                        <p>Open your Profile</p>
-                    </li>
-                    <li>
-                        <p>Tap the “Edit Profile” (Pencil Icon) below your Profile Picture.</p>
-                    </li>
-                    <li>
-                        <p>Scroll down to “Where do you Live?” section</p>
-                    </li>
-                    <li>
-                        <p>Update your Location</p>
-                    </li>
-                    <li>
-                        <p>Scroll down and click on “Continue” to save your changes.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How can I change my Gender?",
-                    answer: `
-                <p>For now, Datsme does not allow you to change your Gender once you have created your account. You will have to Delete that account, and make a new one through a different means.</p>
-                <p>To Delete your account :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Go to Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>Scroll down and Click on “Delete my Account”</p>
-                    </li>
-                    <li>
-                        <p>When the popup comes, Select “Yes, Delete It” on the left side.</p>
-                    </li>
-                </ol>
-                <p>When signing up again, Out of the three options - Facebook, Google and Mobile Number, Whatever method you used to sign up before deleting your account, You cannot use that now. Example : If you signed up using Mobile Number and you had to delete your name, You will now have to sign up using Facebook or Google</p>
-                `
-                },
-                {
-                    question: "How can I change my name?",
-                    answer: `
-                <p>For now, Datsme does not allow you to change your Name once you have created your account. You will have to Delete that account, and make a new one through a different means.</p>
-                <p>To Delete your account :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Go to Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>Scroll down and Click on “Delete my Account”</p>
-                    </li>
-                    <li>
-                        <p>When the popup comes, Select “Yes, Delete It” on the left side.</p>
-                    </li>
-                </ol>
-                <p>When signing up again, Out of the three options - Facebook, Google and Mobile Number, Whatever method you used to sign up before deleting your account, You cannot use that now. Example : If you signed up using Mobile Number and you had to delete your name, You will now have to sign up using Facebook or Google</p>
-                `
-                },
-                {
-                    question: "How can I change my status/bio?",
-                    answer: `
-                <ol>
-                    <li>
-                        <p>Open your Profile</p>
-                    </li>
-                    <li>
-                        <p>Tap the “Edit Profile” (Pencil Icon) below your Profile Picture.</p>
-                    </li>
-                    <li>
-                        <p>Scroll down to “Describe Yourself” section</p>
-                    </li>
-                    <li>
-                        <p>Update your Bio/Say Something about Yourself</p>
-                    </li>
-                    <li>
-                        <p>Scroll down and click on “Continue” to save your changes.</p>
-                    </li>
-                </ol>
-                `
-                }
-            ]
-        },
-        {
-            key: "People and Friends",
-            questions: [
-                {
-                    question: "Can I search for a specific person in the app?",
-                    answer: `
-                <p>Datsme was designed to help you find compatible friends around you, so currently we do not have the option to search for specific people.</p>
-                <p>But how cool would it be to check your compatibility with people you already know?</p>
-                <p>And how cool would it be to check the compatibility of your group?</p>
-                <p>Amazing Features Incoming. Stay Tuned!</p>
-                `
-                },
-                {
-                    question: "How can I add someone as a Friend?",
-                    answer: `
-                <ol>
-                    <li>
-                        <p>You can explore new people either from Datsme View, Datsme Tag Search, Datsme location Search and Datsme Map Mode.</p>
-                    </li>
-                    <li>
-                        <p>Click on their picture to open their profile.</p>
-                    </li>
-                    <li>
-                        <p>On their Profile, You would see a circular floating button on the right side.</p>
-                    </li>
-                    <li>
-                        <p>This button is the “Add Friend” button.</p>
-                    </li>
-                    <li>
-                        <p>Click on this button to add someone as a Friend.</p>
-                    </li>
-                    <li>
-                        <p>Once added as Friends, Open the last panel (Rightmost) in the Bottom bar of Datsme and click on “Friends List”</p>
-                    </li>
-                    <li>
-                        <p>You can find your new friends there.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "Where do I see my Friends?",
-                    answer: `
-                <ol>
-                    <li>
-                        <p>From the Bottom bar of Datsme, Open the 4th from Left (Rightmost) Icon</p>
-                    </li>
-                    <li>
-                        <p>On Top, Click on “Friends List”</p>
-                    </li>
-                    <li>
-                        <p>Here, You can see all your Friends</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How do I message someone?",
-                    answer: `
-                <ol>
-                    <li>
-                        <p>To message someone, You need to add someone as your Friend.</p>
-                    </li>
-                    <li>
-                        <p>Once added as Friend</p>
-                    </li>
-                    <li>
-                        <p>Go to the 4th Icon from the Left (Rightmost) in the Datsme Bottom Bar</p>
-                    </li>
-                    <li>
-                        <p>Open “Friends List”</p>
-                    </li>
-                    <li>
-                        <p>Find the person you want to talk to and open their profile.</p>
-                    </li>
-                    <li>
-                        <p>Click on the “Send Message” floating button on the right to send a message.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How do I report someone?",
-                    answer: `
-                <p>To report someone :</p>
-                <ol>
-                    <li>
-                        <p>Open their Profile</p>
-                    </li>
-                    <li>
-                        <p>On the Top Right Corner, Click on the “3 dots” Icon</p>
-                    </li>
-                    <li>
-                        <p>When Popup comes, Tap on “Report” Icon</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How do I block someone?",
-                    answer: `
-                <p>To block someone :</p>
-                <ol>
-                    <li>
-                        <p>Open their Profile</p>
-                    </li>
-                    <li>
-                        <p>On the Top Right Corner, Click on the “3 dots” Icon</p>
-                    </li>
-                    <li>
-                        <p>When Popup comes, Tap on “Block” Icon</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "How do I unblock someone?",
-                    answer: `
-                <p>To unblock someone you have blocked earlier :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Go to Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>Scroll Down and click on “Block List”</p>
-                    </li>
-                    <li>
-                        <p>Click “Unblock” in front of the name of the person you want to unblock.</p>
-                    </li>
-                </ol>
-                `
-                },
-                {
-                    question: "Is the app only for Heterosexuals?",
-                    answer: `
-                <p>Datsme is for everyone! Although we started with males and females only, Now you can select “Others” as your Gender while creating your account on the Datsme App.</p>
-                <p>Everyone needs compatible friends who understand and uplift them right?</p>
-                <p>This is what Datsme is all about. Download the Datsme App now.</p>
-                `
-                },
-                {
-                    question: "How can I share the app with my friends?",
-                    answer: `
-                <p>To share the app with your friends :</p>
-                <ol>
-                    <li>
-                        <p>Go to your Profile</p>
-                    </li>
-                    <li>
-                        <p>Go to Settings in the Top Right corner</p>
-                    </li>
-                    <li>
-                        <p>Click on either the “Share button” or the “Illustration” and a popup will come</p>
-                    </li>
-                    <li>
-                        <p>Select the means through which you want to share the app. Example : Whatsapp, Gmail etc</p>
-                    </li>
-                </ol>
-                <p>This is how you can share the app with your friends.</p>
+                    <p>Unlock the full potential of the Datsme app! The #1 choice for elevating all your bonds through ongoing learning & meaningful connecting!</p>
+                    <p><strong>Benefits of Datsme Hybrid:</strong></p>
+                    <p>
+                        - Full access to all Expert Sessions.<br />
+                        - Premium access to Datsme Social.<br />
+                        - Elevate your social EQ with Datsme.
+                    </p>
+                    <p><strong>Features of Datsme Hybrid:</strong></p>
+                    <p>
+                        - 80+ Masterclass Sessions unlocked!<br />
+                        - Learn from the world’s leading experts.<br />
+                        - Gain full access to our vault of acclaimed Expert Sessions.<br />
+                        - Regular updates with new content catering to social wellness development in a holistic manner.<br />
+                        - Explore & connect with mindful individuals of The Twelve Rings community.<br />
+                        - 5 Message Requests/day (150+ Message Requests/month).<br />
+                        - 10 connections/day (300 connections/month).<br />
+                        - 3X social visibility for more connections!
+                    </p>
                 `
                 }
             ]
@@ -1257,13 +918,11 @@ const Faq = () => {
                     <h2>Table Of Content</h2>
                     <ul className="content--list">
                         {faqData.map((item, index) => (
-                            <li key={index}>
-                                <a
-                                    className={`content--link ${item.key === activeKey ? 'content--link--active' : ''}`}
-                                    onClick={() => setActiveKey(item.key)}
-                                >
-                                    {item.key}
-                                </a>
+                            <li key={index}
+                                className={`content--link ${item.key === activeKey ? 'content--link--active' : ''}`}
+                                onClick={() => setActiveKey(item.key)}
+                            >
+                                {item.key}
                             </li>
                         ))}
                     </ul>
@@ -1273,13 +932,15 @@ const Faq = () => {
                 <h2>{activeKey}</h2>
                 <div className="faq__section">
                     <div className="faq__ques__section">
-                        {faqData.map((item, index) => (
+                        {faqData.map((item, index) =>
                             item.key === activeKey &&
                             item.questions.map((question, qIndex) => (
                                 <div className="faq__item" key={qIndex}>
                                     <div
                                         className={`faq__item--head ${activeIndex.includes(qIndex) ? 'ques--active' : ''}`}
-                                        onClick={() => setActiveIndex([qIndex])}
+                                        onClick={() => {
+                                            setActiveIndex([qIndex])
+                                        }}
                                     >
                                         <strong>
                                             <p>{question.question}</p>
@@ -1294,7 +955,7 @@ const Faq = () => {
                                     ></div>
                                 </div>
                             ))
-                        ))}
+                        )}
                     </div>
                 </div>
             </div>

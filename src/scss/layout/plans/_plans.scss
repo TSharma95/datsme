@@ -18,7 +18,8 @@
 
             h1 {
                 text-align: center;
-                @include text(700, 7.2rem, 8.8rem, -0.01rem, #2E303A);
+                @include text(700, clamp(6.4rem, 1.961vw + 4.455rem, 7.2rem), clamp(7.7rem, 2.696vw + 5.025rem, 8.8rem), -0.1rem, #2E303A);
+                margin-bottom: 2.4rem;
 
                 span {
                     color: #4861E6;
@@ -50,14 +51,15 @@
                 "d d d d d d d d d";
 
             .plangrid {
-                width: 46.5rem;
-                height: 48rem;
+                width: clamp(37.6rem, 19.778vw + 11.889rem, 46.5rem);
+                height: 53rem;
                 border-radius: 4.8rem;
                 position: relative;
                 padding: 3.2rem;
                 @include display(column, flex-start, space-between);
                 background-repeat: no-repeat;
                 background-size: cover;
+                padding-bottom: 1rem;
 
                 &__toggle {
                     background: rgba(255, 255, 255, 0.12);
@@ -68,6 +70,7 @@
                     text-align: center;
                     position: relative;
                     @include text(600, 1.2rem, 1.5rem, null, #FFFFFF);
+                    z-index: 2;
 
                     &--checkbox {
                         cursor: pointer;
@@ -76,7 +79,6 @@
                         width: 100%;
                         height: 100%;
                         opacity: 0;
-                        z-index: 2;
 
                         &:checked+.plangrid__toggle--label {
                             span:nth-child(1) {
@@ -130,15 +132,22 @@
                     }
                 }
 
-
                 .hoverImage--rise {
-                    width: 17.37rem;
-                    height: 24.7rem;
+                    width: clamp(12.7rem, 11.75vw + -3.163rem, 17.4rem);
+                    height: clamp(18rem, 16.75vw + -4.612rem, 24.7rem);
                     @include position(top, -6.6rem, right, 4rem);
 
+                    @media (max-width: 1525px) {
+                        @include position(top, -5.6rem, right, 3rem);
+                    }
+
+                    @media (max-width: 1400px) {
+                        @include position(top, -4.4rem, right, 2rem);
+                    }
+
                     img {
-                        width: auto;
-                        height: auto;
+                        width: clamp(9.8rem, 9.25vw + -2.688rem, 13.5rem);
+                        height: clamp(15.7rem, 14.75vw + -4.213rem, 21.6rem);
                     }
 
                     .ellipse {
@@ -147,13 +156,21 @@
                 }
 
                 .hoverImage--hybrid {
-                    width: 21.89rem;
-                    height: 24.7rem;
+                    width: clamp(15rem, 17.25vw + -8.287rem, 21.9rem);
+                    height: clamp(16.6rem, 15vw + -3.65rem, 22.6rem);
                     @include position(top, -6.6rem, right, 1rem);
 
+                    @media (max-width: 1525px) {
+                        top: -5.6rem;
+                    }
+
+                    @media (max-width: 1400px) {
+                        top: -4.4rem;
+                    }
+
                     img {
-                        width: auto;
-                        height: auto;
+                        width: clamp(14rem, 12.75vw + -3.212rem, 19.1rem);
+                        height: clamp(16.6rem, 14.75vw + -3.313rem, 22.5rem);
                     }
 
                     .ellipse {
@@ -162,13 +179,21 @@
                 }
 
                 .hoverImage--ace {
-                    width: 15.28rem;
-                    height: 24rem;
+                    width: clamp(11.1rem, 10.5vw + -3.075rem, 15.3rem);
+                    height: clamp(17.5rem, 16.25vw + -4.438rem, 24rem);
                     @include position(top, -6.6rem, right, 4rem);
 
+                    @media (max-width: 1525px) {
+                        top: -5.6rem;
+                    }
+
+                    @media (max-width: 1400px) {
+                        top: -4.4rem;
+                    }
+
                     img {
-                        width: auto;
-                        height: auto;
+                        width: clamp(8.6rem, 4vw + 3.2rem, 10.2rem);
+                        height: clamp(16.8rem, 11.25vw + 1.613rem, 21.3rem);
                     }
 
                     .ellipse {
@@ -178,49 +203,53 @@
 
                 &__hoverImage {
                     @include display(null, flex-start, flex-end);
-                    z-index: 1;
+                    z-index: 0;
 
                     .ellipse {
-                        width: 10rem;
-                        height: 4rem;
+                        width: clamp(7rem, 7.5vw + -3.125rem, 10rem);
+                        height: clamp(3rem, 2.5vw + -0.375rem, 4rem);
                         background: radial-gradient(114.68% 1012.27% at 50% 50%, #242D55 0%, rgba(36, 45, 85, 0) 100%);
                         opacity: .45;
                         filter: blur(1.25rem);
-                        border-radius: 10rem / 4rem;
+                        border-radius: clamp(7rem, 7.5vw + -3.125rem, 10rem) / clamp(3rem, 2.5vw + -0.375rem, 4rem);
                         z-index: -1;
                         transform: skew(-60deg, 10deg);
                     }
                 }
 
-
                 &__content {
-                    width: 40.1rem;
-                    height: 29.4rem;
-                    @include display(row, flex-start, space-between);
+                    width: 100%;
+                    height: 37rem;
+                    @include display(column, flex-start, space-between);
                     overflow: hidden;
                     position: relative;
+                    z-index: 2;
 
                     &--overview {
-                        width: 26.9rem;
-                        height: 29.3rem;
-                        @include display(column, flex-start, space-between);
+                        width: 100%;
+                        height: auto;
+                        @include display(column, flex-start, flex-start);
                         transform: translateX(-35rem);
                         opacity: 0;
+                        margin-bottom: 2rem;
                         // transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
                         h2 {
                             width: 20.6rem;
-                            height: 9.6rem;
+                            height: auto;
                             @include text(700, 4rem, 4.8rem, null, #FFFFFF);
+                            margin-bottom: 0.5rem;
                         }
 
                         p {
                             @include text(300, 1.4rem, 2.1rem, null, #E4E9F1);
+                            margin-bottom: 2rem;
+                            max-width: 30rem;
                         }
 
                         .card {
-                            width: 26.9rem;
-                            height: 10.8rem;
+                            width: 100%;
+                            height: auto;
                             background: rgba(255, 255, 255, 0.06);
                             border-radius: 1.2rem;
                             padding: 1.6rem;
@@ -233,6 +262,11 @@
                                 li {
                                     @include text(400, 1.2rem, 1.5rem, null, #FFFFFF);
                                     @include display(row, null, space-between);
+                                    margin-bottom: 0.8rem;
+
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
 
                                     img {
                                         width: 2rem;
@@ -245,8 +279,7 @@
                     }
 
                     &--detailed {
-                        width: 28.4rem;
-                        height: 29.3rem;
+                        height: 28.3rem;
                         @include display(column, flex-start, space-between);
                         @include position(top, 0, left, 0);
                         transform: translateX(-35rem);
@@ -258,8 +291,9 @@
                         }
 
                         p {
-                            width: 29.4rem;
+                            width: 80%;
                             @include text(300, 1.4rem, 2.1rem, -0.012rem, #FDF2FF);
+                            margin-bottom: 2.4rem
                         }
 
                         h3 {
@@ -287,6 +321,10 @@
                                 &:first-child {
                                     margin-top: 1.2rem;
                                 }
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
                             }
                         }
                     }
@@ -298,13 +336,13 @@
                     }
 
                     &--price {
-                        width: 11.8rem;
-                        height: 7.7rem;
-                        margin-bottom: 2rem;
-                        @include display(column, flex-start, space-between);
-                        align-self: flex-end;
-                        transform: translateX(35rem);
+                        width: 19rem;
+                        height: 4.8rem;
+                        margin-bottom: 2.8rem;
+                        @include display(null, flex-start, space-between);
+                        transform: translateX(-35rem);
                         opacity: 0;
+                        @include position(bottom, -1.2rem, left, 0);
 
                         .discount {
                             padding: 0.6rem;
@@ -325,14 +363,15 @@
                         }
 
                         .price {
-                            width: 100%;
+                            width: 65%;
                             height: 4.8rem;
-                            @include display(row, center, space-between);
+                            @include display(row, center, flex-start);
                             flex-wrap: wrap;
 
                             span:nth-child(1) {
                                 @include text(500, 1.2rem, 1.5rem, null, #E4E9F1);
                                 text-decoration-line: line-through;
+                                margin-right: 1rem;
                             }
 
                             span:nth-child(2) {
@@ -346,10 +385,6 @@
                         }
                     }
 
-                    .priceYearly {
-                        @include position(bottom, 0, right, 0);
-                    }
-
                     .priceActive {
                         transform: translateX(0);
                         opacity: 1;
@@ -358,7 +393,7 @@
                 }
 
                 &__viewDetail {
-                    width: 39.8rem;
+                    width: 100%;
                     height: 5.6rem;
                     border-top: 0.12rem solid;
                     border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
@@ -390,12 +425,18 @@
                 background: url('/public/assets/ace-bg.svg');
             }
 
+            &--upgrade--small {
+                grid-area: d;
+                display: none !important;
+            }
+
             &--upgrade {
                 grid-area: d;
                 width: 100%;
-                height: 60rem;
+                height: 56rem;
                 background: url('/public/assets/upgrade-bg.svg');
                 border-radius: 4.8rem;
+                padding: 7.6rem clamp(7.6rem, 9.25vw + -4.888rem, 11.3rem);
 
                 .upgrade__container {
                     width: 100%;
@@ -406,14 +447,14 @@
 
                     .upgrade__content {
                         @include display(column, flex-start, space-between);
-                        width: 74.1rem;
-                        height: 48.7rem;
+                        width: clamp(53.2rem, 150vw + -149.3rem, 75.7rem);
+                        height: 100%;
                         overflow: hidden;
                         position: relative;
 
                         &--overview {
                             width: 100%;
-                            height: 30.7rem;
+                            height: 27.7rem;
                             @include display(column, flex-start, space-between);
                             margin-bottom: 3.2rem;
                             transform: translateX(-80rem);
@@ -438,14 +479,30 @@
                                 width: 100%;
                                 padding: 1.6rem;
                                 height: 4.7rem;
+                                flex-wrap: wrap;
                                 background: rgba(255, 255, 255, 0.12);
                                 border-radius: 1.2rem;
-                                @include display(null, center, space-between);
+                                @include display(null, center, flex-start);
+
+                                @media (max-width: 1500px) {
+                                    height: 7rem;
+                                    width: 51.4rem;
+
+                                    li {
+                                        &:nth-child(3) {
+                                            margin-right: 0;
+                                        }
+
+                                        &:nth-child(4) {
+                                            display: none;
+                                        }
+                                    }
+                                }
 
                                 li {
-                                    @include text(400, 1.2rem, 1.5rem, null, #FFF);
+                                    @include text(400, 1.2rem, 1.9rem, null, #FFF);
                                     list-style: none;
-                                    margin-left: 0;
+                                    margin-right: 1.6rem;
 
                                     &:nth-child(2),
                                     &:nth-child(4) {
@@ -454,13 +511,17 @@
                                         height: 0.4rem;
                                         border-radius: 50%;
                                     }
+
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
                                 }
                             }
                         }
 
                         &--detailed {
-                            width: 70rem;
-                            height: 27.5rem;
+                            width: 100%;
+                            height: auto;
                             @include display(column, flex-start, space-between);
                             @include position(top, 0, left, 0);
                             transform: translateX(-80rem);
@@ -469,11 +530,12 @@
 
                             .heading {
                                 width: 100%;
-                                height: 7.9rem;
+                                height: auto;
                                 @include display(column, flex-start, space-between);
 
                                 h2 {
-                                    @include text(700, 3.6rem, 4.5rem, null, #FFFFFF);
+                                    @include text(300, 3.6rem, 4.5rem, null, #FFFFFF);
+                                    margin-bottom: 0.6rem
                                 }
 
                                 p {
@@ -644,9 +706,415 @@
                     }
                 }
 
+                @media (max-width: 1350px) {
+                    display: none;
+                }
             }
         }
     }
+}
 
+@media (max-width: 1350px) {
+    .wrapper {
+        .plans {
+            &__header {
+                height: auto;
+                margin: clamp(15rem, 27.933vw + -12.709rem, 25rem) 0 clamp(10rem, 13.966vw + -3.855rem, 15rem) 0;
+            }
 
+            &__content {
+                width: auto;
+                grid-row-gap: 8rem;
+                grid-column-gap: 6.4rem;
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(8, 1fr);
+                grid-template-areas: "a a a b b b"
+                    "a a a b b b"
+                    "a a a b b b"
+                    "a a a b b b"
+                    "c c c d d d"
+                    "c c c d d d"
+                    "c c c d d d"
+                    "c c c d d d";
+
+                .plangrid {
+                    width: clamp(37.6rem, 24.86vw + 12.939rem, 46.5rem);
+
+                    &__hoverImage {
+                        .ellipse {
+                            width: clamp(7rem, 8.38vw + -1.313rem, 10rem);
+                            height: clamp(3rem, 2.793vw + 0.229rem, 4rem);
+                            border-radius: clamp(7rem, 8.38vw + -1.313rem, 10rem) / clamp(3rem, 2.793vw + 0.229rem, 4rem);
+                        }
+                    }
+
+                    .hoverImage--rise {
+                        width: clamp(12.7rem, 13.128vw + -0.323rem, 17.4rem);
+                        height: clamp(18rem, 18.715vw + -0.565rem, 24.7rem);
+                        @include position(top, -6.6rem, right, 4rem);
+
+                        @media (max-width: 1175px) {
+                            @include position(top, -5.6rem, right, 3rem);
+                        }
+
+                        @media (max-width: 1000px) {
+                            @include position(top, -4.4rem, right, 2rem);
+                        }
+
+                        img {
+                            width: clamp(9.8rem, 10.335vw + -0.453rem, 13.5rem);
+                            height: clamp(15.7rem, 16.48vw + -0.649rem, 21.6rem);
+                        }
+
+                        .ellipse {
+                            @include position(bottom, 0.9rem, left, 3.6rem);
+                        }
+                    }
+
+                    .hoverImage--hybrid {
+                        width: clamp(15rem, 19.274vw + -4.12rem, 21.9rem);
+                        height: clamp(16.6rem, 16.76vw + -0.026rem, 22.6rem);
+                        @include position(top, -6.6rem, right, 1rem);
+
+                        @media (max-width: 1175px) {
+                            top: -5.6rem;
+                        }
+
+                        @media (max-width: 1000px) {
+                            top: -4.4rem;
+                        }
+
+                        img {
+                            width: clamp(14rem, 14.246vw + -0.132rem, 19.1rem);
+                            height: clamp(16.6rem, 16.48vw + 0.251rem, 22.5rem);
+                        }
+
+                        .ellipse {
+                            @include position(bottom, -1rem, left, clamp(5.5rem, 5.587vw + -0.042rem, 7.5rem));
+                        }
+                    }
+
+                    .hoverImage--ace {
+                        width: clamp(11.1rem, 11.732vw + -0.538rem, 15.3rem);
+                        height: clamp(17.5rem, 18.156vw + -0.511rem, 24rem);
+                        @include position(top, -6.6rem, right, 4rem);
+
+                        @media (max-width: 1175px) {
+                            top: -5.6rem;
+                        }
+
+                        @media (max-width: 1000px) {
+                            top: -4.4rem;
+                        }
+
+                        img {
+                            width: clamp(8.6rem, 4.469vw + 4.166rem, 10.2rem);
+                            height: clamp(16.8rem, 12.57vw + 4.331rem, 21.3rem);
+                        }
+
+                        .ellipse {
+                            @include position(bottom, 1.4rem, left, clamp(3.5rem, 3.352vw + 0.175rem, 4.7rem));
+                        }
+                    }
+
+                    .hoverImage--upgrade {
+                        width: clamp(12.5rem, 18.436vw + -5.788rem, 19.1rem);
+                        height: clamp(15.5rem, 19.553vw + -3.897rem, 22.5rem);
+                        @include position(top, -6.6rem, right, 0rem);
+
+                        @media (max-width: 1175px) {
+                            top: -5.6rem;
+                        }
+
+                        @media (max-width: 1000px) {
+                            top: -4.4rem;
+                        }
+
+                        img {
+                            width: clamp(12.5rem, 18.436vw + -5.788rem, 19.1rem);
+                            height: clamp(15.5rem, 19.553vw + -3.897rem, 22.5rem);
+                        }
+
+                        .ellipse {
+                            @include position(bottom, -1rem, left, clamp(3rem, 3.911vw + -0.879rem, 4.4rem));
+                        }
+                    }
+                }
+
+                &--upgrade--small {
+                    grid-area: d;
+                    display: flex !important;
+                    background: url('/public/assets/upgrade-bg.svg');
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper {
+        .plans {
+            &__header {
+                height: auto;
+
+                h1 {
+                    margin-bottom: 2.4rem;
+                    font-size: clamp(5.6rem, 1.961vw + 3.655rem, 6.4rem);
+                    line-height: clamp(6.7rem, 2.451vw + 4.269rem, 7.7rem);
+                }
+            }
+
+            &__content {
+                grid-column-gap: 2.4rem;
+                grid-row-gap: 7rem;
+
+                .plangrid {
+                    width: 100%;
+                    max-width: 45.6rem;
+
+                    &__content--detailed p {
+                        width: 100%;
+                    }
+
+                    &__hoverImage {
+                        .ellipse {
+                            width: clamp(7rem, 8.38vw + -1.313rem, 10rem);
+                            height: clamp(3rem, 2.793vw + 0.229rem, 4rem);
+                            border-radius: clamp(7rem, 8.38vw + -1.313rem, 10rem) / clamp(3rem, 2.793vw + 0.229rem, 4rem);
+                        }
+                    }
+
+                    .hoverImage--rise {
+                        right: 0rem;
+                    }
+
+                    .hoverImage--hybrid {
+                        right: -1rem;
+
+                        img {
+                            width: 12rem;
+                            height: 14.3rem;
+                        }
+
+                        .ellipse {
+                            bottom: 1rem;
+                        }
+                    }
+
+                    .hoverImage--ace {
+                        right: 0;
+
+                        .ellipse {
+                            bottom: 1rem;
+                        }
+                    }
+
+                    .hoverImage--upgrade {
+                        right: -1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        .plans {
+            &__header {
+                width: 90%;
+                height: auto;
+                margin: clamp(10.6rem, 13.836vw + 4.374rem, 15rem) 0 clamp(6.4rem, 11.321vw + 1.306rem, 10rem) 0;
+
+                @media (max-width: 540px) {
+                    width: 100%;
+                    align-items: flex-start;
+
+                    h1,
+                    p {
+                        text-align: left;
+                    }
+                }
+
+                h1 {
+                    font-size: clamp(4.4rem, 3.774vw + 2.702rem, 5.6rem);
+                    line-height: clamp(5.3rem, 4.403vw + 3.319rem, 6.7rem);
+                    width: 80%;
+
+                    @media (max-width: 480px) {
+                        width: 100%;
+                    }
+                }
+
+                p {
+                    font-size: clamp(1.6rem, 1.258vw + 1.034rem, 2rem);
+                    line-height: clamp(2.4rem, 2.516vw + 1.268rem, 3.2rem);
+                }
+            }
+
+            &__content {
+                height: auto;
+                grid-row-gap: clamp(2.4rem, 46vw + -16rem, 7rem);
+                grid-column-gap: 0;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(8, 1fr);
+                grid-template-areas: "a a a"
+                    "a a a"
+                    "b b b"
+                    "b b b"
+                    "c c c"
+                    "c c c"
+                    "d d d"
+                    "d d d";
+
+                .plangrid {
+                    width: 100%;
+                    max-width: 45.6rem;
+                    border-radius: 3.2rem;
+
+                    &__content {
+                        &--overview {
+                            margin-bottom: 1.6rem;
+
+                            h2 {
+                                margin-bottom: 0;
+                            }
+
+                            p {
+                                margin-bottom: 1.6rem;
+                            }
+
+                            .card {
+                                padding: 1.2rem;
+                            }
+                        }
+
+                        &--detailed {
+                            ul {
+                                width: 100%;
+                            }
+                        }
+
+                        &--price {
+                            margin-bottom: 2.4rem;
+                        }
+                    }
+
+                    &__hoverImage {
+
+                        .ellipse {
+                            opacity: 0.5;
+                            filter: blur(1rem);
+                            width: clamp(6rem, 30vw + -6rem, 9rem);
+                            height: clamp(2rem, 20vw + -6rem, 4rem);
+                            border-radius: clamp(6rem, 30vw + -6rem, 9rem) / clamp(2rem, 20vw + -6rem, 4rem);
+                        }
+                    }
+
+                    .hoverImage--rise {
+                        width: auto;
+                        height: auto;
+                        @include position(top, -6.6rem, right, clamp(1rem, 30vw + -11rem, 4rem));
+
+                        @media (max-width: 500px) {
+                            top: -4.5rem;
+                        }
+
+                        @media (max-width: 425px) {
+                            top: -2rem;
+                        }
+
+                        img {
+                            width: clamp(7.2rem, 63vw + -18rem, 13.5rem);
+                            height: auto;
+                        }
+
+                        .ellipse {
+                            left: 50%;
+                            transform: translateX(-50%) skew(300deg, 9deg);
+                            bottom: -4%;
+                        }
+                    }
+
+                    .hoverImage--hybrid {
+                        width: auto;
+                        height: auto;
+                        @include position(top, -6.6rem, right, 1rem);
+
+                        @media (max-width: 500px) {
+                            top: -4.5rem;
+                        }
+
+                        @media (max-width: 425px) {
+                            top: -2rem;
+                            right: -1rem;
+                        }
+
+                        img {
+                            width: clamp(10rem, 91vw + -26.4rem, 19.1rem);
+                            height: auto;
+                        }
+
+                        .ellipse {
+                            left: 50%;
+                            transform: translateX(-50%) skew(300deg, 9deg);
+                            bottom: -5%;
+                        }
+                    }
+
+                    .hoverImage--ace {
+                        width: auto;
+                        height: auto;
+                        @include position(top, -6.6rem, right, 4rem);
+
+                        @media (max-width: 500px) {
+                            top: -4.5rem;
+                            right: 2rem;
+                        }
+
+                        @media (max-width: 425px) {
+                            top: -2rem;
+                        }
+
+                        img {
+                            width: clamp(6.5rem, 37vw + -8.3rem, 10.2rem);
+                            height: auto;
+                        }
+
+                        .ellipse {
+                            left: 50%;
+                            transform: translateX(-50%) skew(300deg, 9deg);
+                            bottom: 0;
+                        }
+                    }
+
+                    .hoverImage--upgrade {
+                        width: auto;
+                        height: auto;
+                        @include position(top, -6.6rem, right, 0rem);
+
+                        @media (max-width: 500px) {
+                            top: -4.5rem;
+                        }
+
+                        @media (max-width: 425px) {
+                            top: -2rem;
+                            right: -1rem;
+                        }
+
+                        img {
+                            width: clamp(10rem, 91vw + -26.4rem, 19.1rem);
+                            height: auto;
+                        }
+
+                        .ellipse {
+                            left: 50%;
+                            transform: translateX(-50%) skew(300deg, 9deg);
+                            bottom: -3%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -65,10 +65,10 @@
                         &:hover {
                             color: #4861E6;
                         }
+                    }
 
-                        .content--link--active{
-                            color: #4861E6;
-                        }
+                    .content--link--active {
+                        color: #4861E6;
                     }
                 }
             }
@@ -76,7 +76,7 @@
 
         &__container {
             background: radial-gradient(103.28% 101.91% at 102.03% 101.91%, #FFFFFF 0%, #FBFCFD 100%);
-            box-shadow: 0px 4.8rem 12rem rgba(66, 83, 146, 0.16);
+            box-shadow: 0px 4.8rem 12rem rgba(66, 83, 146, 0.26);
             border-radius: 4rem;
             width: clamp(60rem, 35.821vw + 15.224rem, 84rem);
             height: auto;
@@ -133,7 +133,7 @@
                         &--head {
                             width: 100%;
                             padding-top: 3rem;
-                            @include display(null, center, space-between);
+                            @include display(null, flex-start, space-between);
 
                             strong {
                                 width: 100%;
@@ -311,7 +311,7 @@
             &__container {
                 width: 100%;
                 background: radial-gradient(103.28% 101.91% at 102.03% 101.91%, #FFFFFF 0%, #FBFCFD 100%);
-                box-shadow: 0px 48px 120px rgba(66, 83, 146, 0.16);
+                box-shadow: 0px 48px 120px rgba(66, 83, 146, 0.28);
             }
         }
     }
@@ -347,6 +347,7 @@
                     ul {
 
                         li {
+                            margin-right: 7.6rem;
                             width: max-content;
                             font-size: clamp(2rem, 1.786vw + 0.629rem, 2.4rem);
                         }
@@ -394,6 +395,7 @@
 
                     ul {
                         li {
+                            margin-right: 2.8rem;
                             font-size: clamp(1.6rem, 0.98vw + 1.247rem, 2rem);
                         }
                     }

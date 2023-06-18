@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Plans = () => {
 
@@ -43,24 +43,18 @@ const Plans = () => {
                     <div className="plangrid__content">
                         <div className={`plangrid__content--overview overviewActive ${contentActive[0] ? 'contentActive' : ''}`}>
                             <h2>Datsme Rise</h2>
-                            <p>We help you build meaningful, reliable & enjoyable friendships. <strong>Yes, It's a
-                                skill!</strong></p>
+                            <p>The <strong>#1 choice</strong> for raising your social EQ through <strong>science and skill-building</strong> for better connecting</p>
                             <div className="card">
                                 <ul>
-                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> Elevate your
-                                        people skills</li>
-                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> Acquire the
-                                        key to social success</li>
-                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> Feel Happy,
-                                        Secure and Fulfilled</li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> Learn from the world’s leading experts</li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> Master the art of meaningful friendships</li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> Feel Happy, Secure and Fulfilled</li>
                                 </ul>
                             </div>
                         </div>
                         <div className={`plangrid__content--detailed detailedActive ${!contentActive[0] ? 'contentActive' : ''}`}>
                             <h2>Datsme Rise</h2>
-                            <p>We help you build meaningful, reliable & enjoyable friendships. <strong>Yes, It's a
-                                skill!</strong>
-                            </p>
+                            <p>The <strong>#1 choice</strong> for raising your social EQ through <strong>science and skill-building</strong> for better connecting</p>
                             <h3><strong>Monthly </strong>Subscription</h3>
                             <ul>
                                 <li>Unlimited Access to all Datsme Psychological Sessions - for a full month!</li>
@@ -108,21 +102,18 @@ const Plans = () => {
                     <div className="plangrid__content">
                         <div className={`plangrid__content--overview overviewActive ${contentActive[1] ? 'contentActive' : ''}`}>
                             <h2>Datsme Hybrid</h2>
-                            <p>The Best of Datsme, for the Best of <strong>Datsmeer!</strong></p>
+                            <p>The <strong>#1 choice</strong> for raising your social EQ through <strong>ongoing learning and meaningful connecting!</strong></p>
                             <div className="card">
                                 <ul>
-                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> All Features
-                                        of Datsme Rise</li>
-                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> All Features
-                                        of Datsme Ace</li>
-                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> Extra 30% Off
-                                    </li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" />Full access to all Expert Sessions</li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" />Premium access to Datsme Social</li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" />Elevate your social EQ with Datsme</li>
                                 </ul>
                             </div>
                         </div>
                         <div className={`plangrid__content--detailed detailedActive ${!contentActive[1] ? 'contentActive' : ''}`}>
                             <h2>Datsme Hybrid</h2>
-                            <p>The Best of Datsme, for the Best of <strong>Datsmeer!</strong></p>
+                            <p>The <strong>#1 choice</strong> for raising your social EQ through <strong>ongoing learning and meaningful connecting!</strong></p>
                             <h3><strong>Monthly </strong>Subscription</h3>
                             <ul>
                                 <li>Unlimited Access to all Datsme Psychological Sessions - for a full month!</li>
@@ -170,24 +161,19 @@ const Plans = () => {
                     <div className="plangrid__content">
                         <div className={`plangrid__content--overview overviewActive ${contentActive[2] ? 'contentActive' : ''}`}>
                             <h2>Datsme Ace</h2>
-                            <p>Explore the Exclusive 12 Friendship <strong>Personality Types</strong> only on the Datsme
-                                App!</p>
+                            <p>The <strong>#1 choice</strong> for meeting, connecting and building <strong>meaningful connections</strong></p>
                             <div className="card">
                                 <ul>
-                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> Advanced
-                                        Psychological Matching</li>
-                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> Unlimited
-                                        Friend Requests & DMs</li>
-                                    <li><img src="assets/check-circle.svg" alt="check-circle" /> Premium
-                                        Access to Super Tools
-                                    </li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" />Access to 300* elite members of the Twelve Rings Community</li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" />Advanced matching based on your bonding style</li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" />150+ Message Requests, 3X more profiles, & enhancement visibility</li>
                                 </ul>
                             </div>
                         </div>
                         <div className={`plangrid__content--detailed detailedActive ${!contentActive[2] ? 'contentActive' : ''}`}>
                             <h2>Datsme Ace</h2>
                             <p>Explore the Exclusive 12 Friendship
-                                <strong>Personality Types</strong> only on the Datsme App!
+                                <strong> Personality Types</strong> only on the Datsme App!
                             </p>
                             <h3><strong>Monthly </strong>Subscription</h3>
                             <ul>
@@ -223,32 +209,88 @@ const Plans = () => {
                         <button className="toggleActive" onClick={() => handleContent(2)}>View Plan Details</button>
                     </div>
                 </div>
+                <div className="plangrid plans__content--upgrade--small">
+                    <div className="plangrid__toggle">
+                        <input className="plangrid__toggle--checkbox priceChecked" id="toggle-checkbox3" type="checkbox" checked={priceActive[3]} onChange={() => handlePrice(3)}></input>
+                        <label className="plangrid__toggle--label" htmlFor="toggle-checkbox3">
+                            <span className="plangrid__toggle--label-span">Quarterly</span>
+                            <span className="plangrid__toggle--label-span">Yearly</span>
+                        </label>
+                    </div>
+                    <div className="plangrid__hoverImage hoverImage--upgrade">
+                        <img src="assets/plan-ugrade.svg" alt="" />
+                        <div className="ellipse"></div>
+                    </div>
+                    <div className="plangrid__content">
+                        <div className={`plangrid__content--overview overviewActive ${contentActive[3] ? 'contentActive' : ''}`}>
+                            <h2>Datsme Sync</h2>
+                            <p>Bring thoughtfulness & depth to your personal & professional network!</p>
+                            <div className="card">
+                                <ul>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" />Upgrade your connection limit to 30</li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" />Consciously build & manage your circles</li>
+                                    <li><img src="assets/check-circle.svg" alt="check-circle" />Defeat the constraints of a busy life</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className={`plangrid__content--detailed detailedActive ${!contentActive[3] ? 'contentActive' : ''}`}>
+                            <h2>Datsme Sync</h2>
+                            <p>We are loosing touch with people faster than we are developing meaningful connections.</p>
+                            <h3><strong>Monthly </strong>Subscription</h3>
+                            <ul>
+                                <li>Unlimited Access to all Datsme Psychological Sessions - for a full month!</li>
+                                <li>Access to new content additions on a regular basis</li>
+                                <li>75+ Psychological Sessions unlocked</li>
+                            </ul>
+                        </div>
+                        <div className={`plangrid__content--price priceMonthly ${!priceActive[3] ? 'priceActive' : ''}`}>
+                            <div className="discount">
+                                <p>Save 25%</p>
+                            </div>
+                            <div className="price">
+                                <span>$14.99</span>
+                                <span>$12.99</span>
+                                <span>per month</span>
+                            </div>
+                        </div>
+                        <div className={`plangrid__content--price priceYearly ${priceActive[3] ? 'priceActive' : ''}`}>
+                            <div className="discount">
+                                <p>Save 25%</p>
+                            </div>
+                            <div className="price">
+                                <span>$12.99</span>
+                                <span>$9.99</span>
+                                <span>per year</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="plangrid__viewDetail">
+                        <button className="toggleActive" onClick={() => handleContent(3)}>View Plan Details</button>
+                    </div>
+                </div>
                 <div className="plans__content--upgrade">
                     <div className="upgrade__container">
                         <div className="upgrade__content">
                             <div className={`upgrade__content--overview overviewActive ${contentActive[3] ? 'contentActive' : ''}`}>
-                                <h2>Upgrade your Connection <strong>Limit to 30</strong></h2>
-                                <p>We are loosing touch with people faster than we are developing meaningful
-                                    connections.</p>
+                                <h2><strong>Datsme Sync</strong></h2>
+                                <p>Bring thoughtfulness & depth to your personal & professional network!</p>
                                 <ul>
-                                    <li>Consciously build your circles</li>
+                                    <li>Upgrade your connection limit to 30</li>
                                     <li></li>
-                                    <li>Carry the people you want to do life with</li>
+                                    <li>Consciously build & manage your circles</li>
                                     <li></li>
                                     <li>Defeat the constraints of a busy life</li>
                                 </ul>
                             </div>
                             <div className={`upgrade__content--detailed detailedActive ${!contentActive[3] ? 'contentActive' : ''}`}>
                                 <div className="heading">
-                                    <h2>Upgrade your Connection <strong>Limit to 30</strong></h2>
-                                    <p>We are loosing touch with people faster than we are developing meaningful
-                                        connections.</p>
+                                    <h2><strong>Datsme Sync</strong></h2>
+                                    <p>We are loosing touch with people faster than we are developing meaningful connections.</p>
                                 </div>
                                 <div className="detailed__content">
                                     <h3><strong>Monthly </strong>Subscription</h3>
                                     <ul>
-                                        <li>Unlimited Access to all Datsme Psychological Sessions - for a full month!
-                                        </li>
+                                        <li>Unlimited Access to all Datsme Psychological Sessions - for a full month!</li>
                                         <li>Access to new content additions on a regular basis</li>
                                         <li>75+ Psychological Sessions unlocked</li>
                                     </ul>
